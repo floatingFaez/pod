@@ -35,6 +35,21 @@ export default {
       title: "Site title"
     },
     {
+      name: "slogan",
+      type: "string",
+      title: "Site Slogan"
+    },
+    {
+      name: "location",
+      type: "string",
+      title: "Geo Location"
+    },
+    {
+      name: "logotext",
+      type: "string",
+      title: "Logo Text"
+    },
+    {
       title: "URL",
       name: "url",
       type: "url",
@@ -51,6 +66,25 @@ export default {
       title: "Main logo",
       description: "Upload your main logo here. SVG preferred. ",
       name: "logo",
+      type: "image",
+      fieldset: "logos",
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative text",
+          description: "Important for SEO and accessiblity.",
+          options: {
+            isHighlighted: true
+          }
+        }
+      ]
+    },
+
+    {
+      title: "Footer logo",
+      description: "Upload your footer logo here. SVG preferred. ",
+      name: "footerlogo",
       type: "image",
       fieldset: "logos",
       fields: [

@@ -59,7 +59,6 @@ export default function PostList({ post, aspect, preloadImage }) {
             </span>
           </Link>
         </h2>
-        <p>{post.city}</p>
       </div>
     </>
   );

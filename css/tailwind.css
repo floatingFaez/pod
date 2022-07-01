@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 /*Custom Styles Here*/
+
+.footer-logo .logo-wrap {
+    max-width: 100px;
+}
