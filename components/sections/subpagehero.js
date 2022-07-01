@@ -1,6 +1,6 @@
 const Subpagehero = ({title,subtitle}) => {
     return ( 
-        <div className="page-header py-8 border-y border-gray-400">
+        <div className="page-header py-12 border-y border-gray-400">
             <div className="text-center">
             <p className="mt-2 text-lg">
                 {subtitle}

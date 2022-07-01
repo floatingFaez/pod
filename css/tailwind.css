@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 /*Custom Styles Here*/
+.dark .dark\:bg-black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(16 16 16 / var(--tw-bg-opacity)) !important;
+}
 
 .footer-logo .logo-wrap {
-    max-width: 100px;
+    max-width: 65px;
 }

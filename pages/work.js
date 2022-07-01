@@ -61,7 +61,7 @@ export default function Work(props) {
           <Container py="0">
             <Subpagehero title="Current Project" subtitle="Our Work"/>
             
-            <div className="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 text-center">
+            <div className="grid gap-10 mt-12 mb-12 pb-12 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 text-center">
               {posts.map(post => (
                 <Worklist
                   key={post._id}
