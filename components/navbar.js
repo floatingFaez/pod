@@ -47,7 +47,7 @@ export default function Navbar({logo,logoalt,logotext}) {
                 <Logo logo={logo} logoalt={logoalt} logotext={logotext} open={open}/>
 
                 {/* RightSide: Menu */}
-                <div className="flex-col items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none">
+                <div className="flex-col uppercase items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none">
                   {leftmenu.map((item, index) => (
                     <Link href={item.href} key={index}>
                       <a className="px-5 py-4 mx-5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500">
@@ -57,7 +57,7 @@ export default function Navbar({logo,logoalt,logotext}) {
                   ))}
                 </div>
 
-                <div className="flex-col items-center justify-start order-2 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none">
+                <div className="flex-col uppercase items-center justify-start order-2 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none">
                   {rightmenu.map((item, index) => (
                     <Link href={item.href} key={index}>
                       <a

@@ -68,7 +68,42 @@ export default {
       name: "body",
       title: "Body",
       type: "blockContent"
-    }
+    },
+    {
+      name: "campaign_name",
+      title: "Campaign Name",
+      type: "string"
+    },
+    {
+      name: "campaign_city",
+      title: "Campaign City",
+      type: "string"
+    },
+    {
+      name: "campaign_country",
+      title: "Campaign Country",
+      type: "string"
+    },
+    {
+      name: "campaign_lat",
+      title: "Campaign Latitude",
+      type: "string"
+    },
+    {
+      name: "campaign_long",
+      title: "Campaign Langitude",
+      type: "string"
+    },
+    {
+      name: "campaign_date",
+      title: "Campaign Date",
+      type: "string"
+    },
+    {
+      name: "campaign_year",
+      title: "Campaign year",
+      type: "string"
+    },
   ],
 
   preview: {
@@ -77,7 +112,6 @@ export default {
       media: "mainImage"
     },
     prepare(selection) {
-      const { author } = selection;
       return Object.assign({}, selection);
     }
   }

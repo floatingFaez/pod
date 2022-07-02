@@ -9,9 +9,7 @@ export default function Worklist({ post, aspect, preloadImage }) {
   const imageProps = post?.mainImage
     ? GetImage(post.mainImage)
     : null;
-  const AuthorimageProps = post?.author?.image
-    ? GetImage(post.author.image)
-    : null;
+
   return (
     <>
       <div className="cursor-pointer group">
@@ -20,7 +18,7 @@ export default function Worklist({ post, aspect, preloadImage }) {
             "relative overflow-hidden transition-all bg-gray-100 dark:bg-gray-800  hover:scale-105",
             aspect === "landscape" ? "aspect-video" : "aspect-square"
           )}>
-          <Link href={`/post/${post.slug.current}`}>
+          <Link href={`/work/${post.slug.current}`}>
             <a>
               {imageProps ? (
                 <Image
@@ -46,7 +44,7 @@ export default function Worklist({ post, aspect, preloadImage }) {
         </div>
 
         <h2 className="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
-          <Link href={`/post/${post.slug.current}`}>
+          <Link href={`/work/${post.slug.current}`}>
             <span
               className="bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900
                         bg-[length:0px_10px]
@@ -59,6 +57,7 @@ export default function Worklist({ post, aspect, preloadImage }) {
             </span>
           </Link>
         </h2>
+        <p>{post.city}</p>
       </div>
     </>
   );

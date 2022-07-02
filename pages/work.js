@@ -11,7 +11,7 @@ import { getClient, usePreviewSubscription } from "@lib/sanity";
 import defaultOG from "../public/img/opengraph.jpg";
 import { workquery, configQuery } from "@lib/groq";
 import GetImage from "@utils/getImage";
-import Worklist from "@components/postlist";
+import Worklist from "@components/worklist";
 
 export default function Work(props) {
   const { postdata, siteconfig, preview } = props;

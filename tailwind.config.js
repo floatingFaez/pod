@@ -29,7 +29,23 @@ module.exports = {
     extend: {}
   },
   plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          '@screen sm': {
+            maxWidth: '640px',
+          },
+          '@screen md': {
+            maxWidth: '768px',
+          },
+          '@screen lg': {
+            maxWidth: '1140px',
+          },
+        }
+      })
+    },
     require("@tailwindcss/line-clamp"),
-    require("@tailwindcss/typography")
+    require("@tailwindcss/typography"),
   ]
 };

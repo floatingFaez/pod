@@ -11,3 +11,22 @@
 .footer-logo .logo-wrap {
     max-width: 65px;
 }
+
+.campaign-body:before,.campaign-body:after{
+    position: absolute;
+    font-size: 3rem;
+    top: 28px;
+    width: 12px;
+    height: 40px;
+}
+.campaign-body:before{
+    content: "";
+    background-image: url('/img/pr-left.svg');
+    left: 0;
+}
+.campaign-body:after{
+    content: "";
+    background-image: url('/img/pr-right.svg');
+    right: 0;
+    width: 32px;
+}
