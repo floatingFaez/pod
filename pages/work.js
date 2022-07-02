@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { getClient, usePreviewSubscription } from "@lib/sanity";
 import defaultOG from "../public/img/opengraph.jpg";
 import { workquery, configQuery } from "@lib/groq";
+import Newsletter from "@components/newsletter";
 import GetImage from "@utils/getImage";
 import Worklist from "@components/worklist";
 
@@ -71,6 +72,9 @@ export default function Work(props) {
               ))}
             </div>
           </Container>
+
+          <Newsletter siteconfig={siteconfig} />
+
         </Layout>
       )}
     </>

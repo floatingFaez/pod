@@ -30,3 +30,11 @@
     right: 0;
     width: 32px;
 }
+
+.newsletter{
+    padding-top: 100px;
+    padding-bottom: 150px;
+}
+.newsletter-submit{
+    height: 50px;
+}

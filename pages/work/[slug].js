@@ -1,10 +1,10 @@
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@components/layout";
 import Container from "@components/container";
 import Subpagehero from "@components/sections/subpagehero";
 import Campaign from "@components/work/campaign";
+import Newsletter from "@components/newsletter";
 import { useRouter } from "next/router";
 // import prLiftImage from "../../public/img/opengraph.jpg";
 import client, {
@@ -12,15 +12,17 @@ import client, {
   usePreviewSubscription,
   PortableText
 } from "@lib/sanity";
+
 import ErrorPage from "next/error";
 import GetImage from "@utils/getImage";
-import { parseISO, format } from "date-fns";
 import { NextSeo } from "next-seo";
 import defaultOG from "/public/img/opengraph.jpg";
 
 import { singleWorkquery, configQuery, pathquery } from "@lib/groq";
 
+
 export default function Post(props) {
+
   const { postdata, siteconfig, preview } = props;
 
   const router = useRouter();
@@ -81,32 +83,35 @@ export default function Post(props) {
           </Container>
 
           <Container>
-          <div class="grid grid-cols-5 gap-5">
-            <div class="col-span-3 pr-5">
-              {post?.mainImage && <MainImage image={post.mainImage} />}
-            </div>
-
-            <div className="mt-12 mb-12 col-span-2">
-              <div className="flex justify-between mb-4">
-                <h2 className="text-3xl font-normal tracking-tight text-center lg:leading-snug text-brand-primary lg:text-2xl dark:text-white">
-                  {post?.campaign_name}
-                </h2>
-                <Link href="/work">
-                    <a className="px-5 py-2 text-sm text-gray-500 font-semibold rounded-full dark:text-gray-500 bg-brand-secondary/20 uppercase">
-                      Back to Index
-                    </a>
-                  </Link>
+            <div className="grid grid-cols-5 gap-5">
+              <div className="col-span-3 pr-5">
+                {post?.mainImage && <MainImage image={post.mainImage} />}
               </div>
-              
-              <article className="max-w-screen-md mx-auto mb-5">
-                <div className="mx-auto prose prose-base dark:prose-invert prose-a:text-blue-500">
-                  {post.body && <PortableText value={post.body} />}
-                  <Campaign post={post} />
+
+              <div className="mt-12 mb-12 col-span-2">
+                <div className="flex justify-between mb-4">
+                  <h2 className="text-3xl font-normal tracking-tight text-center lg:leading-snug text-brand-primary lg:text-2xl dark:text-white">
+                    {post?.campaign_name}
+                  </h2>
+                  <Link href="/work">
+                      <a className="px-5 py-2 text-sm text-gray-500 font-semibold rounded-full dark:text-gray-500 bg-brand-secondary/20 uppercase">
+                        Back to Index
+                      </a>
+                    </Link>
                 </div>
-              </article>
+                
+                <article className="max-w-screen-md mx-auto mb-5">
+                  <div className="mx-auto prose prose-base dark:prose-invert prose-a:text-blue-500">
+                    {post.body && <PortableText value={post.body} />}
+                    <Campaign post={post} />
+                  </div>
+                </article>
+              </div>
             </div>
-          </div>
           </Container>
+
+          <Newsletter siteconfig={siteconfig} />
+
         </Layout>
       )}
     </>

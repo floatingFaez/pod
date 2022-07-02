@@ -38,7 +38,7 @@ export default function Footer(props) {
   ];
 
   return (
-    <Container className="mt-10 border-t border-gray-100 dark:border-gray-800 py-10">
+    <Container className="px-8 py-2 mx-auto xl:px-5 max-w-screen-xl mt-10 border-t py-10">
 
       <div className="footer-logo flex-col items-center w-full text-center uppercase">
             <Link href="/">
