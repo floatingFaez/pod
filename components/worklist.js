@@ -6,9 +6,12 @@ import { parseISO, format } from "date-fns";
 import { PhotographIcon } from "@heroicons/react/outline";
 
 export default function Worklist({ post, aspect, preloadImage }) {
+
   const imageProps = post?.mainImage
     ? GetImage(post.mainImage)
     : null;
+  
+  console.log({imageProps})
 
   return (
     <>

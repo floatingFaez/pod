@@ -6,7 +6,6 @@ import Subpagehero from "@components/sections/subpagehero";
 import Campaign from "@components/work/campaign";
 import Newsletter from "@components/newsletter";
 import { useRouter } from "next/router";
-// import prLiftImage from "../../public/img/opengraph.jpg";
 import client, {
   getClient,
   usePreviewSubscription,

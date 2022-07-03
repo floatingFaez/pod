@@ -9,9 +9,7 @@ export default function PostList({ post, aspect, preloadImage }) {
   const imageProps = post?.mainImage
     ? GetImage(post.mainImage)
     : null;
-  const AuthorimageProps = post?.author?.image
-    ? GetImage(post.author.image)
-    : null;
+
   return (
     <>
       <div className="cursor-pointer group">
