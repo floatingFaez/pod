@@ -46,21 +46,14 @@ export default function Worklist({ post, aspect, preloadImage }) {
           </Link>
         </div>
 
-        <h2 className="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
+        <h2 className="mt-5 text-lg font-regular leading-4 text-brand-primary dark:text-white">
           <Link href={`/work/${post.slug.current}`}>
-            <span
-              className="bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900
-                        bg-[length:0px_10px]
-                        bg-left-bottom
-                        bg-no-repeat
-                        transition-[background-size]
-                        duration-500
-                        hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
+            <span>
               {post.title}
             </span>
           </Link>
         </h2>
-        <p>{post.city}</p>
+        <p className="dark:text-white leading-4">{post.city}</p>
       </div>
     </>
   );

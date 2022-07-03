@@ -11,6 +11,7 @@
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
+    "@sanity/components",
     "@sanity/default-login",
     "@sanity/desk-tool",
     "asset-source-unsplash"
@@ -22,7 +23,8 @@
       ]
     }
   },
-  "parts": [{
+  "parts": [
+    {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
     },

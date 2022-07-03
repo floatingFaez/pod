@@ -40,7 +40,7 @@ export default function Navbar({logo,logoalt,logotext}) {
         <Disclosure>
           {({ open }) => (
             <>
-              <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap">
+              <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap border-b border-gray-400">
                 
                 {/* LeftSide: logo */}
 
