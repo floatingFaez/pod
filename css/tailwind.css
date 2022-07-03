@@ -38,3 +38,13 @@
 .newsletter-submit{
     height: 50px;
 }
+.section-desc {
+    padding-top: 125px;
+    padding-bottom: 115px;
+    max-width: 796px;
+}
+
+.tab-content{
+    padding: 90px 0;
+    max-width: 80%;
+}

@@ -130,7 +130,7 @@ const Newsletter = ({ siteconfig }) => {
 
                         <button
                         type="submit"
-                        className="w-full newsletter-submit border font-semibold text-white transition-colors bg-gray-900 dark:hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200  dark:bg-transparent dark:text-white ">
+                        className="w-full newsletter-submit border font-regular text-white transition-colors bg-gray-900 dark:hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200  dark:bg-transparent dark:text-white ">
                         {isSubmitting ? (
                             <svg
                             className="w-5 h-5 mx-auto text-white dark:text-black animate-spin"
