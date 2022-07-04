@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /*Custom Styles Here*/
+body{
+    color:'#fff'
+}
 .dark .dark\:bg-black {
     --tw-bg-opacity: 1;
     background-color: rgb(16 16 16 / var(--tw-bg-opacity)) !important;
@@ -47,4 +50,8 @@
 .tab-content{
     padding: 90px 0;
     max-width: 80%;
+}
+.package-thumb {
+    max-width: 427px;
+    margin: 50px auto 45px;
 }

@@ -1,4 +1,4 @@
-const Subpagehero = ({title,subtitle, classes}) => {
+const Subpagehero = ({title,subtitle, classes=''}) => {
     return ( 
         <div className={`page-header py-12 border-b border-gray-400 ${classes}`}>
             <div className="text-center">

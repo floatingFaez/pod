@@ -36,8 +36,6 @@ export default function Post(props) {
     enabled: preview || router.query.preview !== undefined
   });
 
-  console.log({post})
-
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }

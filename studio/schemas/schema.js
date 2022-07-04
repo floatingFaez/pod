@@ -9,6 +9,7 @@ import blockContent from "./blockContent";
 import category from "./category";
 import post from "./post";
 import work from "./work";
+import page from "./page";
 import author from "./author";
 import siteconfig from "./siteConfig";
 
@@ -22,6 +23,7 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     post,
+    page,
     work,
     author,
     category,

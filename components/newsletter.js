@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import useWeb3Forms from "use-web3forms";
 import Container from "@components/container";
 
-const Newsletter = ({ siteconfig }) => {
+const Newsletter = ({ siteconfig, classes }) => {
 
   const apiKey = siteconfig?.w3ckey || "YOUR_ACCESS_KEY_HERE";
 
@@ -35,8 +35,7 @@ const Newsletter = ({ siteconfig }) => {
 
     return ( 
         <Container>
-            <div className="newsletter border-t">
-                
+            <div className={`newsletter border-t ${classes}`}>
                 <div className="newsletter_header">
                     <div className="text-center">
                         <p className="mt-2 text-lg uppercase">Keep Upadted</p>
@@ -130,7 +129,7 @@ const Newsletter = ({ siteconfig }) => {
 
                         <button
                         type="submit"
-                        className="w-full newsletter-submit border font-regular text-white transition-colors bg-gray-900 dark:hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200  dark:bg-transparent dark:text-white ">
+                        className="w-full uppercase newsletter-submit border font-regular text-white transition-colors bg-gray-900 dark:hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200  dark:bg-transparent dark:text-white ">
                         {isSubmitting ? (
                             <svg
                             className="w-5 h-5 mx-auto text-white dark:text-black animate-spin"
@@ -150,7 +149,7 @@ const Newsletter = ({ siteconfig }) => {
                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                             </svg>
                         ) : (
-                            "Send Message"
+                            "Submit"
                         )}
                         </button>
                     </form>
