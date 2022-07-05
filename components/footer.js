@@ -40,7 +40,7 @@ export default function Footer(props) {
   return (
     <Container className="px-8 py-2 mx-auto xl:px-5 max-w-screen-xl mt-10 border-t py-10">
 
-      <div className="footer-logo flex-col items-center w-full text-center uppercase">
+      <div className="footer-logo flex-col items-center w-full leading-5 text-center uppercase font-regular font-secondary dark:text-white">
             <Link href="/">
               <a className="w-28">
               <div className="logo-wrap max-w-xs text-center mx-auto my-10">
@@ -65,14 +65,14 @@ export default function Footer(props) {
       <div className="flex-col items-center justify-center w-full md:flex md:flex-row md:w-auto uppercase">
         {footermenu.map((item, index) => (
           <Link href={item.href} key={index}>
-            <a className="px-4 py-5 my-10 mx-5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500">
+            <a className="px-4 py-5 my-10 mx-5 font-regular font-secondary text-dark dark:text-white hover:text-blue-500">
               {item.label}
             </a>
           </Link>
         ))}
       </div>
 
-      <div className="text-sm text-center">
+      <div className=" text-center font-regular font-secondary text-dark dark:text-white">
         © {new Date().getFullYear()} {props?.copyright}.
       </div>
 
@@ -93,7 +93,7 @@ const Backlink = () => {
     <a
       href="#"
       rel="noopener"
-      className="fixed flex px-3 py-1 space-x-2 text-sm font-semibold text-gray-900 bg-white border border-gray-300 rounded shadow-sm place-items-center right-5 bottom-5 dark:bg-trueGray-900 dark:border-trueGray-700 dark:text-trueGray-300">
+      className="fixed flex px-3 py-1 space-x-2  font-regular text-gray-900 bg-white border border-gray-300 rounded shadow-sm place-items-center right-5 bottom-5 dark:bg-trueGray-900 dark:border-trueGray-700 dark:text-trueGray-300">
       
       <span>Up</span>
     </a>

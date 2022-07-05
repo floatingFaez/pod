@@ -9,7 +9,7 @@ const Tabs = ({tabs}) => {
         <>
         
         <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
-            <ul className="flex flex-wrap -mb-px justify-around text-sm font-medium text-center border-b">
+            <ul className="flex flex-wrap -mb-px justify-around text-sm font-regular text-center border-b">
                 { map(tabTitles, (tab,i) => {
                     return <li key={`${tab.key}_tt`} className={`${ activeTab === i ? 'dark:bg-gray-900 text-blue-600 dark:text-blue-500' : 'hover:text-blue-600 dark:hover:text-blue-500'} grow `} onClick={() => setActiveTab(i)} >
                         <button className="p-4 uppercase">

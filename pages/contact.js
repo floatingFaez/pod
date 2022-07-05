@@ -45,7 +45,7 @@ export default function Contact({ siteconfig }) {
   return (
     <Layout {...siteconfig}>
       <Container>
-        <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
+        <h1 className="mt-2 mb-3 text-3xl font-regular tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
           Contact
         </h1>
         <div className="text-center">
@@ -54,7 +54,7 @@ export default function Contact({ siteconfig }) {
 
         <div className="grid my-10 md:grid-cols-2">
           <div className="my-10">
-            <h2 className="text-2xl font-semibold dark:text-white">
+            <h2 className="text-2xl font-regular dark:text-white">
               Contact Stablo
             </h2>
             <p className="max-w-sm mt-5">
@@ -169,7 +169,7 @@ export default function Contact({ siteconfig }) {
 
               <button
                 type="submit"
-                className="w-full py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7 dark:bg-white dark:text-black ">
+                className="w-full py-4 font-regular text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7 dark:bg-white dark:text-black ">
                 {isSubmitting ? (
                   <svg
                     className="w-5 h-5 mx-auto text-white dark:text-black animate-spin"

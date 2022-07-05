@@ -93,7 +93,7 @@ export default function Post(props) {
                     {post?.campaign_name}
                   </h2>
                   <Link href="/work">
-                      <a className="px-5 py-2 text-sm text-gray-500 font-semibold rounded-full dark:text-gray-500 bg-brand-secondary/20 uppercase">
+                      <a className="px-5 py-2 text-sm text-gray-500 font-regular rounded-full dark:text-gray-500 bg-brand-secondary/20 uppercase">
                         Back to Index
                       </a>
                     </Link>
@@ -123,7 +123,7 @@ const MainImage = ({ image }) => {
       <Image {...GetImage(image)} alt={image.alt || "Thumbnail"} />
       <figcaption className="text-center ">
         {image.caption && (
-          <span className="text-sm italic text-gray-600 dark:text-gray-400">
+          <span className="text-sm italic text-dark dark:text-white">
             {image.caption}
           </span>
         )}

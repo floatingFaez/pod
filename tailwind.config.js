@@ -14,7 +14,7 @@ module.exports = {
       },
       fontFamily: {
         // to change, update font in _document.js
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: ["ABC Favorit","Inter", ...defaultTheme.fontFamily.sans],
         stock: [defaultTheme.fontFamily.sans]
       },
       aspectRatio: {

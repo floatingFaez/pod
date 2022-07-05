@@ -38,9 +38,9 @@ const Newsletter = ({ siteconfig, classes }) => {
             <div className={`newsletter border-t ${classes}`}>
                 <div className="newsletter_header">
                     <div className="text-center">
-                        <p className="mt-2 text-lg uppercase">Keep Upadted</p>
+                        <p className="mt-2 text-lg uppercase font-secondary text-brand-primary dark:text-white">Keep Upadted</p>
                     </div>
-                    <h1 className="text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
+                    <h1 className="text-3xl font-regular tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
                     Dream Larger
                     </h1>
                 </div>
@@ -58,7 +58,7 @@ const Newsletter = ({ siteconfig, classes }) => {
                             type="text"
                             placeholder="First Name"
                             autoComplete="false"
-                            className={`w-full pr-2 py-3 border-b dark:border-white placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-gray-400 dark:bg-transparent  focus:ring-4  ${
+                            className={`w-full font-secondary uppercase pr-2 py-3 border-b dark:border-white placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent  focus:ring-4  ${
                             errors.name
                                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
@@ -80,7 +80,7 @@ const Newsletter = ({ siteconfig, classes }) => {
                             type="text"
                             placeholder="Last Name"
                             autoComplete="false"
-                            className={`w-full pr-2 py-3 border-b dark:border-white placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-gray-400 dark:bg-transparent   focus:ring-4  ${
+                            className={`w-full font-secondary uppercase pr-2 py-3 border-b dark:border-white placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent   focus:ring-4  ${
                             errors.name
                                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
@@ -107,7 +107,7 @@ const Newsletter = ({ siteconfig, classes }) => {
                             placeholder="Email Address"
                             name="email"
                             autoComplete="false"
-                            className={`w-full pr-2 py-3 border-b dark:border-white placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-gray-400 dark:bg-transparent focus:ring-4  ${
+                            className={`w-full font-secondary uppercase pr-2 py-3 border-b dark:border-white placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent focus:ring-4  ${
                             errors.email
                                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
@@ -129,7 +129,7 @@ const Newsletter = ({ siteconfig, classes }) => {
 
                         <button
                         type="submit"
-                        className="w-full uppercase newsletter-submit border font-regular text-white transition-colors bg-gray-900 dark:hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200  dark:bg-transparent dark:text-white ">
+                        className="w-full font-secondary  uppercase newsletter-submit border font-regular text-white transition-colors bg-gray-900 dark:hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200  dark:bg-transparent dark:text-white ">
                         {isSubmitting ? (
                             <svg
                             className="w-5 h-5 mx-auto text-white dark:text-black animate-spin"

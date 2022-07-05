@@ -44,14 +44,12 @@ export default function Worklist({ post, aspect, preloadImage }) {
           </Link>
         </div>
 
-        <h2 className="mt-5 text-lg font-regular leading-4 text-brand-primary dark:text-white">
+        <h2 className="mt-5 text-lg font-regular leading-4 text-brand-primary dark:text-white font-secondary uppercase">
           <Link href={`/work/${post.slug.current}`}>
-            <span>
-              {post.title}
-            </span>
+            {post.title}
           </Link>
         </h2>
-        <p className="dark:text-white leading-4">{post.city}</p>
+        <p className="text-brand-primary dark:text-white leading-5 font-secondary uppercase">{post.city}</p>
       </div>
     </>
   );

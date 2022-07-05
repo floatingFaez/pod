@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'ABC Favorit';
+    src: url('ABCFavorit-Medium.eot');
+    src: url('ABCFavorit-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ABCFavorit-Medium.woff2') format('woff2'),
+        url('ABCFavorit-Medium.woff') format('woff'),
+        url('ABCFavorit-Medium.ttf') format('truetype'),
+        url('ABCFavorit-Medium.svg#ABCFavorit-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'ABC Favorit Mono';
+    src: url('ABCFavoritMono-Regular.eot');
+    src: url('ABCFavoritMono-Regular.eot?#iefix') format('embedded-opentype'),
+        url('ABCFavoritMono-Regular.woff2') format('woff2'),
+        url('ABCFavoritMono-Regular.woff') format('woff'),
+        url('ABCFavoritMono-Regular.ttf') format('truetype'),
+        url('ABCFavoritMono-Regular.svg#ABCFavoritMono-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

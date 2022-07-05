@@ -10,7 +10,7 @@ export default function About({ authors, siteconfig }) {
   return (
     <Layout {...siteconfig}>
       <Container>
-        <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
+        <h1 className="mt-2 mb-3 text-3xl font-regular tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
           About
         </h1>
         <div className="text-center">

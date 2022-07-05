@@ -40,7 +40,7 @@ export default function Navbar({logo,logoalt,logotext}) {
         <Disclosure>
           {({ open }) => (
             <>
-              <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap border-b border-gray-400">
+              <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap border-b border-gray-400 font-secondary text-dark dark:text-white">
                 
                 {/* LeftSide: logo */}
 
@@ -50,7 +50,7 @@ export default function Navbar({logo,logoalt,logotext}) {
                 <div className="flex-col uppercase items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none">
                   {leftmenu.map((item, index) => (
                     <Link href={item.href} key={index}>
-                      <a className="px-5 py-4 mx-5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500">
+                      <a className="px-5 py-4 mx-5 text-sm font-regular hover:text-blue-500">
                         {item.label}
                       </a>
                     </Link>
@@ -61,7 +61,7 @@ export default function Navbar({logo,logoalt,logotext}) {
                   {rightmenu.map((item, index) => (
                     <Link href={item.href} key={index}>
                       <a
-                        className="py-4 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
+                        className="py-4 text-sm font-regular hover:text-blue-500"
                         target={item.external ? "_blank" : ""}
                         rel={item.external ? "noopener" : ""}>
                         {item.label}
@@ -76,7 +76,7 @@ export default function Navbar({logo,logoalt,logotext}) {
                   {mobilemenu.map((item, index) => (
                     <Link href={item.href} key={index}>
                       <a
-                        className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
+                        className="px-5 py-2 text-sm font-regular text-dark dark:text-white hover:text-blue-500"
                         target={item.external ? "_blank" : ""}
                         rel={item.external ? "noopener" : ""}>
                         {item.label}

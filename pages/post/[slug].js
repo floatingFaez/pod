@@ -91,7 +91,7 @@ export default function Post(props) {
               )}
             </div>
             <Container className="py-48">
-              <h1 className="relative max-w-3xl mx-auto mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl after:absolute after:w-full after:h-full after:bg-white after:inset-0 after:-z-10 after:blur-2xl after:scale-150">
+              <h1 className="relative max-w-3xl mx-auto mb-3 text-3xl font-regular tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl after:absolute after:w-full after:h-full after:bg-white after:inset-0 after:-z-10 after:blur-2xl after:scale-150">
                 {post.title}
               </h1>
             </Container>
@@ -103,7 +103,7 @@ export default function Post(props) {
                 <CategoryLabel categories={post.categories} />
               </div>
 
-              <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
+              <h1 className="mt-2 mb-3 text-3xl font-regular tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
                 {post.title}
               </h1>
 
@@ -193,7 +193,7 @@ const MainImage = ({ image }) => {
       <Image {...GetImage(image)} alt={image.alt || "Thumbnail"} />
       <figcaption className="text-center ">
         {image.caption && (
-          <span className="text-sm italic text-gray-600 dark:text-gray-400">
+          <span className="text-sm italic text-dark dark:text-white">
             {image.caption}
           </span>
         )}

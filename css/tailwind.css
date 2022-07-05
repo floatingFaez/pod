@@ -1,3 +1,4 @@
+@import url('/fonts/stylesheet.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +6,9 @@
 /*Custom Styles Here*/
 body{
     color:'#fff'
+}
+.font-secondary{
+    font-family: 'ABC Favorit Mono';
 }
 .dark .dark\:bg-black {
     --tw-bg-opacity: 1;
