@@ -69,14 +69,15 @@ export default {
       description:
         "The excerpt is used in blog feeds, and also for search results",
       type: "text",
-      rows: 3,
+      rows: 2,
       validation: Rule => Rule.max(200)
     },
     {
       name: "body",
       description:"The texts is used in page content",
       title: "Description",
-      type: "text"
+      type: "text",
+      rows:4,
     },
 
     {
@@ -99,7 +100,63 @@ export default {
       title: "Section Title",
       fieldset:'packages'
     },
-
+    {
+      name: "tabs",
+      type: "array",
+      title: "Bespoke Packages",
+      fieldset:'bes_packages',
+      description: "Enter Bespoke Packages",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "tabtitle",
+              type: "string",
+              title: "Tab Title"
+            },
+            {
+              name: "packag_title",
+              type: "string",
+              title: "Package Title"
+            },
+            {
+              name: "description",
+              type: "text",
+              title: "Descriptiont",
+              rows:3,
+            },
+            {
+              name: "packageOptions",
+              type: "array",
+              title: "Packages Options",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    {
+                      name: "name",
+                      type: "string",
+                      title: "Name"
+                    },
+                  ],
+                  preview: {
+                    select: {
+                      title: "name",
+                    }
+                  }
+                }
+              ]
+            },
+          ],
+          preview: {
+            select: {
+              title: "tabtitle",
+            }
+          }
+        }
+      ]
+    },
     {
       name: "package",
       type: "array",
@@ -118,7 +175,8 @@ export default {
             {
               name: "description",
               type: "text",
-              title: "Descriptiont"
+              title: "Descriptiont",
+              rows:3,
             },
             {
               name: "pkgImage",

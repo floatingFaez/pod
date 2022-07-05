@@ -37,7 +37,6 @@ export default function FieldTrips(props) {
     if(!!data){
       page = data;
       imageProps = data?.mainImage ? GetImage(data.mainImage) : null;
-      console.log(page)
     }
   }
   
@@ -80,11 +79,12 @@ export default function FieldTrips(props) {
 
           <Subpagehero title={page.bep_section_subtitle} subtitle={page.bep_sectiontitle} classes="border-t border-gray-400"/>
 
-          <Tabs />
+          <Tabs tabs={page.tabs}/>
 
           <div className={`py-5 border-b border-t border-gray-400 text-center`}>
               <p className="mt-2 text-lg text-white uppercase">{page.sectiontitle}</p>
           </div>
+          
 
           <div className="grid grid-cols-2 text-white border-b">
               {
@@ -118,6 +118,7 @@ export default function FieldTrips(props) {
                 })
               }
           </div>
+
         </Container>
         <Newsletter siteconfig={siteconfig} classes="pt-0 border-t-0"/>
         </>
