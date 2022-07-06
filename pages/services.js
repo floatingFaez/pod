@@ -12,7 +12,7 @@ import Image from "next/image";
 import Newsletter from "@components/newsletter";
 import { PhotographIcon } from "@heroicons/react/outline";
 
-export default function FieldTrips(props) {
+export default function Services(props) {
   const { page, siteconfig, preview, preloadImage } = props;
   let imageProps = null
 
@@ -63,11 +63,7 @@ export default function FieldTrips(props) {
           </div>
           
 
-          <div className="border-y">
-              {
-                <ItemSlider items={page.client} sliderPerView={4} imgSizes={{w:310,h:88}}/>
-              }
-          </div>
+          <ItemSlider items={page.client} sliderPerView={4} imgSizes={{w:310,h:88}} classes="pb-20 border-b"/>
 
         </Container>
         <Newsletter siteconfig={siteconfig} classes="pt-0 border-t-0"/>

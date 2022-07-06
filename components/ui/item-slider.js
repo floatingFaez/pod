@@ -66,7 +66,7 @@ const ItemSlider = ({items,sliderPerView,imgSizes,classes=''}) => {
     }
 
     return (
-        <div className={`slider-container py-20 ${classes}`}>
+        <div className={`slider-container ${classes}`}>
              <Swiper {...addSwiperParams}>
                 { getSliderHtml(items,imgSizes) }
             </Swiper>
