@@ -1,10 +1,13 @@
+import dynamic from 'next/dynamic'
 import Container from "@components/container";
 import Layout from "@components/layout";
 import { configQuery, servicesQuery } from "@lib/groq";
 import { getClient } from "@lib/sanity";
 import GetImage from "@utils/getImage";
+import SliderPlaceHolder from "@components/ui/slider-placeholder";
 import Subpagehero from "@components/sections/subpagehero";
 import Tabs from "@components/service/service-tabs";
+const ItemSlider = dynamic(() => import('@components/ui/item-slider'),{ loading: () => <SliderPlaceHolder sizes={{w:310,h:88}}/>, ssr: false });
 import Image from "next/image";
 import Newsletter from "@components/newsletter";
 import { PhotographIcon } from "@heroicons/react/outline";
@@ -55,43 +58,16 @@ export default function FieldTrips(props) {
 
           <Tabs tabs={page.tabs}/>
 
-          <div className={`py-5 border-b border-t border-gray-400 text-center`}>
+          <div className={`py-5 border-t border-gray-400 text-center`}>
               <p className="mt-2 text-lg text-white uppercase font-secondary">{page.sectiontitle}</p>
           </div>
           
 
-          {/* <div className="grid grid-cols-2 text-white border-b">
+          <div className="border-y">
               {
-                page?.package?.map( (aPackage,i )=> {
-                  let packageImg = aPackage?.pkgImage ? GetImage(aPackage.pkgImage) : null;
-                  return (
-                    <div className={`pt-20 pb-16 text-center ${i === 0 ? 'border-r':''}`} key={`apck_#${i}`}>
-                        <p className="text-3xl mb-5">{aPackage.title}</p>
-                        <div className="package-thumb">
-                          {
-                            !!packageImg && 
-                              <Image
-                                src={packageImg.src}
-                                loader={packageImg.loader}
-                                blurDataURL={packageImg.blurDataURL}
-                                alt={packageImg.alt || "Thumbnail"}
-                                placeholder="blur"
-                                layout="responsive"
-                                width={'427px'}
-                                height={'285px'}
-                                priority={preloadImage ? true : false}
-                                className="transition-all"
-                              />
-                          }
-                          
-                        </div>
-                        <p className="mb-16 max-w-lg mx-auto">{aPackage.description}</p>
-                          <Button text={aPackage.buttonText} />
-                    </div>
-                  )
-                })
+                <ItemSlider items={page.client} sliderPerView={4} imgSizes={{w:310,h:88}}/>
               }
-          </div> */}
+          </div>
 
         </Container>
         <Newsletter siteconfig={siteconfig} classes="pt-0 border-t-0"/>

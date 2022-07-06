@@ -59,3 +59,67 @@ body{
     max-width: 427px;
     margin: 50px auto 45px;
 }
+/*--------------------- slider ---------------------*/
+.slider-container {
+    overflow: hidden;
+    position: relative;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  bottom: 17px;
+  z-index: 1;
+  color: #fff;
+  font-size: 24px;
+}
+.swiper-button-prev {
+  left: 5px;
+}
+.swiper-button-next {
+  right: 5px;
+}
+
+
+.slider-container .swiper-container {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+.slider-container .swiper-container .swiper-wrapper {
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+/* 
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  color: #ffffff;
+  padding: 13px;
+  background: linear-gradient(#45bdaa, transparent);
+  background-color: #005e6a;
+  border-radius: 50px;
+  z-index: 2;
+  transition: 0.2s all ease-in;
+}
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+  background-color: #259a94;
+  color: #fff;
+}
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+} */
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-next:after {
+  content: "←";
+}
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: "→";
+}

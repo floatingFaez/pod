@@ -168,49 +168,49 @@ export default {
       title: "Section Title",
       fieldset:'logos'
     },
-    // {
-    //   name: "client",
-    //   type: "array",
-    //   title: "Clients",
-    //   fieldset:'logos',
-    //   of: [
-    //     {
-    //       type: "object",
-    //       fields: [
-    //         {
-    //           name: "logo_img",
-    //           title: "Logo image",
-    //           type: "image",
-    //           fields: [
-    //             {
-    //               name: "alt",
-    //               type: "string",
-    //               title: "Alternative text",
-    //               description: "Important for SEO and accessiblity.",
-    //               options: {
-    //                 isHighlighted: true
-    //               }
-    //             }
-    //           ],
-    //           options: {
-    //             hotspot: true
-    //           }
-    //         },,
-    //         {
-    //           name: "logo_name",
-    //           type: "string",
-    //           title: "Logo Name"
-    //         },
-    //       ],
-    //       preview: {
-    //         select: {
-    //           title: "logo_name",
-    //           media: "logo_img"
-    //         }
-    //       }
-    //     }
-    //   ]
-    // }
+    {
+      name: "client",
+      type: "array",
+      title: "Clients",
+      fieldset:'logos',
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "logo_img",
+              title: "Logo image",
+              type: "image",
+              fields: [
+                {
+                  name: "alt",
+                  type: "string",
+                  title: "Alternative text",
+                  description: "Important for SEO and accessiblity.",
+                  options: {
+                    isHighlighted: true
+                  }
+                }
+              ],
+              options: {
+                hotspot: true
+              }
+            },
+            {
+              name: "logo_name",
+              type: "string",
+              title: "Logo Name"
+            },
+          ],
+          preview: {
+            select: {
+              title: "logo_name",
+              media: "logo_img"
+            }
+          }
+        }
+      ]
+    }
 
   ],
 };
