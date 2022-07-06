@@ -1,0 +1,99 @@
+export default {
+  name: "homeSlider",
+  type: "document",
+  title: "Home Slider",
+  fieldsets: [
+    {
+      title: "Slider Content",
+      name: "content",
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
+    },
+  ],
+  fields: [
+    {
+      name: "mainImage",
+      title: "Main image",
+      type: "image",
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative text",
+          description: "Important for SEO and accessiblity.",
+          options: {
+            isHighlighted: true
+          }
+        }
+      ],
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: "title",
+      type: "string",
+      title: "Title",
+      fieldset: "content"
+    },   
+    {
+      name: "city",
+      type: "string",
+      title: "City",
+      fieldset: "content"
+    },   
+    {
+      name: "country",
+      type: "string",
+      title: "Country",
+      fieldset: "content"
+    },
+    {
+      name: "lat",
+      type: "string",
+      title: "Latitude",
+      fieldset: "content"
+    },      
+    {
+      name: "long",
+      type: "string",
+      title: "Longitude",
+      fieldset: "content"
+    },    
+    {
+      name: "date_range",
+      type: "string",
+      title: "Date range",
+      fieldset: "content"
+    },    
+    {
+      name: "year",
+      type: "string",
+      title: "Year",
+      fieldset: "content"
+    },    
+    {
+      name: "project_1",
+      type: "string",
+      title: "Project1",
+      fieldset: "content"
+    },
+    {
+      name: "project_2",
+      type: "string",
+      title: "Project 2",
+      fieldset: "content"
+    },
+  ],
+  preview: {
+    select: {
+      title: "title",
+      media: "mainImage"
+    },
+    prepare(selection) {
+      return Object.assign({}, selection);
+    }
+  }
+};

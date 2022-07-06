@@ -89,7 +89,7 @@ export default function FieldTrips(props) {
                           
                         </div>
                         <p className="mb-16 max-w-lg mx-auto">{aPackage.description}</p>
-                          <Button text={aPackage.buttonText} />
+                        <Button text={aPackage.buttonText} />
                     </div>
                   )
                 })

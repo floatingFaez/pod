@@ -1,4 +1,4 @@
-import React from "react";
+import {Fragment} from "react";
 import { Disclosure } from "@headlessui/react";
 import Container from "@components/container";
 import Logo from "@components/ui/logo";
@@ -35,12 +35,12 @@ export default function Navbar({logo,logoalt,logotext}) {
   const mainmenu = [...leftmenu, ...rightmenu];
 
   return (
-    <Container py='0'>
+    <Container py='0' className='z-50 relative'>
       <nav>
         <Disclosure>
           {({ open }) => (
-            <>
-              <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap border-b border-gray-400 font-secondary text-dark dark:text-white">
+            <Fragment>
+              <div className="flex flex-wrap justify-between px-5 md:gap-10 md:flex-nowrap border-b border-white font-secondary text-dark dark:text-white">
                 
                 {/* LeftSide: logo */}
 
@@ -85,7 +85,7 @@ export default function Navbar({logo,logoalt,logotext}) {
                   ))}
                 </div>
               </Disclosure.Panel>
-            </>
+            </Fragment>
           )}
         </Disclosure>
       </nav>

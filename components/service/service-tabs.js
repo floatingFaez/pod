@@ -21,7 +21,14 @@ const Tabs = ({tabs}) => {
         </div>
         <div id="TabContent">
             { map(tabs, (service,index) => {
-                return <ServiceItem key={service._key} service={service} classes={`${activeTab !== index ? 'hidden' : ''}`} />
+                return <ServiceItem key={service._key} service={service} imgSizes={{w:721,h:831}} classes={`${activeTab !== index ? 'hidden' : ''}`}>
+                            {map(service.serviceOptions, serviceItem => 
+                                <div className="flex flex-col" key={`${serviceItem._key}`}>
+                                    <span className="leading-5">{serviceItem.service1}</span>
+                                    <span className="leading-5">{serviceItem.service2}</span>
+                                </div>
+                            )}
+                        </ServiceItem>
             })}
         </div>
         </>

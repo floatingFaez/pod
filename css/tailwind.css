@@ -59,6 +59,9 @@ body{
     max-width: 427px;
     margin: 50px auto 45px;
 }
+.text-desc.text-3xl {
+  font-size: 1.925rem;
+}
 /*--------------------- slider ---------------------*/
 .slider-container {
     overflow: hidden;

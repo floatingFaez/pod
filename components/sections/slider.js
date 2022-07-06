@@ -8,66 +8,49 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 SwiperCore.use([Autoplay]);
 
 
-const ItemSlider = ({items,sliderPerView,imgSizes,classes=''}) => {
+const ItemSlider = ({items,sizes,sliderPerView=1,classes=''}) => {
     const addSwiperParams = {
-        slidesPerView: 2,
+        slidesPerView: sliderPerView,
         rebuildOnUpdate: true,
         runCallbacksOnInit: true,
         slideToClickedSlide: true,
         shouldSwiperUpdate: true,
         activeSlideKey: 0,
         loop: true,
-        autoplay: false,
+        autoplay: {
+            delay: 6000,
+            disableOnInteraction: false
+        },
         observer: true,
         lazy: true,
-        spaceBetween: 20,
+        spaceBetween: 0,
         pagination: false,
-        breakpoints: {
-            992: {
-                slidesPerView: sliderPerView,
-                spaceBetween: 40,
-            },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-        }
     };
 
     const getSliderHtml = (sliders,size) => {
-        return sliders.map((slider, index) => {
-            let imageProps = slider?.logo_img ? GetImage(slider.logo_img) : null;
+        return sliders?.map(slider => {
+            let imageProps = slider?.mainImage ? GetImage(slider.mainImage) : null;
             return <div className={`slider-item`} key={slider._key}>
-                        {imageProps ? (
-                            <Image
+                        <Image
                             src={imageProps.src}
                             loader={imageProps.loader}
                             blurDataURL={imageProps.blurDataURL}
-                            alt={slider.logo_img.alt || "Thumbnail"}
+                            alt={slider.mainImage.alt || "Thumbnail"}
                             placeholder="blur"
                             layout="responsive"
                             width={size.w}
                             height={size.h}
                             priority={false}
                             className="transition-all"
-                            />
-                        ) : (
-                            <span className="absolute w-16 h-16 text-gray-200 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" key={slider._key}>
-                                <PhotographIcon />
-                            </span>
-                        )}
+                        />
                     </div>
         }) 
     }
 
     return (
-        <div className={`slider-container ${classes}`}>
+        <div className={`overflow-hidden ${classes}`}>
              <Swiper {...addSwiperParams}>
-                { getSliderHtml(items,imgSizes) }
+                { getSliderHtml(items,sizes) }
             </Swiper>
         </div>
     )

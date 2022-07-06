@@ -2,10 +2,10 @@
 import Image from "next/image";
 import GetImage from "@utils/getImage";
 import Subpagehero from "@components/sections/subpagehero";
-import { map } from "lodash";
 
-const ServiceItem = ({service,classes=''}) => {
-    // console.log('$$--->',service._key,`${service.key}_tt`)
+const ServiceItem = (props) => {
+    
+    const {service,imgSizes,classes=''} = props
     let serviceImg = service?.tabImage ? GetImage(service.tabImage) : null;
     return ( 
         <div className={`service-item ${classes}`}>
@@ -19,8 +19,8 @@ const ServiceItem = ({service,classes=''}) => {
                     alt={serviceImg.alt || "Thumbnail"}
                     placeholder="blur"
                     layout="responsive"
-                    width={'721px'}
-                    height={'831px'}
+                    width={`${imgSizes.w}px`}
+                    height={`${imgSizes.h}px`}
                     priority={false}
                     className="transition-all"
                     />
@@ -30,12 +30,7 @@ const ServiceItem = ({service,classes=''}) => {
                     <div className="service-footer mb-5 max-w-lg mx-auto dark:text-white font-regular py-5">
                         <p className="mb-5">{service.description}</p>
                         <div className="flex flex-row justify-around font-secondary uppercase py-6">
-                            {map(service.serviceOptions, serviceItem => 
-                                    <div className="flex flex-col" key={`${serviceItem._key}`}>
-                                        <span className="leading-5">{serviceItem.service1}</span>
-                                        <span className="leading-5">{serviceItem.service2}</span>
-                                    </div>
-                            )}
+                            {props.children}
                         </div>
                     </div>
                 </div>
