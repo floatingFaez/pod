@@ -1,11 +1,10 @@
 import Container from "@components/container";
 import Layout from "@components/layout";
-import { configQuery, fieldTripsQuery } from "@lib/groq";
+import { configQuery, servicesQuery } from "@lib/groq";
 import { getClient } from "@lib/sanity";
 import GetImage from "@utils/getImage";
 import Subpagehero from "@components/sections/subpagehero";
-import Tabs from "@components/tabs";
-import Button from "@components/ui/button";
+import Tabs from "@components/service/service-tabs";
 import Image from "next/image";
 import Newsletter from "@components/newsletter";
 import { PhotographIcon } from "@heroicons/react/outline";
@@ -54,8 +53,6 @@ export default function FieldTrips(props) {
             </p>
           </div>
 
-          <Subpagehero title={page.bep_section_subtitle} subtitle={page.bep_sectiontitle} classes="border-t border-gray-400"/>
-
           <Tabs tabs={page.tabs}/>
 
           <div className={`py-5 border-b border-t border-gray-400 text-center`}>
@@ -63,7 +60,7 @@ export default function FieldTrips(props) {
           </div>
           
 
-          <div className="grid grid-cols-2 text-white border-b">
+          {/* <div className="grid grid-cols-2 text-white border-b">
               {
                 page?.package?.map( (aPackage,i )=> {
                   let packageImg = aPackage?.pkgImage ? GetImage(aPackage.pkgImage) : null;
@@ -94,7 +91,7 @@ export default function FieldTrips(props) {
                   )
                 })
               }
-          </div>
+          </div> */}
 
         </Container>
         <Newsletter siteconfig={siteconfig} classes="pt-0 border-t-0"/>
@@ -107,10 +104,10 @@ export default function FieldTrips(props) {
 
 export async function getStaticProps({ params, preview = false }) {
   const config = await getClient(preview).fetch(configQuery);
-  const fieldTrips = await getClient(preview).fetch(fieldTripsQuery);
+  const services = await getClient(preview).fetch(servicesQuery);
   return {
     props: {
-      page: fieldTrips,
+      page: services,
       siteconfig: { ...config },
       preview
     },

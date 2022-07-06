@@ -73,7 +73,7 @@ export default function Footer(props) {
       </div>
 
       <div className=" text-center font-regular font-secondary text-dark dark:text-white">
-        © {new Date().getFullYear()} {props?.copyright}.
+        ©{new Date().getFullYear()} {props?.copyright}.
       </div>
 
       {/* <div className="flex items-center justify-between mt-2">

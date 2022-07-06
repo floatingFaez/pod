@@ -1,6 +1,7 @@
 import S from "@sanity/desk-tool/structure-builder";
 import {
   HiOutlineCog,
+  HiOutlineCash,
   HiOutlineClipboardList,
   HiOutlineFilter,
   HiOutlineNewspaper
@@ -12,7 +13,7 @@ import {
 // import DocumentsPane from "sanity-plugin-documents-pane";
 
 const hiddenDocTypes = listItem =>
-  !["siteconfig"].includes(listItem.getId());
+  !["siteconfig","fieldtrips","services"].includes(listItem.getId());
 
 export default () =>
   S.list()
@@ -23,6 +24,20 @@ export default () =>
         .icon(HiOutlineCog)
         .child(
           S.editor().schemaType("siteconfig").documentId("siteconfig")
+        ),
+      S.divider(),
+      S.listItem()
+        .title("Field Trips")
+        .icon(HiOutlineCash)
+        .child(
+          S.editor().schemaType("fieldtrips").documentId("fieldtrips")
+        ),
+      S.divider(),
+      S.listItem()
+        .title("Services")
+        .icon(HiOutlineCash)
+        .child(
+          S.editor().schemaType("services").documentId("services")
         ),
       S.divider(),
       ...S.documentTypeListItems().filter(hiddenDocTypes)
