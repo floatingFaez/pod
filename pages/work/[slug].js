@@ -4,7 +4,6 @@ import Layout from "@components/layout";
 import Container from "@components/container";
 import Subpagehero from "@components/sections/subpagehero";
 import Campaign from "@components/work/campaign";
-import Newsletter from "@components/newsletter";
 import { useRouter } from "next/router";
 import client, {
   getClient,
@@ -42,10 +41,6 @@ export default function Post(props) {
     return <ErrorPage statusCode={404} />;
   }
   
-  const imageProps = post?.mainImage
-    ? GetImage(post?.mainImage)
-    : null;
-
   const ogimage = siteConfig?.openGraphImage
     ? GetImage(siteConfig?.openGraphImage).src
     : defaultOG.src;
@@ -76,10 +71,8 @@ export default function Post(props) {
               cardType: "summary_large_image"
             }}
           />
-
-          <Container className="!pt-0" py="0">
-            <Subpagehero title={post.title} subtitle={post.city}/>
-          </Container>
+          
+          <Subpagehero title={post.title} subtitle={post.city}/>
 
           <Container>
             <div className="grid grid-cols-5 gap-5">
@@ -108,9 +101,6 @@ export default function Post(props) {
               </div>
             </div>
           </Container>
-
-          <Newsletter siteconfig={siteconfig} />
-
         </Layout>
       )}
     </>

@@ -7,6 +7,11 @@
 body{
     color:'#fff'
 }
+.full-width {
+  max-width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .font-secondary{
     font-family: 'ABC Favorit Mono';
 }
@@ -75,11 +80,11 @@ body{
   color: #fff;
   font-size: 24px;
 }
-.swiper-button-prev {
+/* .swiper-button-prev {
   left: 5px;
-}
+} */
 .swiper-button-next {
-  right: 5px;
+  right: 20px;
 }
 
 

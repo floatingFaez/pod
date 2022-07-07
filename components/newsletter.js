@@ -34,8 +34,8 @@ const Newsletter = ({ siteconfig, classes }) => {
   });
 
     return ( 
-        <Container>
-            <div className={`newsletter border-t ${classes}`}>
+        <Container className="border-t full-width">
+            <div className={`newsletter max-w-screen-xl mx-auto p-8 xl-5 ${classes}`}>
                 <div className="newsletter_header">
                     <div className="text-center">
                         <p className="mt-2 text-lg uppercase font-secondary text-brand-primary dark:text-white">Keep Upadted</p>
@@ -166,7 +166,6 @@ const Newsletter = ({ siteconfig, classes }) => {
                     )}
 
                 </div>
-                
             </div>
         </Container>
     );

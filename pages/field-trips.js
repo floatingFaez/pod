@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Container from "@components/container";
 import Layout from "@components/layout";
 import { configQuery, fieldTripsQuery } from "@lib/groq";
@@ -7,7 +8,6 @@ import Subpagehero from "@components/sections/subpagehero";
 import Tabs from "@components/tabs";
 import Button from "@components/ui/button";
 import Image from "next/image";
-import Newsletter from "@components/newsletter";
 import { PhotographIcon } from "@heroicons/react/outline";
 
 export default function FieldTrips(props) {
@@ -22,11 +22,11 @@ export default function FieldTrips(props) {
   return (
     <Layout {...siteconfig}>
       {!!page && 
-        <>
-        <Container py="0">
+        <Fragment>
           <Subpagehero title={page.subtitle} subtitle={page.title}/>
 
-          <div className="banner">
+          <Container className="full-width">
+            <div className="banner">
               {imageProps ? (
                 <Image
                   src={imageProps.src}
@@ -45,25 +45,28 @@ export default function FieldTrips(props) {
                   <PhotographIcon />
                 </span>
               )}
-
-          </div>
-
-          <div className="mx-auto prose text-center dark:prose-invert section-desc">
-            <p className="text-desc text-3xl dark:text-white">
-              {page.body}
-            </p>
-          </div>
-
-          <Subpagehero title={page.bep_section_subtitle} subtitle={page.bep_sectiontitle} classes="border-t border-gray-400"/>
-
+            </div>
+          </Container>
+          
+          <Container>
+            <div className="mx-auto prose text-center dark:prose-invert section-desc">
+              <p className="text-desc text-3xl dark:text-white">
+                {page.body}
+              </p>
+            </div>
+          </Container>
+            
+          <Subpagehero title={page.bep_section_subtitle} subtitle={page.bep_sectiontitle} classes="border-t border-white"/>
+            
           <Tabs tabs={page.tabs}/>
 
-          <div className={`py-5 border-b border-t border-gray-400 text-center`}>
-              <p className="mt-2 text-lg text-white uppercase font-secondary">{page.sectiontitle}</p>
-          </div>
-          
+          <Container className="full-width border-y">
+            <div className={`py-5 border-white text-center max-w-screen-xl mx-auto  px-8 xl:px-5`}>
+                <p className="mt-2 text-lg text-white uppercase font-secondary">{page.sectiontitle}</p>
+            </div>
+          </Container>
 
-          <div className="grid grid-cols-2 text-white border-b">
+          <div className="grid grid-cols-2 text-white max-w-screen-xl mx-auto  px-8 xl:px-5">
               {
                 page?.package?.map( (aPackage,i )=> {
                   let packageImg = aPackage?.pkgImage ? GetImage(aPackage.pkgImage) : null;
@@ -96,9 +99,8 @@ export default function FieldTrips(props) {
               }
           </div>
 
-        </Container>
-        <Newsletter siteconfig={siteconfig} classes="pt-0 border-t-0"/>
-        </>
+          
+        </Fragment>
       }
       
     </Layout>

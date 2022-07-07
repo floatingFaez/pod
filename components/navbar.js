@@ -35,12 +35,12 @@ export default function Navbar({logo,logoalt,logotext}) {
   const mainmenu = [...leftmenu, ...rightmenu];
 
   return (
-    <Container py='0' className='z-50 relative'>
-      <nav>
+    <Container py='0' full="true" className='z-50 relative border-b border-white full-width'>
+      <nav className="max-w-screen-xl mx-auto px-8 xl:px-5">
         <Disclosure>
           {({ open }) => (
             <Fragment>
-              <div className="flex flex-wrap justify-between px-5 md:gap-10 md:flex-nowrap border-b border-white font-secondary text-dark dark:text-white">
+              <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap font-secondary text-dark dark:text-white">
                 
                 {/* LeftSide: logo */}
 

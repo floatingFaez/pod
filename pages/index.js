@@ -1,15 +1,15 @@
 
 import { Fragment } from "react";
 import dynamic from 'next/dynamic'
-import Container from "@components/container";
-import Layout from "@components/layout";
-import SliderPlaceHolder from "@components/ui/slider-placeholder";
-import { configQuery, homeQuery, homeSliderQuery } from "@lib/groq";
 import { getClient } from "@lib/sanity";
-const Slider = dynamic(() => import('@components/sections/slider'),{ loading: () => <SliderPlaceHolder sizes={{w:1440,h:1052}}/>, ssr: false });
-import CTAItem from "@components/ui/cta-item";
+import { configQuery, homeQuery, homeSliderQuery } from "@lib/groq";
+
+import Layout from "@components/layout";
 import Button from "@components/ui/button";
-import Newsletter from "@components/newsletter";
+import Container from "@components/container";
+import CTAItem from "@components/ui/cta-item";
+import SliderPlaceHolder from "@components/ui/slider-placeholder";
+const Slider = dynamic(() => import('@components/sections/slider'),{ loading: () => <SliderPlaceHolder sizes={{w:1440,h:1052}}/>, ssr: false });
 
 export default function Home(props) {
   const { page,sliders,siteconfig } = props;
@@ -19,16 +19,16 @@ export default function Home(props) {
     <Layout {...siteconfig}>
       {!!page && 
         <Fragment>
-          <Container py="0">
+          <Container className="full-width">
             <Slider {...{items:sliders,sizes:{w:1440,h:1052},classes:"-mt-14"}} />
-            <CTAItem item={ctaObj} imgSizes={{w:700,h:980}} classes="border-y">
+          </Container>
+          <Container className="full-width border-t">
+            <CTAItem item={ctaObj} imgSizes={{w:700,h:980}} classes="max-w-screen-xl mx-auto  px-8 xl:px-5">
               <Button text="Book Your Call" />
             </CTAItem>
           </Container>
-          <Newsletter siteconfig={siteconfig} classes="pt-0 border-t-0"/>
         </Fragment>
       }
-      
     </Layout>
   );
 }

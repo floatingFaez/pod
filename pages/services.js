@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import dynamic from 'next/dynamic'
 import Container from "@components/container";
 import Layout from "@components/layout";
@@ -9,7 +10,6 @@ import Subpagehero from "@components/sections/subpagehero";
 import Tabs from "@components/service/service-tabs";
 const ItemSlider = dynamic(() => import('@components/ui/item-slider'),{ loading: () => <SliderPlaceHolder sizes={{w:310,h:88}}/>, ssr: false });
 import Image from "next/image";
-import Newsletter from "@components/newsletter";
 import { PhotographIcon } from "@heroicons/react/outline";
 
 export default function Services(props) {
@@ -24,11 +24,11 @@ export default function Services(props) {
   return (
     <Layout {...siteconfig}>
       {!!page && 
-        <>
-        <Container py="0">
+        <Fragment>
           <Subpagehero title={page.subtitle} subtitle={page.title}/>
-
-          <div className="banner">
+          
+          <Container className="full-width">
+            <div className="banner">
               {imageProps ? (
                 <Image
                   src={imageProps.src}
@@ -48,26 +48,30 @@ export default function Services(props) {
                 </span>
               )}
 
-          </div>
+            </div>
+          </Container>
 
-          <div className="mx-auto prose text-center dark:prose-invert section-desc">
-            <p className="text-desc text-3xl dark:text-white">
-              {page.body}
-            </p>
-          </div>
+          <Container>
+            <div className="mx-auto prose text-center dark:prose-invert section-desc">
+              <p className="text-desc text-3xl dark:text-white">
+                {page.body}
+              </p>
+            </div>
+          </Container>
 
           <Tabs tabs={page.tabs}/>
 
-          <div className={`py-5 border-t border-gray-400 text-center`}>
-              <p className="mt-2 text-lg text-white uppercase font-secondary">{page.sectiontitle}</p>
-          </div>
+          <Container className="full-width border-t">
+            <div className={`py-5 border-white text-center`}>
+                <p className="mt-2 text-lg text-white uppercase font-secondary">{page.sectiontitle}</p>
+            </div>
+          </Container>
+
+          <Container className="full-width border-t relative">
+            <ItemSlider items={page.client} sliderPerView={4} imgSizes={{w:310,h:88}} classes="pb-20 "/>
+          </Container>
           
-
-          <ItemSlider items={page.client} sliderPerView={4} imgSizes={{w:310,h:88}} classes="pb-20 border-b"/>
-
-        </Container>
-        <Newsletter siteconfig={siteconfig} classes="pt-0 border-t-0"/>
-        </>
+        </Fragment>
       }
       
     </Layout>

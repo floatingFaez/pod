@@ -22,7 +22,12 @@ const ItemSlider = ({items,sizes,sliderPerView=1,classes=''}) => {
             disableOnInteraction: false
         },
         observer: true,
-        lazy: true,
+        preloadImages: false, 
+        lazy: { 
+            loadPrevNext: true,
+            loadPrevNextAmount: 2,
+            loadOnTransitionStart: true 
+        },
         spaceBetween: 0,
         pagination: false,
     };
