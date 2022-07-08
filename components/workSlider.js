@@ -82,11 +82,14 @@ const WorkSlider = ({works,sliderPerView}) => {
 
     return (
         <div className='container work-slider-container full-width relative'>
-                <div className='max-w-screen-xl mx-auto overflow-hidden px-8 xl:px-5 relative pt-0 pb-5'>
-                    <Swiper {...addSwiperParams}>
-                        { getSliderHtml(works,imageSizes) }
-                    </Swiper>
-                </div>
+            <div className='max-w-screen-xl mx-auto overflow-hidden px-8 xl:px-5 relative pt-0 pb-5'>
+                <Swiper {...addSwiperParams}>
+                    { getSliderHtml(works,imageSizes) }
+                </Swiper>
+            </div>
+            <Link href="/work">
+                <a className='slider-footer-link text-white hover:text-blue-500 uppercase font-secondary'> View Index </a>
+            </Link>
         </div>
     )
 }

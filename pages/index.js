@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import { getClient } from "@lib/sanity";
 import { configQuery, homeQuery, homeSliderQuery, eventQuery, workQuery } from "@lib/groq";
 
+import {useState, useEffect} from 'react'
 import Layout from "@components/layout";
 import Button from "@components/ui/button";
 import Container from "@components/container";
@@ -16,10 +17,35 @@ const Slider = dynamic(() => import('@components/sections/slider'),{ loading: ()
 
 export default function Home(props) {
   const { page,sliders, events, works, siteconfig } = props;
+  const [navBg,setNavBg] = useState('bg-transparent')
+  const [scrolling, setScrolling] = useState(false);
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    const onScroll = e => {
+      let pageOffset = e.target.documentElement.scrollTop
+      setScrollTop(pageOffset);
+      setScrolling(pageOffset > scrollTop);
+      console.log(pageOffset > 100, pageOffset)
+      if(pageOffset > 100){
+        setNavBg('bg-gray-900')
+      }else{
+        setNavBg('bg-transparent')
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollTop]);
+
+  useEffect(()=>{
+    console.log({navBg})
+  },[navBg])
+
 
   const ctaObj = {title:page.cta_title,subtitle:page.cta_subtitle,body:page.body,mainImage:page.ctaImage}
   return (
-    <Layout {...siteconfig}>
+    <Layout {...siteconfig} navClass={navBg}>
       {!!page && 
         <Fragment>
           <Container className="full-width">
@@ -34,7 +60,7 @@ export default function Home(props) {
             </CTAItem>
           </Container>
 
-          <Subpagehero title="Adventure Awaits" subtitle="RECENT WORK" classes="border-t"/>
+          <Subpagehero title="Adventure Awaits" subtitle="RECENT WORK" classes="border-y"/>
           <WorkSlider works={works} sliderPerView={3} />
 
         </Fragment>

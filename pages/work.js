@@ -54,7 +54,7 @@ export default function Work(props) {
             }}
           />
           
-          <Subpagehero title="Current Project" subtitle="Our Work"/>
+          <Subpagehero title="Current Project" subtitle="Our Work" classes="border-b"/>
 
           <Container >
             <div className="grid gap-10 mt-12 mb-12 pb-12 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 text-center">

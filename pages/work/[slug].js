@@ -72,7 +72,7 @@ export default function Post(props) {
             }}
           />
           
-          <Subpagehero title={post.title} subtitle={post.city}/>
+          <Subpagehero title={post.title} subtitle={post.city} classes="border-b"/>
 
           <Container>
             <div className="grid grid-cols-5 gap-5">

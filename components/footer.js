@@ -40,7 +40,7 @@ export default function Footer(props) {
   return (
     <Fragment>
       <Newsletter siteconfig={props.siteconfig} classes="pt-0 border-t-0"/>
-      <Container className="border-t full-width">
+      <Container className="border-t full-width pb-16">
         <div className="footer-logo flex-col items-center w-full leading-5 text-center uppercase font-regular font-secondary dark:text-white">
           <Link href="/">
             <a className="w-28">

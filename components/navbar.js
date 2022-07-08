@@ -4,7 +4,7 @@ import Container from "@components/container";
 import Logo from "@components/ui/logo";
 import Link from "next/link";
 
-export default function Navbar({logo,logoalt,logotext}) {
+export default function Navbar({logo,logoalt,logotext,navClass='bg-gray-900'}) {
   const leftmenu = [
     {
       label: "Home",
@@ -35,7 +35,7 @@ export default function Navbar({logo,logoalt,logotext}) {
   const mainmenu = [...leftmenu, ...rightmenu];
 
   return (
-    <Container py='0' full="true" className='z-50 relative border-b border-white full-width'>
+    <Container py='0' full="true" className={`z-50 relative border-b border-white full-width sticky top-0 ${navClass} `}>
       <nav className="max-w-screen-xl mx-auto px-8 xl:px-5">
         <Disclosure>
           {({ open }) => (

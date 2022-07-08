@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior:smooth;
+  }
+}
 /*Custom Styles Here*/
 body{
     color:#fff
@@ -103,10 +108,10 @@ body{
   bottom:30px
 }
 .work-slider .swiper-button-prev {
-  left: 0;
+  left: 18px;
 }
 .work-slider .swiper-button-next {
-  right: 0;
+  right: 18px;
 }
 .work-slider-container:after {
   content: '';
@@ -117,34 +122,13 @@ body{
   bottom: 100px;
   border-bottom: 1px solid white;
 }
+.slider-footer-link.uppercase.font-secondary {
+  position: absolute;
+  bottom: 35px;
+  width: 100%;
+  text-align: center;
+}
 
-/* 
-.swiper-button-prev:after,
-.swiper-container-rtl .swiper-button-next:after,
-.swiper-button-next:after,
-.swiper-container-rtl .swiper-button-prev:after {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-size: 15px;
-  color: #ffffff;
-  padding: 13px;
-  background: linear-gradient(#45bdaa, transparent);
-  background-color: #005e6a;
-  border-radius: 50px;
-  z-index: 2;
-  transition: 0.2s all ease-in;
-}
-.swiper-button-next:hover::after,
-.swiper-button-prev:hover::after {
-  background-color: #259a94;
-  color: #fff;
-}
-.swiper-button-next.swiper-button-disabled,
-.swiper-button-prev.swiper-button-disabled {
-  opacity: 0;
-} */
 .swiper-button-prev:after,
 .swiper-container-rtl .swiper-button-next:after {
   content: "←";

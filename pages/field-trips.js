@@ -23,7 +23,7 @@ export default function FieldTrips(props) {
     <Layout {...siteconfig}>
       {!!page && 
         <Fragment>
-          <Subpagehero title={page.subtitle} subtitle={page.title}/>
+          <Subpagehero title={page.subtitle} subtitle={page.title} classes="border-b"/>
 
           <Container className="full-width">
             <div className="banner">
