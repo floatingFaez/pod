@@ -98,8 +98,6 @@ export default function FieldTrips(props) {
                 })
               }
           </div>
-
-          
         </Fragment>
       }
       

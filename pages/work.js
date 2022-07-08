@@ -5,7 +5,7 @@ import Subpagehero from "@components/sections/subpagehero";
 import { useRouter } from "next/router";
 import { getClient, usePreviewSubscription } from "@lib/sanity";
 import defaultOG from "../public/img/opengraph.jpg";
-import { workquery, configQuery } from "@lib/groq";
+import { workQuery, configQuery } from "@lib/groq";
 import GetImage from "@utils/getImage";
 import Worklist from "@components/worklist";
 
@@ -14,7 +14,7 @@ export default function Work(props) {
 
   const router = useRouter();
 
-  const { data: posts } = usePreviewSubscription(workquery, {
+  const { data: posts } = usePreviewSubscription(workQuery, {
     initialData: postdata,
     enabled: preview || router.query.preview !== undefined
   });
@@ -53,6 +53,7 @@ export default function Work(props) {
               cardType: "summary_large_image"
             }}
           />
+          
           <Subpagehero title="Current Project" subtitle="Our Work"/>
 
           <Container >
@@ -74,7 +75,7 @@ export default function Work(props) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const post = await getClient(preview).fetch(workquery);
+  const post = await getClient(preview).fetch(workQuery);
   const config = await getClient(preview).fetch(configQuery);
   return {
     props: {

@@ -9,6 +9,7 @@ import blockContent from "./blockContent";
 import category from "./category";
 import homeSlider from "./homeSlider";
 import post from "./post";
+import event from "./event";
 import home from "./home";
 import work from "./work";
 import fieldtrips from "./fieldtrips";
@@ -26,10 +27,11 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     home,
-    post,
+    event,
+    // post,
     work,
-    author,
-    category,
+    // author,
+    // category,
     homeSlider,
     siteconfig,
     fieldtrips,

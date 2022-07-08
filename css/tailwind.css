@@ -5,7 +5,7 @@
 
 /*Custom Styles Here*/
 body{
-    color:'#fff'
+    color:#fff
 }
 .full-width {
   max-width: 100%;
@@ -86,8 +86,6 @@ body{
 .swiper-button-next {
   right: 20px;
 }
-
-
 .slider-container .swiper-container {
   border-top-width: 1px;
   border-bottom-width: 1px;
@@ -96,6 +94,30 @@ body{
   padding-top: 85px;
   padding-bottom: 85px;
 }
+.work-slider {
+  margin-left: -30px;
+  width: calc(100% + 60px);
+}
+.work-slider .swiper-button-next, 
+.work-slider .swiper-button-prev{
+  bottom:30px
+}
+.work-slider .swiper-button-prev {
+  left: 0;
+}
+.work-slider .swiper-button-next {
+  right: 0;
+}
+.work-slider-container:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+  border-bottom: 1px solid white;
+}
+
 /* 
 .swiper-button-prev:after,
 .swiper-container-rtl .swiper-button-next:after,
