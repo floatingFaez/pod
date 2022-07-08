@@ -69,7 +69,7 @@ const WorkSlider = ({works,sliderPerView}) => {
                         </Link>
                         <p className="mt-5 text-md text-center  font-regular leading-4 text-brand-primary dark:text-white font-secondary leading-5 uppercase">
                             <Link href={`/work/${slider.slug.current}`}>
-                            <a className="font-regular hover:text-blue-500">
+                            <a className="font-regular hover:text-blue-500 fss-1">
                                 {slider.title} <br/>
                                 {slider.city}
                             </a>
@@ -88,7 +88,7 @@ const WorkSlider = ({works,sliderPerView}) => {
                 </Swiper>
             </div>
             <Link href="/work">
-                <a className='slider-footer-link text-white hover:text-blue-500 uppercase font-secondary'> View Index </a>
+                <a className='slider-footer-link text-white hover:text-blue-500 uppercase font-secondary fss-1'> View Index </a>
             </Link>
         </div>
     )

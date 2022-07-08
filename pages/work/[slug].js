@@ -82,11 +82,11 @@ export default function Post(props) {
 
               <div className="mt-12 mb-12 col-span-2">
                 <div className="flex justify-between mb-4">
-                  <h2 className="text-3xl font-normal tracking-tight text-center lg:leading-snug text-brand-primary lg:text-2xl dark:text-white">
+                  <h2 className="text-heading font-normal tracking-tight text-center lg:leading-snug text-brand-primary lg:text-2xl dark:text-white">
                     {post?.campaign_name}
                   </h2>
                   <Link href="/work">
-                      <a className="px-5 py-2 text-sm text-gray-500 font-regular rounded-full dark:text-gray-500 bg-brand-secondary/20 uppercase">
+                      <a className="px-5 py-2 fss text-gray-500 font-regular rounded-full dark:text-gray-500 bg-brand-secondary/20 uppercase">
                         Back to Index
                       </a>
                     </Link>

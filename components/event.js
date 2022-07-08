@@ -26,11 +26,11 @@ const Event = ({event}) => {
                     </time>
                 </div>
                 <div className="description w-3/6">
-                    <p className="pb-6 font-secondary uppercase">{event.countries}</p>
-                    <p>{event.body && <PortableText value={event.body} />}</p>
+                    <p className="pb-6 font-secondary uppercase fss-1">{event.countries}</p>
+                    <p className="fss-2">{event.body && <PortableText value={event.body} />}</p>
                 </div>
-                <div className="booking-info w-2/6 items-end flex flex-col ">
-                    <div className="booking-content text-left flex flex-col justify-between grow">
+                <div className="booking-info w-2/6 items-end flex flex-col">
+                    <div className="booking-content text-left flex flex-col justify-between grow fss-1">
                         <p className="booking-date pb-5 font-secondary uppercase">
                             Booking Deadline 
                             <time

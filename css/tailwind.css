@@ -13,7 +13,26 @@
 }
 /*Custom Styles Here*/
 body{
-    color:#fff
+  color:#fff;
+  font-size:14px;
+  line-height: 16px;
+}
+
+.fss-1{
+  font-size:16px;
+  line-height: 21px;
+}
+.fss-2{
+  font-size:18px;
+  line-height: 24px;
+}
+.fss-3{
+  font-size:21px;
+  line-height: 24px;
+}
+.text-heading{
+  font-size: 40px;
+  line-height: 42px;
 }
 .full-width {
   max-width: 100%;
@@ -108,7 +127,7 @@ body{
 }
 .nav-slider-container .swiper-button-next, 
 .nav-slider-container .swiper-button-prev{
-  bottom:30px
+  bottom:40px
 }
 .nav-slider-container .swiper-button-prev {
   left: 18px;
@@ -139,4 +158,13 @@ body{
 .swiper-button-next:after,
 .swiper-container-rtl .swiper-button-prev:after {
   content: "→";
+}
+
+@media(min-width:1400px){
+  .full-width{
+    max-width: 100% !important;
+  }
+  .max-w-screen-xl{
+    max-width: 1440px;
+  }
 }

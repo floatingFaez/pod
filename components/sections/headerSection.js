@@ -1,12 +1,8 @@
 const headerSection = ({title,subtitle, classes=''}) => {
     return ( 
         <div className={`page-header pt-18 pb-20 border-white font-regular text-dark dark:text-white ${classes}`}>
-            <div className="text-center">
-            <p className="mt-2 text-lg uppercase font-secondary">
-                {subtitle}
-            </p>
-            </div>
-            <h1 className="text-3xl font-regular tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
+            <p className="my-2 fss-1 uppercase font-secondary text-center">{subtitle}</p>
+            <h1 className="text-heading font-regular tracking-tight text-center lg:leading-snug text-brand-primary dark:text-white">
                 {title}
             </h1>
         </div>

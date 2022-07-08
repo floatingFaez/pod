@@ -63,7 +63,7 @@ export default function Services(props) {
 
           <Container className="full-width border-t">
             <div className={`py-5 border-white text-center`}>
-                <p className="mt-2 text-lg text-white uppercase font-secondary">{page.sectiontitle}</p>
+                <p className="mt-2 fss-1 text-white uppercase font-secondary">{page.sectiontitle}</p>
             </div>
           </Container>
 

@@ -62,7 +62,7 @@ export default function FieldTrips(props) {
 
           <Container className="full-width border-y">
             <div className={`py-5 border-white text-center max-w-screen-xl mx-auto  px-8 xl:px-5`}>
-                <p className="mt-2 text-lg text-white uppercase font-secondary">{page.sectiontitle}</p>
+                <p className="mt-2 fss-1 text-white uppercase font-secondary">{page.sectiontitle}</p>
             </div>
           </Container>
 
@@ -72,7 +72,7 @@ export default function FieldTrips(props) {
                   let packageImg = aPackage?.pkgImage ? GetImage(aPackage.pkgImage) : null;
                   return (
                     <div className={`pt-20 pb-16 text-center ${i === 0 ? 'border-r':''}`} key={`apck_#${i}`}>
-                        <p className="text-3xl mb-5">{aPackage.title}</p>
+                        <p className="text-heading mb-5">{aPackage.title}</p>
                         <div className="package-thumb">
                           {
                             !!packageImg && 
@@ -91,7 +91,7 @@ export default function FieldTrips(props) {
                           }
                           
                         </div>
-                        <p className="mb-16 max-w-lg mx-auto">{aPackage.description}</p>
+                        <p className="mb-16 max-w-lg mx-auto fss-2">{aPackage.description}</p>
                         <Button text={aPackage.buttonText} />
                     </div>
                   )
