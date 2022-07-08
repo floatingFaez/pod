@@ -4,7 +4,7 @@ import Layout from "@components/layout";
 import { configQuery, fieldTripsQuery } from "@lib/groq";
 import { getClient } from "@lib/sanity";
 import GetImage from "@utils/getImage";
-import Subpagehero from "@components/sections/subpagehero";
+import HeaderSection from "@components/sections/headerSection";
 import Tabs from "@components/tabs";
 import Button from "@components/ui/button";
 import Image from "next/image";
@@ -23,7 +23,7 @@ export default function FieldTrips(props) {
     <Layout {...siteconfig}>
       {!!page && 
         <Fragment>
-          <Subpagehero title={page.subtitle} subtitle={page.title} classes="border-b"/>
+          <HeaderSection title={page.subtitle} subtitle={page.title} classes="border-b"/>
 
           <Container className="full-width">
             <div className="banner">
@@ -48,7 +48,7 @@ export default function FieldTrips(props) {
             </div>
           </Container>
           
-          <Container>
+          <Container className="full-width border-t">
             <div className="mx-auto prose text-center dark:prose-invert section-desc">
               <p className="text-desc text-3xl dark:text-white">
                 {page.body}
@@ -56,7 +56,7 @@ export default function FieldTrips(props) {
             </div>
           </Container>
             
-          <Subpagehero title={page.bep_section_subtitle} subtitle={page.bep_sectiontitle} classes="border-t border-white"/>
+          <HeaderSection title={page.bep_section_subtitle} subtitle={page.bep_sectiontitle} classes="border-t border-white border-b"/>
             
           <Tabs tabs={page.tabs}/>
 

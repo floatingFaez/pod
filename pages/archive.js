@@ -4,7 +4,7 @@ import Link from "next/link";
 import { NextSeo } from "next-seo";
 import Layout from "@components/layout";
 import Container from "@components/container";
-// import Subpagehero from "@components/sections/subpagehero";
+// import HeaderSection from "@components/sections/headerSection";
 // import Categories from "@components/categories";
 import { useRouter } from "next/router";
 import { getClient, usePreviewSubscription } from "@lib/sanity";

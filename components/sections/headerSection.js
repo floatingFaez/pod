@@ -1,8 +1,8 @@
-const Subheader = ({title,subtitle}) => {
+const headerSection = ({title,subtitle, classes=''}) => {
     return ( 
-        <div className="page-header py-8">
+        <div className={`page-header pt-18 pb-20 border-white font-regular text-dark dark:text-white ${classes}`}>
             <div className="text-center">
-            <p className="mt-2 text-lg">
+            <p className="mt-2 text-lg uppercase font-secondary">
                 {subtitle}
             </p>
             </div>
@@ -13,4 +13,4 @@ const Subheader = ({title,subtitle}) => {
      );
 }
  
-export default Subheader;
+export default headerSection;

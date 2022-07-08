@@ -25,15 +25,15 @@ export default function Footer(props) {
     },
     {
       label: "Instagram",
-      href: "/instagram"
+      href: "https://instagram.com"
     },
     {
       label: "Facebook",
-      href: "/facebook"
+      href: "https://facebook.com"
     },
     {
       label: "Twitter",
-      href: "/twitter"
+      href: "https://twitter.com"
     }
   ];
 

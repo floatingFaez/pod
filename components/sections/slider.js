@@ -16,6 +16,7 @@ const ItemSlider = ({items,sizes,sliderPerView=1,classes=''}) => {
         slideToClickedSlide: true,
         shouldSwiperUpdate: true,
         activeSlideKey: 0,
+        effect: "fade",
         loop: true,
         autoplay: {
             delay: 6000,

@@ -6,7 +6,7 @@ import { configQuery, servicesQuery } from "@lib/groq";
 import { getClient } from "@lib/sanity";
 import GetImage from "@utils/getImage";
 import SliderPlaceHolder from "@components/ui/slider-placeholder";
-import Subpagehero from "@components/sections/subpagehero";
+import HeaderSection from "@components/sections/headerSection";
 import Tabs from "@components/service/service-tabs";
 const ItemSlider = dynamic(() => import('@components/ui/item-slider'),{ loading: () => <SliderPlaceHolder sizes={{w:310,h:88}}/>, ssr: false });
 import Image from "next/image";
@@ -25,9 +25,9 @@ export default function Services(props) {
     <Layout {...siteconfig}>
       {!!page && 
         <Fragment>
-          <Subpagehero title={page.subtitle} subtitle={page.title} classes="border-b"/>
+          <HeaderSection title={page.subtitle} subtitle={page.title} classes="border-b"/>
 
-          <Container className="full-width">
+          <Container className="full-width border-b">
             <div className="banner">
               {imageProps ? (
                 <Image
@@ -67,7 +67,7 @@ export default function Services(props) {
             </div>
           </Container>
 
-          <Container className="full-width border-t relative">
+          <Container className="nav-slider-container full-width border-t relative">
             <ItemSlider items={page.client} sliderPerView={4} imgSizes={{w:310,h:88}} classes="pb-20 "/>
           </Container>
           

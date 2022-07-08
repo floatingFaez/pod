@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Layout from "@components/layout";
 import Container from "@components/container";
-import Subpagehero from "@components/sections/subpagehero";
+import HeaderSection from "@components/sections/headerSection";
 import Campaign from "@components/work/campaign";
 import { useRouter } from "next/router";
 import client, {
@@ -72,7 +72,7 @@ export default function Post(props) {
             }}
           />
           
-          <Subpagehero title={post.title} subtitle={post.city} classes="border-b"/>
+          <HeaderSection title={post.title} subtitle={post.city} classes="border-b"/>
 
           <Container>
             <div className="grid grid-cols-5 gap-5">

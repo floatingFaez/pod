@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo";
 import Layout from "@components/layout";
 import Container from "@components/container";
-import Subpagehero from "@components/sections/subpagehero";
+import HeaderSection from "@components/sections/headerSection";
 import { useRouter } from "next/router";
 import { getClient, usePreviewSubscription } from "@lib/sanity";
 import defaultOG from "../public/img/opengraph.jpg";
@@ -54,7 +54,7 @@ export default function Work(props) {
             }}
           />
           
-          <Subpagehero title="Current Project" subtitle="Our Work" classes="border-b"/>
+          <HeaderSection title="Current Project" subtitle="Our Work" classes="border-b"/>
 
           <Container >
             <div className="grid gap-10 mt-12 mb-12 pb-12 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 text-center">

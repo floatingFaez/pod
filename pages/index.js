@@ -10,7 +10,7 @@ import Button from "@components/ui/button";
 import Container from "@components/container";
 import EventList from "@components/eventlist";
 import CTAItem from "@components/ui/cta-item";
-import Subpagehero from "@components/sections/subpagehero";
+import HeaderSection from "@components/sections/headerSection";
 import SliderPlaceHolder from "@components/ui/slider-placeholder";
 const WorkSlider = dynamic(() => import('@components/workSlider'),{ loading: () => <SliderPlaceHolder sizes={{w:480,h:678}}/>, ssr: false });
 const Slider = dynamic(() => import('@components/sections/slider'),{ loading: () => <SliderPlaceHolder sizes={{w:1440,h:1052}}/>, ssr: false });
@@ -26,7 +26,6 @@ export default function Home(props) {
       let pageOffset = e.target.documentElement.scrollTop
       setScrollTop(pageOffset);
       setScrolling(pageOffset > scrollTop);
-      console.log(pageOffset > 100, pageOffset)
       if(pageOffset > 100){
         setNavBg('bg-gray-900')
       }else{
@@ -37,10 +36,6 @@ export default function Home(props) {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollTop]);
-
-  useEffect(()=>{
-    console.log({navBg})
-  },[navBg])
 
 
   const ctaObj = {title:page.cta_title,subtitle:page.cta_subtitle,body:page.body,mainImage:page.ctaImage}
@@ -60,7 +55,7 @@ export default function Home(props) {
             </CTAItem>
           </Container>
 
-          <Subpagehero title="Adventure Awaits" subtitle="RECENT WORK" classes="border-y"/>
+          <HeaderSection title="Adventure Awaits" subtitle="RECENT WORK" classes="border-y"/>
           <WorkSlider works={works} sliderPerView={3} />
 
         </Fragment>

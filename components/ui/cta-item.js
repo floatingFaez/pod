@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import GetImage from "@utils/getImage";
-import Subpagehero from "@components/sections/subpagehero";
+import HeaderSection from "@components/sections/headerSection";
 
 const CTAItem = (props) => {
     
@@ -25,10 +25,10 @@ const CTAItem = (props) => {
                         className="transition-all"
                     />
                 }
-                <div className="text-center flex flex-col justify-between">
-                    <Subpagehero title={item.subtitle} subtitle={item.title} classes="border-b-0"/>
+                <div className="text-center flex flex-col justify-between pt-28 pb-24">
+                    <HeaderSection title={item.subtitle} subtitle={item.title} classes="border-b-0"/>
                     <div className="service-footer mb-5 max-w-lg mx-auto dark:text-white font-regular py-5">
-                        <p className="mb-5">{item.body}</p>
+                        <p className="mb-8">{item.body}</p>
                         <div className="flex flex-row justify-around font-secondary uppercase py-6">
                             {props.children}
                         </div>

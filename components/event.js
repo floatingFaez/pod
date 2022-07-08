@@ -29,19 +29,22 @@ const Event = ({event}) => {
                     <p className="pb-6 font-secondary uppercase">{event.countries}</p>
                     <p>{event.body && <PortableText value={event.body} />}</p>
                 </div>
-                <div className="booking-info w-2/6 flex flex-col items-end justify-between">
-                    <p className="booking-date pb-5 font-secondary uppercase">
-                        Booking Deadline 
-                        <time
-                            className="ml-4"
-                            dateTime={event?.bookingEndDate}>
-                            {format(
-                            parseISO(event?.bookingEndDate),
-                            "MMMM dd"
-                            )}
-                        </time>
-                    </p>
-                    <Button text={event.buttonText} />
+                <div className="booking-info w-2/6 items-end flex flex-col ">
+                    <div className="booking-content text-left flex flex-col justify-between grow">
+                        <p className="booking-date pb-5 font-secondary uppercase">
+                            Booking Deadline 
+                            <time
+                                className="ml-4"
+                                dateTime={event?.bookingEndDate}>
+                                {format(
+                                parseISO(event?.bookingEndDate),
+                                "MMMM dd"
+                                )}
+                            </time>
+                        </p>
+                        <Button text={event.buttonText} />
+                    </div>
+                    
                 </div>
             </div>
         </Container>

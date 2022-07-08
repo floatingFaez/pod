@@ -59,7 +59,7 @@ const ItemSlider = ({items,sliderPerView,imgSizes,classes=''}) => {
                                 <PhotographIcon />
                             </span>
                         )}
-                    </div>
+            </div>
         }) 
     }
 

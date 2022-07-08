@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import GetImage from "@utils/getImage";
-import Subpagehero from "@components/sections/subpagehero";
+import HeaderSection from "@components/sections/headerSection";
 
 const ServiceItem = (props) => {
     
@@ -26,8 +26,8 @@ const ServiceItem = (props) => {
                     />
                 }
                 <div className="text-center flex flex-col justify-between">
-                    <Subpagehero title={service.service_subtitle} subtitle={service.service_title} classes="border-b-0"/>
-                    <div className="service-footer mb-5 max-w-lg mx-auto dark:text-white font-regular py-5">
+                    <HeaderSection title={service.service_subtitle} subtitle={service.service_title} classes="border-b-0 -mt-4"/>
+                    <div className="service-footer mb-4 max-w-lg mx-auto dark:text-white font-regular py-5">
                         <p className="mb-5">{service.description}</p>
                         <div className="flex flex-row justify-around font-secondary uppercase py-6">
                             {props.children}
