@@ -42,6 +42,15 @@ body{
 .font-secondary{
     font-family: 'ABC Favorit Mono';
 }
+.theme-gray-bg{
+  background-color: #EDE8E3;
+}
+.txt-black{
+  color:#1A1A1A;
+}
+.border-theme-black{
+  border-coloR:#1A1A1A;
+}
 .dark .dark\:bg-black {
     --tw-bg-opacity: 1;
     background-color: rgb(16 16 16 / var(--tw-bg-opacity)) !important;
@@ -158,6 +167,15 @@ body{
 .swiper-button-next:after,
 .swiper-container-rtl .swiper-button-prev:after {
   content: "→";
+}
+
+.slider-img{
+  transition: opacity .3s ease-in;
+  opacity: 1;
+}
+.slider-img.fade{
+  opacity: 0; 
+  transition: opacity .5s ease-out;
 }
 
 @media(min-width:1400px){

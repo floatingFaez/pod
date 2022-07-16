@@ -7,6 +7,7 @@ import { configQuery, homeQuery, homeSliderQuery, eventQuery, workQuery } from "
 import {useState, useEffect} from 'react'
 import Layout from "@components/layout";
 import Button from "@components/ui/button";
+import Marquee from "@components/ui/marquee";
 import Container from "@components/container";
 import EventList from "@components/eventlist";
 import CTAItem from "@components/ui/cta-item";
@@ -45,9 +46,10 @@ export default function Home(props) {
         <Fragment>
           <Container className="full-width">
             <Slider {...{items:sliders,sizes:{w:1440,h:1052},classes:"-mt-14"}} />
+            <Marquee text="(POD)® FLIGHTS SOON DEPARTING" count={10} />
           </Container>
           
-          <EventList events={events} header={{title:'2022 CALENDAR',subtitle:'Upcoming Field Trips'}}/>
+          <EventList events={events} />
 
           <Container className="full-width border-t">
             <CTAItem item={ctaObj} imgSizes={{w:700,h:980}} classes="max-w-screen-xl mx-auto  px-8 xl:px-5">

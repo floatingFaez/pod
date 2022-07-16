@@ -5,8 +5,8 @@ import {PortableText} from "@lib/sanity";
 
 const Event = ({event}) => {
     return ( 
-        <Container className="full-width border-t border-black dark:border-white" >
-            <div className="event-item flex justify-between max-w-screen-xl mx-auto px-8 xl:px-5 text-dark dark:text-white pt-12 pb-16">
+        <Container className="full-width border-t border-theme-black " >
+            <div className="event-item flex justify-between max-w-screen-xl mx-auto px-8 xl:px-5 txt-black pt-12 pb-16">
                 <div className="dates w-1/6 uppercase">
                     <time
                         className="text-3xl leading-8"
@@ -42,7 +42,7 @@ const Event = ({event}) => {
                                 )}
                             </time>
                         </p>
-                        <Button text={event.buttonText} />
+                        <Button text={event.buttonText} classes="border-theme-black"/>
                     </div>
                     
                 </div>
