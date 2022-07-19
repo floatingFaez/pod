@@ -25,9 +25,9 @@ const CTAItem = (props) => {
                         className="transition-all"
                     />
                 }
-                <div className="text-center flex flex-col justify-between pt-28 pb-24">
-                    <HeaderSection title={item.subtitle} subtitle={item.title} classes="border-b-0"/>
-                    <div className="service-footer mb-5 max-w-lg mx-auto dark:text-white font-regular py-5">
+                <div className="text-center flex flex-col justify-between pt-28 pb-28">
+                    <HeaderSection title={item.subtitle} subtitle={item.title} classes="border-b-0 text-white"/>
+                    <div className="service-footer mb-5 max-w-lg mx-auto text-white font-regular py-2">
                         <p className="mb-8 fss-2">{item.body}</p>
                         <div className="flex flex-row justify-around font-secondary uppercase py-6">
                             {props.children}

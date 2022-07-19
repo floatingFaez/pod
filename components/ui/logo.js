@@ -8,7 +8,7 @@ const logo = (props) => {
     return ( 
         <div className="flex justify-between items-center w-full md:w-auto">
             <Link href="/">
-            <a className="w-28 dark:hidden">
+            <a className="w-28 dark:hidden py-3">
                 {props.logo ? (
                 <Image
                     {...GetImage(props.logo)}
@@ -24,7 +24,7 @@ const logo = (props) => {
             </a>
             </Link>
             <Link href="/">
-            <a className="hidden w-28 dark:block">
+            <a className="hidden w-28 dark:block py-3">
                 {props.logoalt ? (
                 <Image
                     {...GetImage(props.logoalt)}

@@ -40,7 +40,7 @@ export default function Navbar({logo,logoalt,logotext,navClass='bg-gray-900'}) {
         <Disclosure>
           {({ open }) => (
             <Fragment>
-              <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap font-secondary text-dark dark:text-white">
+              <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap font-secondary text-white">
                 
                 {/* LeftSide: logo */}
 
@@ -50,7 +50,7 @@ export default function Navbar({logo,logoalt,logotext,navClass='bg-gray-900'}) {
                 <div className="flex-col uppercase items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none">
                   {leftmenu.map((item, index) => (
                     <Link href={item.href} key={index}>
-                      <a className="px-5 py-4 mx-5 text-sm font-regular hover:text-blue-500">
+                      <a className="px-6 py-3 mx-2 text-sm">
                         {item.label}
                       </a>
                     </Link>
@@ -61,7 +61,7 @@ export default function Navbar({logo,logoalt,logotext,navClass='bg-gray-900'}) {
                   {rightmenu.map((item, index) => (
                     <Link href={item.href} key={index}>
                       <a
-                        className="py-4 text-sm font-regular hover:text-blue-500"
+                        className="py-3 text-sm font-regular hover:text-blue-500"
                         target={item.external ? "_blank" : ""}
                         rel={item.external ? "noopener" : ""}>
                         {item.label}

@@ -27,6 +27,16 @@ export default {
         validation: Rule => Rule.max(200)
       },
       {
+        title: 'Boarding Available ?',
+        name: 'boarding',
+        type: 'boolean'
+      },
+      {
+        title: 'Is Booking Available ?',
+        name: 'scheduled',
+        type: 'boolean'
+      },
+      {
         name: "mainImage",
         title: "Main image",
         type: "image",
@@ -44,6 +54,12 @@ export default {
         options: {
           hotspot: true
         }
+      },
+      {
+        name: 'eventImages',
+        title: 'Event Images',
+        type: 'array',
+        of: [{ type: 'image' }]
       },
       {
         name: "countries",
@@ -82,7 +98,10 @@ export default {
         type: "string"
       }
     ],
-  
+    initialValue: {
+      boarding: false,
+      scheduled: false
+    },
     preview: {
       select: {
         title: "title",

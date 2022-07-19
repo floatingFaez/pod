@@ -25,6 +25,10 @@ const WorkSlider = ({works,sliderPerView}) => {
         lazy: true,
         spaceBetween: 20,
         pagination: false,
+        mousewheel: {
+            enabled: true,
+            sensitivity: 5.5,
+        },
         breakpoints: {
             992: {
                 slidesPerView: sliderPerView,
@@ -44,7 +48,7 @@ const WorkSlider = ({works,sliderPerView}) => {
     const getSliderHtml = (sliders,size) => {
         return sliders.map(slider => {
             let imageProps = slider?.mainImage ? GetImage(slider.mainImage) : null;
-            return <div className="slider-item p-7 border-r border-white" key={slider._id}>
+            return <div className="slider-item p-7 border-r border-black " key={slider._id}>
                         <Link href={`/work/${slider.slug.current}`}>
                             <a>
                                 {imageProps ? (
@@ -67,9 +71,9 @@ const WorkSlider = ({works,sliderPerView}) => {
                                 )}
                             </a>
                         </Link>
-                        <p className="mt-5 text-md text-center  font-regular leading-4 text-brand-primary dark:text-white font-secondary leading-5 uppercase">
+                        <p className="mt-5 text-md text-center leading-4 text-brand-primary txt-black font-secondary leading-5 uppercase">
                             <Link href={`/work/${slider.slug.current}`}>
-                            <a className="font-regular hover:text-blue-500 fss-1">
+                            <a className="font-regular fss-1">
                                 {slider.title} <br/>
                                 {slider.city}
                             </a>
@@ -81,7 +85,7 @@ const WorkSlider = ({works,sliderPerView}) => {
     }
 
     return (
-        <div className='container nav-slider-container full-width relative'>
+        <div className='container nav-slider-container full-width relative theme-gray-bg'>
             <div className='max-w-screen-xl mx-auto overflow-hidden px-8 xl:px-5 relative pt-0 pb-5'>
                 <Swiper {...addSwiperParams}>
                     { getSliderHtml(works,imageSizes) }

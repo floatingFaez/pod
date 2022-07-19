@@ -36,7 +36,7 @@ const Newsletter = ({ siteconfig, classes }) => {
 
     return ( 
         <Container className="border-t full-width">
-            <HeaderSection title="Dream Larger" subtitle="Keep Updated" classes="border-y-0"/>
+            <HeaderSection title="Dream Larger" subtitle="Keep Updated" classes="border-y-0 text-white"/>
             <div className="newsletter_body max-w-screen-xl mx-auto px-8 xl:px-5 pb-24">
                 <form onSubmit={handleSubmit(onSubmit)} className="my-10 grid grid-cols-4 gap-5 fss-1">
                     <input

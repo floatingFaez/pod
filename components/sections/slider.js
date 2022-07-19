@@ -3,7 +3,6 @@ import Image from "next/image";
 import { map } from "lodash"
 import GetImage from "@utils/getImage";
 import When from '@components/when';
-import { PhotographIcon } from "@heroicons/react/outline";
 
 
 const ItemSlider = ({items,sizes,sliderPerView=1,classes=''}) => {

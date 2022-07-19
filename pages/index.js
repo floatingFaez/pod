@@ -52,12 +52,12 @@ export default function Home(props) {
           <EventList events={events} />
 
           <Container className="full-width border-t">
-            <CTAItem item={ctaObj} imgSizes={{w:700,h:980}} classes="max-w-screen-xl mx-auto  px-8 xl:px-5">
-              <Button text="Book Your Call" />
+            <CTAItem item={ctaObj} imgSizes={{w:700,h:980}} classes="max-w-screen-xl mx-auto  px-0">
+              <Button text="Book Your Call" classes="border border-white py-4 px-20 hover:bg-gray-700"/>
             </CTAItem>
           </Container>
 
-          <HeaderSection title="Adventure Awaits" subtitle="RECENT WORK" classes="border-y"/>
+          <HeaderSection title="Adventure Awaits" subtitle="RECENT WORK" classes="border-y theme-gray-bg txt-black border-black"/>
           <WorkSlider works={works} sliderPerView={3} />
 
         </Fragment>
