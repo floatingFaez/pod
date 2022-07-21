@@ -51,7 +51,7 @@ const Event = ({event, isExpand, setClickedId, setModalShow}) => {
                             map(event.eventImages, eventImage => {
                                 const image = GetImage(eventImage);
                                 return <Image
-                                            key={eventImage._id}
+                                            key={eventImage._key}
                                             src={image.src}
                                             loader={image.loader}
                                             blurDataURL={image.blurDataURL}
@@ -99,7 +99,7 @@ const Event = ({event, isExpand, setClickedId, setModalShow}) => {
                             <p className="font-secondary uppercase fss-1 mb-1 tracking-light">AVAILABILITY</p>
                             <p className="text-2xl flex">
                                 <span className={`mr-5 flight-text ${expand ? 'expanded':''}`}>{expand ? 'Reserve Your Seat' : 'Flight Open'} </span>
-                                <img src="/img/plane.svg" className='plane-icon'/>
+                                <img src="/img/plane.svg" className='plane-icon' alt="plane"/>
                             </p>
                         </div>
                     </div>

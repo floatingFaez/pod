@@ -1,4 +1,4 @@
-const headerSection = ({title,subtitle, classes=''}) => {
+const HeaderSection = ({title,subtitle, classes=''}) => {
     return ( 
         <div className={`page-header pt-18 pb-20 font-regular ${classes}`}>
             <p className="fss-1 uppercase font-secondary text-center">{subtitle}</p>
@@ -9,4 +9,4 @@ const headerSection = ({title,subtitle, classes=''}) => {
      );
 }
  
-export default headerSection;
+export default HeaderSection;

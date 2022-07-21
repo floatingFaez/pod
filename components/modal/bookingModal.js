@@ -4,10 +4,10 @@ import HeaderSection from "@components/sections/headerSection";
 import Button from "@components/ui/button";
 import When from "@components/when";
 
-const bookingModal = ({setModalShow, classes=''}) => {
+const BookingModal = ({setModalShow, classes=''}) => {
 
-    const [isSuccess, setIsSuccess] = useState(false);
-    const [message, setMessage] = useState(false);
+    // const [isSuccess, setIsSuccess] = useState(false);
+    // const [message, setMessage] = useState(false);
     const [step, setStep] = useState(1)
 
     const {
@@ -29,7 +29,7 @@ const bookingModal = ({setModalShow, classes=''}) => {
     return ( 
         <div className={`modal ${classes}`}>
             <button type="button" className="btn-close" onClick={() => setModalShow(false)}>
-                <img src="/img/cross-black.svg" />
+                <img src="/img/cross-black.svg" alt="cross-black"/>
             </button>
             <div className="modal-body grid grid-rows-3">
                 <HeaderSection title="Hey there!" subtitle='Schedule a discovery call' classes="border-0 mb-16 txt-black"/>
@@ -77,4 +77,4 @@ const bookingModal = ({setModalShow, classes=''}) => {
     );
 }
  
-export default bookingModal;
+export default BookingModal;

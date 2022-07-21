@@ -1,11 +1,11 @@
 import HeaderSection from "@components/sections/headerSection"; 
 import NewsletterSubscribe from "@components/newsletterSubscribe";
 
-const subscriptionModal = ({setModalShow, classes}) => {
+const SubscriptionModal = ({setModalShow, classes}) => {
     return ( 
         <div className={`modal ${classes}`}>
             <button type="button" className="btn-close" onClick={() => setModalShow(false)}>
-                <img src="/img/cross.svg" />
+                <img src="/img/cross.svg" alt="cross"/>
             </button>
             <div className="modal-body">
                 <HeaderSection title="USA / Mexico" subtitle='Register Your Interest In' classes="border-0 mb-16 text-white"/>
@@ -15,4 +15,4 @@ const subscriptionModal = ({setModalShow, classes}) => {
     );
 }
  
-export default subscriptionModal;
+export default SubscriptionModal;

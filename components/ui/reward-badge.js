@@ -5,7 +5,7 @@ const RewardBadge = ({type,classes=""}) => {
 
     return ( 
         <div className={`badge-wrapper ${classes}`}>
-            <img src="/img/footer-logo.svg" className="badge-logo"/>
+            <img src="/img/footer-logo.svg" className="badge-logo" alt="badge"/>
             <span className={`square-txt txt-box ${boardingAvailable ? 'bg-white' : 'bottom bg-theme-green'}`}>
                 {boardingAvailable ? 'Now Boarding' : boardingText}
             </span>

@@ -7,7 +7,7 @@ const SliderInfo = ({slider}) => {
                 <span>Proof of Dreams</span>
             </div>
             <div className="info-wrap relative">
-                <div className="infos flex justify-between leading-4 uppercase pl-8 pr-5 text-sm font-secondary fss-2 !leading-none">
+                <div className="infos flex justify-between leading-4 uppercase pl-8 pr-14 text-sm font-secondary fss-2 !leading-none">
                     <span>{city}<br/>{country}</span>
                     <span>{lat}<br/>{long}</span>
                     <span>{start_date}<br/>{end_date}</span>
