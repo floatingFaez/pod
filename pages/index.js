@@ -52,7 +52,7 @@ export default function Home(props) {
           <Container className="full-width">
             <Slider {...{items:sliders,sizes:{w:1440,h:1052},classes:"-mt-14"}} />
             <Marquee count={10}>
-              (POD)<sup>®</sup> FLIGHTS SOON DEPARTING
+              (POD)® FLIGHTS SOON DEPARTING
             </Marquee>
           </Container>
           

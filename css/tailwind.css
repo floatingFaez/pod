@@ -140,7 +140,7 @@ body{
 .section-desc {
     padding-top: 125px;
     padding-bottom: 115px;
-    max-width: 796px;
+    max-width: 950px;
 }
 
 .tab-content{
@@ -387,6 +387,34 @@ input[type="radio"]:checked::before{
 .theme-gray-bg input[type=checkbox] {
   background-color: transparent;
 }
+
+input[type="radio"].radio, 
+input[type="radio"].radio:before {
+  border-radius: 30px;
+}
+input[type="radio"].radio{
+  background-color: transparent;
+  border:1px solid #fff;
+}
+input[type="radio"].radio:checked::before{
+  background-color: #fff;
+}
+input[type="radio"].radio::before{
+  width: 18px;
+  height: 18px;
+  left: -1px;
+  top: -1px;
+  
+}
+.tap-border {
+  border: 40px solid #fff;
+}
+
+.tab-images .tab-image{
+  width: 310px;
+  min-height: 395px;
+}
+
 @media (min-width: 1280px){
   .xl\:text-heading-2x {
     font-size: 3.1428rem;

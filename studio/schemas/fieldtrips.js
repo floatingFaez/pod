@@ -112,6 +112,25 @@ export default {
               title: "Tab Title"
             },
             {
+              name: "tabImage",
+              title: "Tab Image",
+              type: "image",
+              fields: [
+                {
+                  name: "alt",
+                  type: "string",
+                  title: "Alternative text",
+                  description: "Important for SEO and accessiblity.",
+                  options: {
+                    isHighlighted: true
+                  }
+                }
+              ],
+              options: {
+                hotspot: true
+              }
+            },
+            {
               name: "packag_title",
               type: "string",
               title: "Package Title"
@@ -148,6 +167,7 @@ export default {
           preview: {
             select: {
               title: "tabtitle",
+              media: "tabImage"
             }
           }
         }
