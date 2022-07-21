@@ -8,8 +8,8 @@ const SubscriptionModal = ({setModalShow, classes}) => {
                 <img src="/img/cross.svg" alt="cross"/>
             </button>
             <div className="modal-body">
-                <HeaderSection title="USA / Mexico" subtitle='Register Your Interest In' classes="border-0 mb-16 text-white"/>
-                <NewsletterSubscribe className='max-w-xs mx-auto  px-8 xl:px-5 pb-24' type='vertical' />
+                <HeaderSection title="USA / Mexico" subtitle='Register Your Interest In' classes="border-0 mb-16 text-white !pb-14"/>
+                <NewsletterSubscribe className='max-w-xs mx-auto  px-8 xl:px-5 pb-8' type='vertical' />
             </div>
         </div>
     );

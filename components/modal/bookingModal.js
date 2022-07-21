@@ -32,7 +32,7 @@ const BookingModal = ({setModalShow, classes=''}) => {
                 <img src="/img/cross-black.svg" alt="cross-black"/>
             </button>
             <div className="modal-body grid grid-rows-3">
-                <HeaderSection title="Hey there!" subtitle='Schedule a discovery call' classes="border-0 mb-16 txt-black"/>
+                <HeaderSection title="Hey there!" subtitle='Schedule a discovery call' classes="border-0 mb-16 txt-black !pb-14"/>
 
                 <form onSubmit={handleSubmit(onSubmit)} className={`my-10 form-steps txt-black row-span-2`}>
                     <When condition={step === 1}>

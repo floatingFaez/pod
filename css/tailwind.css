@@ -308,23 +308,25 @@ body{
   z-index: 2;
 }
 .subscriber-modal .badge-wrapper {
-  right: 30em;
+  right: 15em;
   bottom: 15em;
   width: 250px;
   position: absolute;
 }
 .modal {
   position: fixed;
-  width: 456px;
-  height: 682px;
+  width: 416px;
+  min-height: 590px;
+  max-height: 645px;
   z-index: 50;
-  top: 10em;
+  top: 7em;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: var(--theme-black);
   margin: 0 auto;
   display: block;
+  padding: 20px;
 }
 .modal.tape {
   outline: 40px solid #fff;
@@ -356,5 +358,8 @@ body{
   }
   .max-w-screen-xl{
     max-width: 1440px;
+  }
+  .subscriber-modal .badge-wrapper {
+    right: 20em;
   }
 }
