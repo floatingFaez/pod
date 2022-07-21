@@ -8,10 +8,13 @@ import {useState, useEffect} from 'react'
 import Layout from "@components/layout";
 import Button from "@components/ui/button";
 import Marquee from "@components/ui/marquee";
+import When from "@components/when";
 import Container from "@components/container";
 import EventList from "@components/eventlist";
 import CTAItem from "@components/ui/cta-item";
 import HeaderSection from "@components/sections/headerSection";
+import SubscriptionModal from "@components/modal/subscriptionModal";
+import BookingModal from "@components/modal/bookingModal";
 import SliderPlaceHolder from "@components/ui/slider-placeholder";
 const WorkSlider = dynamic(() => import('@components/workSlider'),{ loading: () => <SliderPlaceHolder sizes={{w:480,h:678}}/>, ssr: false });
 const Slider = dynamic(() => import('@components/sections/slider'),{ loading: () => <SliderPlaceHolder sizes={{w:1440,h:1052}}/>, ssr: false });
@@ -21,6 +24,8 @@ export default function Home(props) {
   const [navBg,setNavBg] = useState('bg-transparent')
   const [scrolling, setScrolling] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);
+  const [modalShow,setModalShow] = useState(false)
+  const [showBooking,setShowBooking] = useState(false)
 
   useEffect(() => {
     const onScroll = e => {
@@ -49,17 +54,23 @@ export default function Home(props) {
             <Marquee text="(POD)® FLIGHTS SOON DEPARTING" count={10} />
           </Container>
           
-          <EventList events={events} />
+          <EventList events={events} setModalShow={setModalShow}/>
 
           <Container className="full-width border-t">
             <CTAItem item={ctaObj} imgSizes={{w:700,h:980}} classes="max-w-screen-xl mx-auto  px-0">
-              <Button text="Book Your Call" classes="border border-white py-4 px-20 hover:bg-gray-700"/>
+              <Button text="Book Your Call" classes="border border-white py-4 px-20 hover:bg-gray-700" handleClick={() => setShowBooking(true)}/>
             </CTAItem>
           </Container>
 
           <HeaderSection title="Adventure Awaits" subtitle="RECENT WORK" classes="border-y theme-gray-bg txt-black border-black"/>
           <WorkSlider works={works} sliderPerView={3} />
-
+          <When condition={modalShow}>
+            <SubscriptionModal setModalShow={setModalShow} classes="tape"/>
+          </When>
+          <When condition={showBooking}>
+            <BookingModal setModalShow={setShowBooking} classes='!theme-gray-bg border border-black p-6'/>
+          </When>
+          
         </Fragment>
       }
     </Layout>

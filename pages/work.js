@@ -54,9 +54,9 @@ export default function Work(props) {
             }}
           />
           
-          <HeaderSection title="Current Project" subtitle="Our Work" classes="border-b"/>
+          <HeaderSection title="Current Project" subtitle="Our Work" classes="border-b txt-black theme-gray-bg"/>
 
-          <Container >
+          <Container className="txt-black theme-gray-bg">
             <div className="grid gap-10 mt-12 mb-12 pb-12 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 text-center">
               {posts.map(post => (
                 <Worklist

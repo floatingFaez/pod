@@ -8,6 +8,9 @@
     scroll-behavior:smooth;
   }
 }
+:root {
+  --theme-black: #1a1a1a;
+}
 .pt-18{
   padding-top:3.75rem;
 }
@@ -34,6 +37,11 @@ body{
 .fss-3{
   font-size:21px;
   line-height: 24px;
+}
+.font-primary{
+  font-family: Favorit,sans-serif;
+  font-size: 2.71428rem;
+  line-height: 1;
 }
 .text-heading-sm{
   font-size: 1.5714rem;
@@ -79,17 +87,20 @@ body{
 .theme-gray-bg{
   background-color: #EDE8E3;
 }
+.\!theme-gray-bg{
+  background-color: #EDE8E3 !important;
+}
 .theme-gray-bg *{
-  color:#1A1A1A;
+  color:var(--theme-black);
 }
 .theme-gray-bg:after{
-  border-color:#000 !important;
+  border-color:var(--theme-black) !important;
 }
 .txt-black{
-  color:#1A1A1A;
+  color:var(--theme-black);
 }
 .border-theme-black{
-  border-coloR:#1A1A1A;
+  border-coloR:var(--theme-black);
 }
 .dark .dark\:bg-black {
     --tw-bg-opacity: 1;
@@ -142,6 +153,24 @@ body{
 }
 .text-desc.text-3xl {
   font-size: 1.925rem;
+}
+.slider-info .brand-name:before {
+  content: '(';
+  font-family: 'ABC Favorit Mono';
+  position: relative;
+  top: 2px;
+}
+.slider-info .info-wrap {
+  font-family: 'ABC Favorit Mono';
+}
+.slider-info .info-wrap .right-braces {
+  position: absolute;
+  right: 0;
+  top: 0px;
+}
+.slider-info .info-wrap .right-braces sup {
+  position: relative;
+  left: -3px;
 }
 /*--------------------- slider ---------------------*/
 .slider-container {
@@ -270,13 +299,49 @@ body{
   top: 80px;
 }
 .badge-wrapper .badge-logo {
-  background-color: #1A1A1A;
+  background-color: var(--theme-black);
   padding: 16px;
   border-radius: 50px;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 2;
+}
+.subscriber-modal .badge-wrapper {
+  right: 30em;
+  bottom: 15em;
+  width: 250px;
+  position: absolute;
+}
+.modal {
+  position: fixed;
+  width: 456px;
+  height: 682px;
+  z-index: 50;
+  top: 10em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--theme-black);
+  margin: 0 auto;
+  display: block;
+}
+.modal.tape {
+  outline: 40px solid #fff;
+}
+.modal .btn-close {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+.modal .page-header {
+  margin-bottom: 0;
+}
+.modal .input-group {
+  margin-bottom: 10px !important;
+}
+.modal [type=submit] {
+  margin-top: 10px;
 }
 @media (min-width: 1280px){
   .xl\:text-heading-2x {

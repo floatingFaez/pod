@@ -25,7 +25,7 @@ export default function Services(props) {
     <Layout {...siteconfig}>
       {!!page && 
         <Fragment>
-          <HeaderSection title={page.subtitle} subtitle={page.title} classes="border-b"/>
+          <HeaderSection title={page.subtitle} subtitle={page.title} classes="border-b txt-black theme-gray-bg"/>
 
           <Container className="full-width border-b">
             <div className="banner">

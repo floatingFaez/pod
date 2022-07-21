@@ -63,15 +63,15 @@ export default {
       fieldset: "content"
     },    
     {
-      name: "date_range",
-      type: "string",
-      title: "Date range",
+      name: "start_date",
+      type: "date",
+      title: "Start Date",
       fieldset: "content"
     },    
     {
-      name: "year",
-      type: "string",
-      title: "Year",
+      name: "end_date",
+      type: "date",
+      title: "End Date",
       fieldset: "content"
     },    
     {
