@@ -345,6 +345,48 @@ body{
 .modal [type=submit] {
   margin-top: 10px;
 }
+.checkbox-list {
+  margin: 20px auto;
+}
+.checkbox-list li {
+  margin-bottom: 10px;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  color: currentColor;
+  border: 1px solid currentColor;
+  transform: translateY(3px);
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"]::before,
+input[type="radio"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color: #000;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+input[type="checkbox"]:checked::before,
+input[type="radio"]:checked::before{
+  transform: scale(1);
+}
+
+.theme-gray-bg input[type=checkbox] {
+  background-color: transparent;
+}
 @media (min-width: 1280px){
   .xl\:text-heading-2x {
     font-size: 3.1428rem;

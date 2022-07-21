@@ -51,7 +51,9 @@ export default function Home(props) {
         <Fragment>
           <Container className="full-width">
             <Slider {...{items:sliders,sizes:{w:1440,h:1052},classes:"-mt-14"}} />
-            <Marquee text="(POD)® FLIGHTS SOON DEPARTING" count={10} />
+            <Marquee count={10}>
+              (POD)<sup>®</sup> FLIGHTS SOON DEPARTING
+            </Marquee>
           </Container>
           
           <EventList events={events} setModalShow={setModalShow}/>
