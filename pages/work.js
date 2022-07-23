@@ -54,10 +54,10 @@ export default function Work(props) {
             }}
           />
           
-          <HeaderSection title="Current Project" subtitle="Our Work" classes="border-b txt-black theme-gray-bg"/>
+          <HeaderSection title="Current Project" subtitle="Our Work" classes="border-b txt-black theme-gray-bg border-theme-black"/>
 
-          <Container className="txt-black theme-gray-bg">
-            <div className="grid gap-10 mt-12 mb-12 pb-12 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 text-center">
+          <div className="full-width txt-black theme-gray-bg">
+            <div className="mx-auto xl:px-5 max-w-screen-xl grid gap-10 py-12 pb-12 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 text-center">
               {posts.map(post => (
                 <Worklist
                   key={post._id}
@@ -66,7 +66,7 @@ export default function Work(props) {
                 />
               ))}
             </div>
-          </Container>
+          </div>
 
         </Layout>
       )}

@@ -51,6 +51,10 @@ body{
   font-size: 40px;
   line-height: 42px;
 }
+.text-heading-3x{
+  font-size: 44px;
+  line-height: 62px;
+}
 .text-heading-2x{
   font-size: 36px;
   line-height: 1.2;
@@ -413,6 +417,30 @@ input[type="radio"].radio::before{
 .tab-images .tab-image{
   width: 310px;
   min-height: 395px;
+}
+
+
+.slider-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding-top: 95px;
+  padding-bottom: 45px;
+}
+.post-body{
+  max-width: 545px;
+}
+
+.img-wrap.pad-max {
+  padding: 155px;
+}
+
+.work-section-content{
+  padding: 200px 100px;
+}
+.work-section-image{
+  height: 850px;
 }
 
 @media (min-width: 1280px){

@@ -38,7 +38,7 @@ const ItemSlider = ({items,sizes,sliderPerView=1,classes=''}) => {
                     layout="responsive"
                     width={sizes.w}
                     height={sizes.h}
-                    priority={false}
+                    priority={true}
                     className={`slider-img ${fadeClass}`}
                 />
                 <SliderInfo slider={slider} />

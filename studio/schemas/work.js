@@ -2,6 +2,56 @@ export default {
   name: "work",
   title: "Work",
   type: "document",
+  fieldsets: [
+    {
+      title: "Section 2",
+      name: "section_2",
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
+    },
+    {
+      title: "Section 3",
+      name: "section_3",
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
+    },
+    {
+      title: "Section 4",
+      name: "section_4",
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
+    },
+    {
+      title: "Section 5",
+      name: "section_5",
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
+    },
+    {
+      title: "Section 6",
+      name: "section_6",
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
+    },
+    {
+      title: "Section 7",
+      name: "section_7",
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
+    },
+  ],
   fields: [
     {
       name: "title",
@@ -36,15 +86,6 @@ export default {
       title: "Main image",
       type: "image",
       fields: [
-        // {
-        //   name: "caption",
-        //   type: "string",
-        //   title: "Image caption",
-        //   description: "Appears below image.",
-        //   options: {
-        //     isHighlighted: true
-        //   }
-        // },
         {
           name: "alt",
           type: "string",
@@ -70,40 +111,152 @@ export default {
       type: "blockContent"
     },
     {
-      name: "campaign_name",
-      title: "Campaign Name",
-      type: "string"
+      name: 'section2Images',
+      title: '',
+      type: 'array',
+      fieldset:'section_2',
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              fields: [
+                {
+                  name: "alt",
+                  type: "string",
+                  title: "Alternative text",
+                  description: "Important for SEO",
+                  options: {
+                    isHighlighted: true
+                  }
+                }
+              ],
+              options: {
+                hotspot: true
+              }
+            }
+          ],
+          
+          preview: {
+            select: {
+              media: "image",
+              title: "image.alt"
+            }
+          }
+        }
+      ]  
     },
     {
-      name: "campaign_city",
-      title: "Campaign City",
-      type: "string"
+      name: 'section3Image',
+      title: '',
+      type: 'image',
+      fieldset:'section_3',
+    },
+
+    {
+      name: 'section4Image',
+      title: '',
+      type: 'image',
+      fieldset:'section_4',
     },
     {
-      name: "campaign_country",
-      title: "Campaign Country",
-      type: "string"
+      name: 'section4Heading',
+      title: 'Section 4 Heading',
+      type: 'string',
+      fieldset:'section_4',
     },
     {
-      name: "campaign_lat",
-      title: "Campaign Latitude",
-      type: "string"
+      name: 'section4Description',
+      title: 'Section 4 Description',
+      type: 'blockContent',
+      fieldset:'section_4',
     },
     {
-      name: "campaign_long",
-      title: "Campaign Langitude",
-      type: "string"
+      name: 'section5Image',
+      title: '',
+      type: 'image',
+      fieldset:'section_5',
     },
     {
-      name: "campaign_date",
-      title: "Campaign Date",
-      type: "string"
+      name: 'section5Heading',
+      title: 'Section 5 Heading',
+      type: 'string',
+      fieldset:'section_5',
     },
     {
-      name: "campaign_year",
-      title: "Campaign year",
-      type: "string"
+      name: 'section5Description',
+      title: 'Section 5 Description',
+      type: 'blockContent',
+      fieldset:'section_5',
     },
+    {
+      name: 'section6Image',
+      title: '',
+      type: 'array',
+      of: [{ type: 'image' }],
+      fieldset:'section_6',
+    },
+    {
+      name: 'section6Heading',
+      title: 'Section 6 Heading',
+      type: 'string',
+      fieldset:'section_6',
+    },
+    {
+      name: 'section6Description',
+      title: 'Section 6 Description',
+      type: 'blockContent',
+      fieldset:'section_6',
+    },
+    {
+      name: 'section7video',
+      title: 'Section 7 Video',
+      type: 'file',
+      fieldset:'section_7',
+    },
+    {
+      name: 'section7Heading',
+      title: 'Section 7 Heading',
+      type: 'string',
+      fieldset:'section_7',
+    },
+    {
+      name: 'section7Description',
+      title: 'Section 7 Description',
+      type: 'blockContent',
+      fieldset:'section_7',
+    },
+    {
+      name: "services",
+      type: "array",
+      title: "Services",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "service",
+              type: "string",
+              title: "Service"
+            },
+            {
+              name: "specialist",
+              type: "string",
+              title: "Specialist"
+            },
+          ],
+          preview: {
+            select: {
+              title: "service",
+            }
+          }
+        }
+      ]
+    },
+    
   ],
 
   preview: {
