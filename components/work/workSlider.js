@@ -47,7 +47,7 @@ const WorkSlider = ({works,sliderPerView}) => {
     const getSliderHtml = (sliders,size) => {
         return sliders.map(slider => {
             let imageProps = slider?.image ? GetImage(slider.image) : null;
-            return <div className="slider-item p-7 border-r border-black " key={slider._id}>
+            return <div className="slider-item p-7 border-r border-black " key={slider._key}>
                         {imageProps ? (
                             <Image
                                 src={imageProps.src}

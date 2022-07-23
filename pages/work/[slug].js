@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from "next/image";
 import dynamic from 'next/dynamic'
 import Link from "next/link";
 import { useRouter } from "next/router";
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+
 import Layout from "@components/layout";
 import Container from "@components/container";
 import SliderPlaceHolder from "@components/ui/slider-placeholder";
 const WorkSlider = dynamic(() => import('@components/work/workSlider'),{ loading: () => <SliderPlaceHolder sizes={{w:1130,h:785}}/>, ssr: false });
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
 import client, {
   getClient,
@@ -27,6 +30,14 @@ export default function Post(props) {
   const { postdata, siteconfig, preview } = props;
 
   const [modalShow, setModalShow] = useState(false)
+  // const [player, setPlayer] = useState(null)
+
+  const onPlayerReady = () => {
+    console.log("iframe Added")
+  }
+
+  // const pauseVid = () => player.pauseVideo()
+
 
   const router = useRouter();
   const { slug } = router.query;
@@ -44,6 +55,11 @@ export default function Post(props) {
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
+  }
+
+  const handleModalClose = () => {
+    // pauseVid()
+    setModalShow(false)
   }
   
   // const ogimage = siteConfig?.openGraphImage
@@ -272,15 +288,19 @@ export default function Post(props) {
             </div>
 
             <div className={`modal video-modal ${modalShow?'':'hidden'}`}>
-                <button type="button" className="btn-close" onClick={() => setModalShow(false)}>
+                <button type="button" className="btn-close" onClick={handleModalClose}>
                     <img src="/img/cross.svg" alt="cross-black"/>
                 </button>
                 <div className="modal-body grid grid-rows-3">
-                    <iframe width="100%" height="570" src="https://www.youtube.com/embed/mTZirC9DwqE" 
-                        title="YouTube video player" 
-                        frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowFullScreen>
-                    </iframe>
+                    {post.section7videoUrl && 
+                      <LiteYouTubeEmbed
+                        aspectHeight = {9}
+                        aspectWidth = {16}
+                        id={post.section7videoUrl}
+                        title={post?.campaign_name}
+                        onIframeAdded={onPlayerReady}
+                      />
+                    }
                 </div>
             </div>
         </Layout>
@@ -299,7 +319,6 @@ const MainImage = ({ image,...rest }) => {
 
 
 const Section2Image = ({ image,sizes }) => {
-  console.log({image})
   const imageProps = image ? GetImage(image) :  null
   return (
       <Image 
