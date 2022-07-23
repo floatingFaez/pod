@@ -16,7 +16,7 @@ import HeaderSection from "@components/sections/headerSection";
 import SubscriptionModal from "@components/modal/subscriptionModal";
 import BookingModal from "@components/modal/bookingModal";
 import SliderPlaceHolder from "@components/ui/slider-placeholder";
-const WorkSlider = dynamic(() => import('@components/workSlider'),{ loading: () => <SliderPlaceHolder sizes={{w:480,h:678}}/>, ssr: false });
+const WorksSlider = dynamic(() => import('@components/worksSlider'),{ loading: () => <SliderPlaceHolder sizes={{w:480,h:678}}/>, ssr: false });
 const Slider = dynamic(() => import('@components/sections/slider'),{ loading: () => <SliderPlaceHolder sizes={{w:1440,h:1052}}/>, ssr: false });
 
 export default function Home(props) {
@@ -65,7 +65,7 @@ export default function Home(props) {
           </Container>
 
           <HeaderSection title="Adventure Awaits" subtitle="RECENT WORK" classes="border-y theme-gray-bg txt-black border-black"/>
-          <WorkSlider works={works} sliderPerView={3} />
+          <WorksSlider works={works} sliderPerView={3} />
           <When condition={modalShow}>
             <SubscriptionModal setModalShow={setModalShow} classes="tape"/>
           </When>

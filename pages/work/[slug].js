@@ -1,11 +1,13 @@
+import { useState } from 'react'
 import Image from "next/image";
+import dynamic from 'next/dynamic'
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "@components/layout";
 import Container from "@components/container";
-import HeaderSection from "@components/sections/headerSection";
-import Campaign from "@components/work/campaign";
-import When from '@components/when';
+import SliderPlaceHolder from "@components/ui/slider-placeholder";
+const WorkSlider = dynamic(() => import('@components/work/workSlider'),{ loading: () => <SliderPlaceHolder sizes={{w:1130,h:785}}/>, ssr: false });
+
 import client, {
   getClient,
   usePreviewSubscription,
@@ -15,7 +17,6 @@ import client, {
 import ErrorPage from "next/error";
 import GetImage from "@utils/getImage";
 import { NextSeo } from "next-seo";
-import defaultOG from "/public/img/opengraph.jpg";
 
 import { singleWorkquery, configQuery, workPathQuery } from "@lib/groq";
 import { map } from "lodash";
@@ -24,6 +25,8 @@ import { map } from "lodash";
 export default function Post(props) {
 
   const { postdata, siteconfig, preview } = props;
+
+  const [modalShow, setModalShow] = useState(false)
 
   const router = useRouter();
   const { slug } = router.query;
@@ -205,35 +208,34 @@ export default function Post(props) {
                 <div className="work-section-content text-center text-white">
                   <p className="fss-1 uppercase font-secondary text-center mb-8">{post?.section6Heading} </p>
                   <p className="text-heading-3x font-regular tracking-tight text-center lg:leading-snug text-brand-primary">
-                      {post.section4Description && <PortableText value={post.section4Description} />}
+                      {post.section6Description && <PortableText value={post.section6Description} />}
                   </p>
                 </div>
-                <div className="relative work-section-image overflow-hidden">
-                  {post?.section4Image && <MainImage image={post.section4Image} 
-                                          layout="fill" 
-                                          loading="eager" 
-                                          objectFit="cover" 
-                                          objectPosition="top"/>}
-                </div>
-                
               </Container>
+
+              {post?.section6Images && <WorkSlider works={post.section6Images} sliderPerView={1} />}
 
             </div>
 
             <div className="full-width  theme-gray-bg pb-4">
               <Container>
                 <div className="work-section-content text-center text-white">
-                  <p className="fss-1 uppercase font-secondary text-center mb-8">{post?.section6Heading} </p>
+                  <p className="fss-1 uppercase font-secondary text-center mb-8">{post?.section7Heading} </p>
                   <p className="text-heading-3x font-regular tracking-tight text-center lg:leading-snug text-brand-primary">
-                      {post.section4Description && <PortableText value={post.section4Description} />}
+                      {post.section6Description && <PortableText value={post.section7Description} />}
                   </p>
                 </div>
                 <div className="relative work-section-image overflow-hidden">
-                  {post?.section4Image && <MainImage image={post.section4Image} 
-                                          layout="fill" 
-                                          loading="eager" 
-                                          objectFit="cover" 
-                                          objectPosition="top"/>}
+                  
+                {post?.section7videoImage && <MainImage image={post.section7videoImage} 
+                                                          layout="fill" 
+                                                          loading="eager" 
+                                                          objectFit="cover" 
+                                                          objectPosition="top"/>}
+                  <div className="play-button" onClick={() => setModalShow(true)}>
+                    <img src="/img/play-icon.svg" className="play-icon" />
+                  </div>
+                  
                 </div>
                 
               </Container>
@@ -267,6 +269,20 @@ export default function Post(props) {
                   </div>
                 </div>
               </Container>
+            </div>
+
+            <div className={`modal video-modal ${modalShow?'':'hidden'}`}>
+                <button type="button" className="btn-close" onClick={() => setModalShow(false)}>
+                    <img src="/img/cross.svg" alt="cross-black"/>
+                </button>
+                <div className="modal-body grid grid-rows-3">
+                    <iframe width="100%" height="570" src="https://www.youtube.com/embed/mTZirC9DwqE" 
+                        title="YouTube video player" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                      
+                    </iframe>
+                </div>
             </div>
         </Layout>
       )}

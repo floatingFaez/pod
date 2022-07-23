@@ -193,11 +193,43 @@ export default {
       fieldset:'section_5',
     },
     {
-      name: 'section6Image',
+      name: 'section6Images',
       title: '',
       type: 'array',
-      of: [{ type: 'image' }],
       fieldset:'section_6',
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              fields: [
+                {
+                  name: "alt",
+                  type: "string",
+                  title: "Alternative text",
+                  description: "Important for SEO",
+                  options: {
+                    isHighlighted: true
+                  }
+                }
+              ],
+              options: {
+                hotspot: true
+              }
+            }
+          ],
+          
+          preview: {
+            select: {
+              media: "image",
+              title: "image.alt"
+            }
+          }
+        }
+      ]  
     },
     {
       name: 'section6Heading',
@@ -212,9 +244,15 @@ export default {
       fieldset:'section_6',
     },
     {
-      name: 'section7video',
-      title: 'Section 7 Video',
-      type: 'file',
+      name: 'section7videoImage',
+      title: 'Video Poster',
+      type: 'image',
+      fieldset:'section_7',
+    },
+    {
+      name: 'section7videoUrl',
+      title: 'YouTube Video Url',
+      type: 'string',
       fieldset:'section_7',
     },
     {

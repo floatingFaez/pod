@@ -8,7 +8,7 @@ import { PhotographIcon } from "@heroicons/react/outline";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 SwiperCore.use([Autoplay]);
 
-const WorkSlider = ({works,sliderPerView}) => {
+const WorksSlider = ({works,sliderPerView}) => {
     const imageSizes = {w:430,h:548}
     const addSwiperParams = {
         containerClass:'work-slider',
@@ -98,4 +98,4 @@ const WorkSlider = ({works,sliderPerView}) => {
     )
 }
  
-export default WorkSlider;
+export default WorksSlider;
