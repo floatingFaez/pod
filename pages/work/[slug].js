@@ -278,9 +278,8 @@ export default function Post(props) {
                 <div className="modal-body grid grid-rows-3">
                     <iframe width="100%" height="570" src="https://www.youtube.com/embed/mTZirC9DwqE" 
                         title="YouTube video player" 
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                      
+                        frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen>
                     </iframe>
                 </div>
             </div>
