@@ -9,7 +9,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
     // Please update the Access Key in the Sanity CMS - Site Congig Page
     // const apiKey = siteconfig?.w3ckey || "YOUR_ACCESS_KEY_HERE";
 
-    const formClass = type === 'horizontal' ? 'grid-cols-4 gap-5' : 'grid-rows-4 gap-5'
+    const formClass = type === 'horizontal' ? 'grid-cols-1 md:grid-cols-4 md:grid-rows-1 gap-5' : 'grid-rows-4 gap-5'
 
     useEffect(()=>{
         if(status && cmessage && 'error' === status){
@@ -58,86 +58,78 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
 
         <div className={`newsletter_body ${classes}`}>
             <form onSubmit={handleSubmit(onSubmit)} className={`my-10 grid ${formClass} fss-1`}>
-                {/* <input
-                    type="checkbox"
-                    id=""
-                    className="hidden"
-                    style={{ display: "none" }}
-                    {...register("botcheck")} 
-                /> */}
-
                 <div className="mb-5 input-group">
-                <input
-                    type="text"
-                    placeholder="First Name"
-                    autoComplete="false"
-                    className={`w-full font-secondary  pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent  focus:ring-4  ${
-                    errors.FNAME
-                        ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                        : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
-                    }`}
-                    {...register("FNAME", {
-                        required: "First name is required",
-                        maxLength: 80
-                    })}
-                />
-                {errors.FNAME && (
-                    <div className="mt-1 text-red-600">
-                    <small>{errors.FNAME.message}</small>
-                    </div>
-                )}
+                    <input
+                        type="text"
+                        placeholder="First Name"
+                        autoComplete="false"
+                        className={`w-full font-secondary  pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent  focus:ring-4  ${
+                        errors.FNAME
+                            ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                            : "border-white ring-gray-100 dark:ring-0"
+                        }`}
+                        {...register("FNAME", {
+                            required: "First name is required",
+                            maxLength: 80
+                        })}
+                    />
+                    {errors.FNAME && (
+                        <div className="mt-1 text-red-600">
+                        <small>{errors.FNAME.message}</small>
+                        </div>
+                    )}
                 </div>
 
                 <div className="mb-5 input-group">
-                <input
-                    type="text"
-                    placeholder="Last Name"
-                    autoComplete="false"
-                    className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent   focus:ring-4  ${
-                    errors.LNAME
-                        ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                        : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
-                    }`}
-                    {...register("LNAME", {
-                        required: "Last name is required",
-                        maxLength: 80
-                    })}
-                />
-                {errors.LNAME && (
-                    <div className="mt-1 text-red-600">
-                    <small>{errors.LNAME.message}</small>
-                    </div>
-                )}
+                    <input
+                        type="text"
+                        placeholder="Last Name"
+                        autoComplete="false"
+                        className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent   focus:ring-4  ${
+                        errors.LNAME
+                            ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                            : "border-white ring-gray-100 dark:ring-0"
+                        }`}
+                        {...register("LNAME", {
+                            required: "Last name is required",
+                            maxLength: 80
+                        })}
+                    />
+                    {errors.LNAME && (
+                        <div className="mt-1 text-red-600">
+                        <small>{errors.LNAME.message}</small>
+                        </div>
+                    )}
                 </div>
 
                 <div className="mb-5 input-group">
-                <label htmlFor="email_address" className="sr-only">
-                    Email Address
-                </label>
-                <input
-                    id="email_address"
-                    type="email"
-                    placeholder="Email Address"
-                    name="EMAIL"
-                    autoComplete="false"
-                    className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent focus:ring-4  ${
-                    errors.EMAIL
-                        ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                        : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
-                    }`}
-                    {...register("EMAIL", {
-                        required: "Enter your email",
-                        pattern: {
-                            value: /^\S+@\S+$/i,
-                            message: "Please enter a valid email"
-                        }
-                    })}
-                />
-                {errors.EMAIL && (
-                    <div className="mt-1 text-red-600">
-                    <small>{errors.EMAIL.message}</small>
-                    </div>
-                )}
+                    <label htmlFor="email_address" className="sr-only">
+                        Email Address
+                    </label>
+                    <input
+                        id="email_address"
+                        type="email"
+                        placeholder="Email Address"
+                        name="EMAIL"
+                        autoComplete="false"
+                        className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent focus:ring-4  ${
+                        errors.EMAIL
+                            ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                            : "border-white ring-gray-100 dark:ring-0"
+                        }`}
+                        {...register("EMAIL", {
+                            required: "Enter your email",
+                            pattern: {
+                                value: /^\S+@\S+$/i,
+                                message: "Please enter a valid email"
+                            }
+                        })}
+                    />
+                    {errors.EMAIL && (
+                        <div className="mt-1 text-red-600">
+                        <small>{errors.EMAIL.message}</small>
+                        </div>
+                    )}
                 </div>
 
                 <button

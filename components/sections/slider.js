@@ -6,7 +6,7 @@ import GetImage from "@utils/getImage";
 import When from '@components/when';
 
 
-const ItemSlider = ({items,sizes,sliderPerView=1,classes=''}) => {
+const ItemSlider = ({items,sizes,logo,classes=''}) => {
     const [slider,setSlider] = useState(items[0])
     const [fadeClass,setFadeClass]= useState('')
     const slideCount = items.length;
@@ -15,7 +15,6 @@ const ItemSlider = ({items,sizes,sliderPerView=1,classes=''}) => {
     
     let imageProps = slider?.mainImage ? GetImage(slider?.mainImage) : null;
   
-    
     const handleHover = (img) => {
         setFadeClass('fade')
 
@@ -29,6 +28,7 @@ const ItemSlider = ({items,sizes,sliderPerView=1,classes=''}) => {
     return (
         <div className={`overflow-hidden h-screen relative w-full ${classes}`}>
             <When condition={!!imageProps}>
+                <div className='hidden md:block'>
                 <Image
                     src={imageProps.src}
                     loader={imageProps.loader}
@@ -41,7 +41,22 @@ const ItemSlider = ({items,sizes,sliderPerView=1,classes=''}) => {
                     priority={true}
                     className={`slider-img ${fadeClass}`}
                 />
-                <SliderInfo slider={slider} />
+                </div>
+                <div className='block md:hidden '>
+                <Image
+                    src={imageProps.src}
+                    loader={imageProps.loader}
+                    blurDataURL={imageProps.blurDataURL}
+                    alt={imageProps.alt || "Thumbnail"}
+                    placeholder="blur"
+                    layout="responsive"
+                    width={414}
+                    height={896}
+                    priority={true}
+                    className={`slider-img object-cover ${fadeClass} `}
+                />
+                </div>
+                <SliderInfo slider={slider} logo={logo}/>
             </When>
              <div className={`hover-slider-wrapper absolute w-full top-0 left-0 h-screen grid grid-rows-2 grid-cols-${gridCols}`}>
                 {

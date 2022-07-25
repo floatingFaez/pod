@@ -42,7 +42,7 @@ export default function Layout(props) {
         }}
       />
 
-      <div className="antialiased text-gray-800 bg-black text-gray-400">
+      <div className="antialiased text-gray-800 theme-bg-black text-gray-100">
         <Navbar {...props} />
         <div className="page-body">
           {children}

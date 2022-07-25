@@ -11,7 +11,7 @@ export default function Footer(props) {
   return (
     <Fragment>
 
-      <Newsletter classes="pt-0 border-t-0"/>
+      <Newsletter classes="pt-0 !pb-4 !md:pb-22 border-t-0"/>
 
       <Container className="border-t full-width pb-16">
         <div className="footer-logo flex-col items-center w-full text-center uppercase font-secondary text-white mb-7">
@@ -36,10 +36,10 @@ export default function Footer(props) {
           </Link>
         </div>
 
-        <div className="flex-col items-center justify-center w-full md:flex md:flex-row md:w-auto uppercase">
+        <div className="hidden md:flex flex-col items-center justify-center w-full md:flex-row md:w-auto uppercase">
           {footerMenus.map((item, index) => (
             <Link href={item.link} key={index}>
-              <a className="px-4 py-5 my-10 mx-5 font-regular font-secondary text-dark dark:text-white hover:text-blue-500">
+              <a className="px-4 mx-5 my-3 md:py-5 md:my-10 font-regular font-secondary text-dark dark:text-white hover:text-blue-500">
                 {item.name}
               </a>
             </Link>

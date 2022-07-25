@@ -4,12 +4,12 @@ import Container from "@components/container";
 import Logo from "@components/ui/logo";
 import Link from "next/link";
 
-export default function Navbar({menus, logo, logoalt, logotext, navClass='bg-gray-900'}) {
+export default function Navbar({menus, logo, logoalt, logotext, navClass='theme-bg-black'}) {
 
   const rightmenu = [
     {
-      label: "Discovery Session",
-      href: "/discovery-session"
+      name: "Discovery Session",
+      link: "/discovery-session"
     },
   ];
 
@@ -17,8 +17,8 @@ export default function Navbar({menus, logo, logoalt, logotext, navClass='bg-gra
   const mainmenu = [...menus, ...rightmenu];
 
   return (
-    <Container py='0' full="true" className={`z-50 relative border-b border-white full-width sticky top-0 ${navClass} `}>
-      <nav className="max-w-screen-xl mx-auto px-8 xl:px-5">
+    <Container py='0' full="true" className={`z-50 relative border-b border-theme-black md:border-white full-width sticky top-0 ${navClass} `}>
+      <nav className="max-w-screen-xl mx-auto px-5">
         <Disclosure>
           {({ open }) => (
             <Fragment>
@@ -41,12 +41,12 @@ export default function Navbar({menus, logo, logoalt, logotext, navClass='bg-gra
 
                 <div className="flex-col uppercase items-center justify-start order-2 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none">
                   {rightmenu.map((item, index) => (
-                    <Link href={item.href} key={index}>
+                    <Link href={item.link} key={index}>
                       <a
                         className="py-3 text-sm font-regular hover:text-blue-500"
                         target={item.external ? "_blank" : ""}
                         rel={item.external ? "noopener" : ""}>
-                        {item.label}
+                        {item.name}
                       </a>
                     </Link>
                   ))}

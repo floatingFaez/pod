@@ -72,7 +72,7 @@ const WorkSlider = ({works,sliderPerView}) => {
 
     return (
         <div className='container nav-slider-container full-width relative no-border'>
-            <div className='max-w-screen-xl mx-auto overflow-hidden px-8 xl:px-5 relative pt-0 pb-5'>
+            <div className='max-w-screen-xl mx-auto overflow-hidden px-5 relative pt-0 pb-5'>
                 <Swiper {...addSwiperParams}>
                     { getSliderHtml(works,imageSizes) }
                 </Swiper>

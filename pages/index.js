@@ -21,7 +21,7 @@ const Slider = dynamic(() => import('@components/sections/slider'),{ loading: ()
 
 export default function Home(props) {
   const { page,sliders, events, works, siteconfig } = props;
-  const [navBg,setNavBg] = useState('bg-transparent')
+  const [navBg,setNavBg] = useState('theme-bg-black md:bg-transparent')
   const [scrolling, setScrolling] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);
   const [modalShow,setModalShow] = useState(false)
@@ -35,7 +35,7 @@ export default function Home(props) {
       if(pageOffset > 100){
         setNavBg('bg-gray-900')
       }else{
-        setNavBg('bg-transparent')
+        setNavBg('theme-bg-black md:bg-transparent')
       }
     };
     window.addEventListener("scroll", onScroll);
@@ -50,7 +50,7 @@ export default function Home(props) {
       {!!page && 
         <Fragment>
           <Container className="full-width">
-            <Slider {...{items:sliders,sizes:{w:1440,h:1052},classes:"-mt-14"}} />
+            <Slider {...{items:sliders,sizes:{w:1440,h:1052},logo:siteconfig.footerlogo,classes:"-mt-14"}} />
             <Marquee count={10}>
               {siteconfig.marquee_text}
             </Marquee>

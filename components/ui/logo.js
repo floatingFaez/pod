@@ -1,6 +1,5 @@
 import Image from "next/image";
 import GetImage from "@utils/getImage";
-import { myLoader } from "@utils/all";
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
 
@@ -42,23 +41,9 @@ const logo = (props) => {
             <Disclosure.Button
             aria-label="Toggle Menu"
             className="px-2 py-1 ml-auto text-gray-500 rounded-md md:hidden focus:text-blue-500 focus:outline-none dark:text-gray-300 ">
-            <svg
-                className="w-6 h-6 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
-                {props.open && (
-                <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-                />
-                )}
-                {!props.open && (
-                <path
-                    fillRule="evenodd"
-                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                />
-                )}
+            <svg width="31" height="9" viewBox="0 0 31 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.633301" y1="8.5" x2="29.5533" y2="8.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="0.633301" y1="0.5" x2="29.5533" y2="0.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             </Disclosure.Button>
         </div>

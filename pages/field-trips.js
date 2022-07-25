@@ -11,6 +11,7 @@ import HeaderSection from "@components/sections/headerSection";
 import BookingModal from "@components/modal/bookingModal";
 import Tabs from "@components/tabs";
 import Button from "@components/ui/button";
+import TapeBorder from "@components/ui/tape-border";
 import { PhotographIcon } from "@heroicons/react/outline";
 
 export default function FieldTrips(props) {
@@ -71,12 +72,12 @@ export default function FieldTrips(props) {
           <Tabs tabs={page.tabs}/>
 
           <Container className="full-width border-y theme-gray-bg ">
-            <div className="grid grid-cols-2 text-white max-w-screen-xl mx-auto  px-8 xl:px-5">
+            <div className="grid grid-cols-2 text-white max-w-screen-xl mx-auto  px-5">
                 {
                   page?.package?.map( (aPackage,i )=> {
                     let packageImg = aPackage?.pkgImage ? GetImage(aPackage.pkgImage) : null;
                     return (
-                      <div className={`pt-20 pb-16 text-center border-r ${i === 0 ?'border-theme-black':''}`} key={`apck_#${i}`}>
+                      <div className={`pt-20 pb-16 text-center border-r relative ${i === 0 ?'border-theme-black':'tap-parent inside'}`} key={`apck_#${i}`}>
                           <p className="text-heading mb-5">{aPackage.title}</p>
                           <div className="package-thumb">
                             {
@@ -98,6 +99,9 @@ export default function FieldTrips(props) {
                           </div>
                           <p className="mb-16 max-w-lg mx-auto fss-2">{aPackage.description}</p>
                           <Button text={aPackage.buttonText} classes="border border-theme-black py-4 px-20 hover:bg-gray-100" handleClick={()=> handleButtonClick(i)}/>
+                          <When condition={i===1}>
+                            <TapeBorder scrollText={siteconfig.marquee_tape_text} count={10}/>
+                          </When>
                       </div>
                     )
                   })

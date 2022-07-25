@@ -40,7 +40,7 @@ const Tabs = ({tabs}) => {
                 }
             </div>
             <div className="border-white border-y">
-                <ul className="flex flex-wrap -mb-px justify-around fss-3 text-center mb-0 max-w-screen-xl mx-auto  px-8 xl:px-5">
+                <ul className="flex flex-wrap -mb-px justify-around fss-3 text-center mb-0 max-w-screen-xl mx-auto  px-5">
                     { map(tabTitles, (tab,i) => {
                         return <li key={`${tab.key}_tt`} 
                                    id={`${tab.key}_id`}
@@ -52,7 +52,7 @@ const Tabs = ({tabs}) => {
                     })}
                 </ul>
             </div>
-            <div id="TabContent" className='max-w-screen-xl mx-auto  px-8 xl:px-5'>
+            <div id="TabContent" className='max-w-screen-xl mx-auto  px-5'>
                 { map(tabs, (tab,index) => {
                     
                     const btnText = index<3 ? "Save & Next": "Submit Package"
