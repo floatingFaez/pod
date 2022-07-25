@@ -51,26 +51,30 @@ export default function Services(props) {
             </div>
           </Container>
 
-          <Container>
-            <div className="mx-auto prose text-center dark:prose-invert section-desc">
-              <p className="text-desc text-3xl dark:text-white">
-                {page.body}
-              </p>
-            </div>
-          </Container>
+          <div className='full-width theme-gray-bg'>
+            <Container>
+              <div className="mx-auto prose text-center dark:prose-invert section-desc">
+                <p className="text-desc text-3xl txt-black">
+                  {page.body}
+                </p>
+              </div>
+            </Container>
+          </div>
 
           <Tabs tabs={page.tabs}/>
 
-          <Container className="full-width border-t">
-            <div className={`py-5 border-white text-center`}>
-                <p className="mt-2 fss-1 text-white uppercase font-secondary">{page.sectiontitle}</p>
+          <Container className="full-width border-t theme-gray-bg">
+            <div className={`py-5 border-theme-black text-center`}>
+                <p className="mt-2 fss-1 txt-black uppercase font-secondary">{page.sectiontitle}</p>
             </div>
           </Container>
 
-          <Container className="nav-slider-container full-width border-t relative">
-            <ItemSlider items={page.client} sliderPerView={4} imgSizes={{w:310,h:88}} classes="pb-20 "/>
-          </Container>
-          
+          <div className='full-width theme-gray-bg'>
+            <Container className="nav-slider-container border-theme-black full-width border-t relative">
+              <ItemSlider items={page.client} sliderPerView={4} imgSizes={{w:310,h:88}} classes="pb-20 "/>
+            </Container>
+          </div>
+
         </Fragment>
       }
       

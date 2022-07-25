@@ -2,13 +2,13 @@ import 'swiper/css';
 import Image from "next/image";
 import Link from "next/link";
 import Swiper from "react-id-swiper";
-import SwiperCore, { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
+import SwiperCore, { A11y, Autoplay, Navigation, Pagination, Scrollbar, Mousewheel } from "swiper";
 import GetImage from "@utils/getImage";
 import { PhotographIcon } from "@heroicons/react/outline";
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
-SwiperCore.use([Autoplay]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay, Mousewheel]);
 
-const WorksSlider = ({works,sliderPerView}) => {
+const WorksSlider = ({works,sliderPerView,listLink}) => {
+    
     const imageSizes = {w:430,h:548}
     const addSwiperParams = {
         containerClass:'work-slider',
@@ -19,7 +19,7 @@ const WorksSlider = ({works,sliderPerView}) => {
         slideToClickedSlide: true,
         shouldSwiperUpdate: true,
         activeSlideKey: 0,
-        loop: true,
+        loop: false,
         autoplay: false,
         observer: true,
         lazy: true,
@@ -91,8 +91,8 @@ const WorksSlider = ({works,sliderPerView}) => {
                     { getSliderHtml(works,imageSizes) }
                 </Swiper>
             </div>
-            <Link href="/work">
-                <a className='slider-footer-link text-white hover:text-blue-500 uppercase font-secondary fss-1'> View Index </a>
+            <Link href={listLink.link}>
+                <a className='slider-footer-link text-white  uppercase font-secondary fss-1'> {listLink.name} </a>
             </Link>
         </div>
     )

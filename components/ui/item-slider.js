@@ -1,11 +1,10 @@
 import 'swiper/css';
 import Image from "next/image";
 import Swiper from "react-id-swiper";
-import SwiperCore, { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
+import SwiperCore, { A11y, Autoplay, Navigation, Pagination, Scrollbar, Mousewheel } from "swiper";
 import GetImage from "@utils/getImage";
 import { PhotographIcon } from "@heroicons/react/outline";
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
-SwiperCore.use([Autoplay]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay, Mousewheel]);
 
 
 const ItemSlider = ({items,sliderPerView,imgSizes,classes=''}) => {
@@ -19,9 +18,10 @@ const ItemSlider = ({items,sliderPerView,imgSizes,classes=''}) => {
         slideToClickedSlide: true,
         shouldSwiperUpdate: true,
         activeSlideKey: 0,
-        loop: true,
+        loop: false,
         autoplay: false,
         observer: true,
+        mousewheel: true,
         lazy: true,
         spaceBetween: 20,
         pagination: false,

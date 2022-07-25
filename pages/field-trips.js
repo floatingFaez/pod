@@ -1,22 +1,30 @@
-import { Fragment } from "react";
+import { Fragment,useState } from "react";
+import Image from "next/image";
+import GetImage from "@utils/getImage";
+import { getClient } from "@lib/sanity";
+import { configQuery, fieldTripsQuery } from "@lib/groq";
 import Container from "@components/container";
+import When from "@components/when";
 import Layout from "@components/layout";
 import Marquee from "@components/ui/marquee";
-import { configQuery, fieldTripsQuery } from "@lib/groq";
-import { getClient } from "@lib/sanity";
-import GetImage from "@utils/getImage";
 import HeaderSection from "@components/sections/headerSection";
+import BookingModal from "@components/modal/bookingModal";
 import Tabs from "@components/tabs";
 import Button from "@components/ui/button";
-import Image from "next/image";
 import { PhotographIcon } from "@heroicons/react/outline";
 
 export default function FieldTrips(props) {
   const { page, siteconfig, preview, preloadImage } = props;
+  const [showBooking,setShowBooking] = useState(false)
+
   let imageProps = null
 
   if(!!page){
     imageProps = page?.mainImage ? GetImage(page.mainImage) : null;
+  }
+
+  const handleButtonClick = (index) =>{
+    setShowBooking(index === 0)
   }
   
 
@@ -56,7 +64,7 @@ export default function FieldTrips(props) {
               </p>
             </div>
             <Marquee count={10} classes='border-t border-theme-black txt-black bg-white'>
-              (POD)® FLIGHTS SOON DEPARTING
+              {siteconfig.marquee_text}
             </Marquee>
           </Container>
             
@@ -68,7 +76,7 @@ export default function FieldTrips(props) {
                   page?.package?.map( (aPackage,i )=> {
                     let packageImg = aPackage?.pkgImage ? GetImage(aPackage.pkgImage) : null;
                     return (
-                      <div className={`pt-20 pb-16 text-center ${i === 0 ? 'border-r border-theme-black':'tap-border'}`} key={`apck_#${i}`}>
+                      <div className={`pt-20 pb-16 text-center border-r ${i === 0 ?'border-theme-black':''}`} key={`apck_#${i}`}>
                           <p className="text-heading mb-5">{aPackage.title}</p>
                           <div className="package-thumb">
                             {
@@ -89,16 +97,16 @@ export default function FieldTrips(props) {
                             
                           </div>
                           <p className="mb-16 max-w-lg mx-auto fss-2">{aPackage.description}</p>
-                          <Button text={aPackage.buttonText} classes="border border-theme-black py-4 px-20 hover:bg-gray-100"/>
+                          <Button text={aPackage.buttonText} classes="border border-theme-black py-4 px-20 hover:bg-gray-100" handleClick={()=> handleButtonClick(i)}/>
                       </div>
                     )
                   })
                 }
             </div>
           </Container>
-
-            
-          
+          <When condition={showBooking}>
+            <BookingModal setModalShow={setShowBooking} classes='!theme-gray-bg border border-black p-6'/>
+          </When>
         </Fragment>
       }
       

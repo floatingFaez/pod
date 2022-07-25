@@ -223,7 +223,7 @@ body{
   position: absolute;
   left: 0;
   bottom: 100px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--theme-black);
 }
 .nav-slider-container.no-border:after {
   display: none;
@@ -335,7 +335,7 @@ body{
   padding: 20px;
 }
 .modal.tape {
-  outline: 40px solid #fff;
+  /* outline: 40px solid #fff; */
 }
 .modal .btn-close {
   position: absolute;
@@ -470,6 +470,39 @@ input[type="radio"].radio::before{
   width: 1080px;
   min-height: 608px;
   height: 608px;
+}
+
+.modal .tape-p {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  background: #fff;
+  width: calc(100% + 80px);
+}
+.modal .tape-p p{
+  color: var(--theme-black);
+}
+.modal .tape-p.pos-bottom {
+  bottom: -40px;
+  top: unset;
+}
+.modal .tape-p.pos-left {
+  transform: rotate3d(0, 0, 1, 270deg);
+  transform-origin: right bottom;
+  right: -40px;
+  left: unset;
+  top: -80px;
+}
+.modal .tape-p.pos-right {
+  transform: rotate3d(0, 0, 1, 270deg);
+  transform-origin: left top;
+  left: -40px;
+  bottom: -80px;
+  top: unset;
+}
+.modal .tape-p.pos-left,
+.modal .tape-p.pos-right{
+  width: 164.8%;
 }
 @media (min-width: 1280px){
   .xl\:text-heading-2x {

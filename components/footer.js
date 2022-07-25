@@ -6,36 +6,7 @@ import GetImage from "@utils/getImage";
 import Link from "next/link";
 
 export default function Footer(props) {
-  const footermenu = [
-    {
-      label: "Home",
-      href: "/"
-    },
-    {
-      label: "Work",
-      href: "/work"
-    },
-    {
-      label: "Services",
-      href: "/services"
-    },
-    {
-      label: "Field Trips",
-      href: "/field-trips"
-    },
-    {
-      label: "Instagram",
-      href: "https://instagram.com"
-    },
-    {
-      label: "Facebook",
-      href: "https://facebook.com"
-    },
-    {
-      label: "Twitter",
-      href: "https://twitter.com"
-    }
-  ];
+  const footerMenus = props.footer_menus;
 
   return (
     <Fragment>
@@ -66,10 +37,10 @@ export default function Footer(props) {
         </div>
 
         <div className="flex-col items-center justify-center w-full md:flex md:flex-row md:w-auto uppercase">
-          {footermenu.map((item, index) => (
-            <Link href={item.href} key={index}>
+          {footerMenus.map((item, index) => (
+            <Link href={item.link} key={index}>
               <a className="px-4 py-5 my-10 mx-5 font-regular font-secondary text-dark dark:text-white hover:text-blue-500">
-                {item.label}
+                {item.name}
               </a>
             </Link>
           ))}

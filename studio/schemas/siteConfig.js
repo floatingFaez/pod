@@ -120,26 +120,31 @@ export default {
       ]
     },
 
-    {
-      name: "email",
-      type: "string",
-      title: "Support Email",
-      validation: Rule =>
-        Rule.regex(
-          /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
-          {
-            name: "email", // Error message is "Does not match email-pattern"
-            invert: false // Boolean to allow any value that does NOT match pattern
-          }
-        )
-    },
+    // {
+    //   name: "email",
+    //   type: "string",
+    //   title: "Support Email",
+    //   validation: Rule =>
+    //     Rule.regex(
+    //       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
+    //       {
+    //         name: "email", // Error message is "Does not match email-pattern"
+    //         invert: false // Boolean to allow any value that does NOT match pattern
+    //       }
+    //     )
+    // },
 
     {
-      name: "phone",
+      name: "marquee_text",
       type: "string",
-      title: "Support Phone"
+      title: "Marquee Scroll Text"
     },
-
+    {
+      name: "marquee_tape_text",
+      type: "string",
+      title: "Marquee Tape Scroll Text",
+      description:"Border of Outside Box Tape Design Scrolling Text"
+    },
     {
       name: "w3ckey",
       type: "string",
@@ -147,7 +152,71 @@ export default {
       description:
         "Enter Access key obtained from web3forms.com. It is required to make the form work."
     },
-
+    {
+      name: 'menus',
+      title: 'Main Menu',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              type: "string",
+              name: "name",
+              title: "Name"
+            },
+            {
+              type: "string",
+              name: "link",
+              title: "Link"
+            }
+          ],
+          preview: {
+            select: {
+              title: "name"
+            }
+          }
+        }
+      ]
+    },
+    {
+      name: 'footer_menus',
+      title: 'Footer Menu',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              type: "string",
+              name: "name",
+              title: "Name"
+            },
+            {
+              type: "string",
+              name: "link",
+              title: "Link"
+            },
+            {
+              type: "string",
+              name: "target",
+              title: "Target",
+              options: {
+                list: [
+                  { title: "New Tab", value: "_tab" },
+                  { title: "Self", value: "_self" },
+                ],
+              }
+            },
+          ],
+          preview: {
+            select: {
+              title: "name"
+            }
+          }
+        }
+      ]
+    },
     {
       name: "social",
       type: "array",

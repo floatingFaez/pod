@@ -52,7 +52,7 @@ export default function Home(props) {
           <Container className="full-width">
             <Slider {...{items:sliders,sizes:{w:1440,h:1052},classes:"-mt-14"}} />
             <Marquee count={10}>
-              (POD)® FLIGHTS SOON DEPARTING
+              {siteconfig.marquee_text}
             </Marquee>
           </Container>
           
@@ -64,10 +64,10 @@ export default function Home(props) {
             </CTAItem>
           </Container>
 
-          <HeaderSection title="Adventure Awaits" subtitle="RECENT WORK" classes="border-y theme-gray-bg txt-black border-black"/>
-          <WorksSlider works={works} sliderPerView={3} />
+          <HeaderSection title={page.header_subtitle} subtitle={page.header_title} classes="border-y theme-gray-bg txt-black border-black"/>
+          <WorksSlider works={works} sliderPerView={3} listLink={{name:page.work_text,link:page.work_link}}/>
           <When condition={modalShow}>
-            <SubscriptionModal setModalShow={setModalShow} classes="tape"/>
+            <SubscriptionModal setModalShow={setModalShow} classes="tape" scrollText={siteconfig.marquee_tape_text}/>
           </When>
           <When condition={showBooking}>
             <BookingModal setModalShow={setShowBooking} classes='!theme-gray-bg border border-black p-6'/>

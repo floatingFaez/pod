@@ -19,6 +19,14 @@ export default {
         collapsed: false
       }
     },
+    {
+      title: "Work Slider",
+      name: "slider",
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
+    },
   ],
   fields: [
     {
@@ -89,6 +97,30 @@ export default {
       type: "string",
       title: "CTA Button Text",
       fieldset:"cta"
+    },
+    {
+      name: "header_title",
+      type: "string",
+      title: "Header Title",
+      fieldset:"slider"
+    },
+    {
+      name: "header_subtitle",
+      type: "string",
+      title: "Header Sub Title",
+      fieldset:"slider"
+    },
+    {
+      name: "work_text",
+      type: "string",
+      title: "Work Page Link Text",
+      fieldset:"slider"
+    },
+    {
+      name: "work_link",
+      type: "string",
+      title: "Work Page Link",
+      fieldset:"slider"
     },
   ],
 };

@@ -8,10 +8,10 @@ const Tabs = ({tabs}) => {
 
     return ( 
         <Fragment>
-            <div className='border-dark dark:border-white border-y'>
+            <div className='border-white border-y'>
                 <ul className="flex flex-wrap -mb-px justify-around fss-3 text-center mb-0 max-w-screen-xl mx-auto  px-8 xl:px-5">
                     { map(tabTitles, (tab,i) => {
-                        return <li key={`${tab.key}_tt`} className={`${ activeTab === i ? 'text-dark dark:text-white' : 'text-gray-700 hover:text-white dark:hover:text-white'} grow `} onClick={() => setActiveTab(i)} >
+                        return <li key={`${tab.key}_tt`} className={`${ activeTab === i ? 'text-white' : 'text-gray-700 hover:text-white hover:text-white'} grow `} onClick={() => setActiveTab(i)} >
                             <button className="p-4 uppercase">{tab.title}</button>
                         </li>
                     })}
