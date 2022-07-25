@@ -42,8 +42,8 @@ const logo = (props) => {
             aria-label="Toggle Menu"
             className="px-2 py-1 ml-auto text-gray-500 rounded-md md:hidden focus:text-blue-500 focus:outline-none dark:text-gray-300 ">
             <svg width="31" height="9" viewBox="0 0 31 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="0.633301" y1="8.5" x2="29.5533" y2="8.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                <line x1="0.633301" y1="0.5" x2="29.5533" y2="0.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="0.633301" y1="8.5" x2="29.5533" y2="8.5" stroke="white" strokeLinecap="round" strokeLineJoin="round"/>
+                <line x1="0.633301" y1="0.5" x2="29.5533" y2="0.5" stroke="white" strokeLinecap="round" strokeLineJoin="round"/>
             </svg>
             </Disclosure.Button>
         </div>
