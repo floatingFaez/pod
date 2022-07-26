@@ -132,7 +132,10 @@ body{
 .footer-logo .logo-wrap {
     max-width: 65px;
 }
-
+.nav-logo>div {
+  max-width: 50px;
+  width: 50px;
+}
 .campaign-body:before,.campaign-body:after{
     position: absolute;
     font-size: 3rem;
@@ -574,12 +577,17 @@ input[type="radio"].radio::before{
 @media (max-width: 576px){
   .modal {
     max-width: 95%;
+    top: 1em;
   }
   .modal.tap-parent{
     max-width: 80%;
   }
+  .banner-marquee{
+    margin-top: -40px;
+    background-color: var(--theme-black);
+  }
   .slider-info{
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   .slider-info .logo-wrap{
     width: 50px;
@@ -656,8 +664,8 @@ input[type="radio"].radio::before{
       max-height: 160px;
       overflow: hidden;
   }
-  .modal {
-    top: 4em;
+  .modal.tap-parent {
+    top: 3em;
     min-height: 500px;
     max-height: 595px;
   }
@@ -666,5 +674,23 @@ input[type="radio"].radio::before{
   }
   #headlessui-disclosure-panel-2 {
     padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 414px){
+  .tap-parent .tape-p.pos-left, .tap-parent .tape-p.pos-right {
+    width: 203%;
+  }
+  .subscriber-modal .badge-wrapper .wide-txt.top{
+    top: 55px;
+  }
+  .subscriber-modal .badge-wrapper .square-txt.bottom{
+    top: 100px;
+  }
+}
+
+@media (max-width: 390px){
+  .tap-parent .tape-p.pos-left, .tap-parent .tape-p.pos-right {
+    width: 675px;
   }
 }

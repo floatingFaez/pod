@@ -51,7 +51,7 @@ export default function Home(props) {
         <Fragment>
           <Container className="full-width">
             <Slider {...{items:sliders,sizes:{w:1440,h:1052},logo:siteconfig.footerlogo,classes:"-mt-14"}} />
-            <Marquee count={10}>
+            <Marquee count={10} classes='banner-marquee'>
               {siteconfig.marquee_text}
             </Marquee>
           </Container>

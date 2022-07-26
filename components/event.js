@@ -144,7 +144,7 @@ const Event = ({event, isExpand, setClickedId, setModalShow}) => {
                         Pellentesque sed luctus nisi. Vestibulum sed massa eu velit egestas ultricies. Nulla semper justo tristique mi eleifend, eu ultrices urna ullamcorper. Nunc mattis cursus nunc et feugiat.
                     </p>
                     <div className="flex flex-row justify-around font-secondary uppercase py-6">
-                        <Button text="Keep Me Posted" handleClick={setModalShow} classes="!text-white py-4 px-20 bg-gray-900 hover:bg-gray-100 hover:!text-black"/>
+                        <Button text="Keep Me Posted" handleClick={setModalShow} classes="!text-white py-4 px-14 bg-gray-900 hover:bg-gray-100 hover:!text-black"/>
                     </div>
                     <RewardBadge type='scheduled' classes='show'/>
                 </div>

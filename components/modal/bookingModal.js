@@ -31,12 +31,12 @@ const BookingModal = ({setModalShow, classes=''}) => {
             <button type="button" className="btn-close" onClick={() => setModalShow(false)}>
                 <img src="/img/cross-black.svg" alt="cross-black"/>
             </button>
-            <div className="modal-body grid grid-rows-3">
+            <div className="modal-body grid content-between grid-rows-3 h-full">
                 <HeaderSection title="Hey there!" subtitle='Schedule a discovery call' classes="border-0 mb-16 txt-black !pb-10 !pt-14"/>
 
                 <form onSubmit={handleSubmit(onSubmit)} className={`my-5 form-steps txt-black row-span-2`}>
                     <When condition={step === 1}>
-                        <div className="step flex flex-col flex-grow justify-between h-full max-w-xs mx-auto">
+                        <div className="step flex flex-col grow justify-between h-full max-w-xs mx-auto">
                             <div className="step-content">
                                 <p className="fss-1 uppercase font-secondary text-center mb-4">What’s involved?</p>
                                 <p className="mb-8 fss-2 text-center">
@@ -46,11 +46,11 @@ const BookingModal = ({setModalShow, classes=''}) => {
                                 </p>
                             </div>
                             
-                            <Button text="So, what day suits?" classes="border border-black py-4 px-10 hover:bg-gray-300" handleClick={() => setStep(2)}/>
+                            <Button text="So, what day suits?" classes="border border-black py-4 px-8 hover:bg-gray-300" handleClick={() => setStep(2)}/>
                         </div>
                     </When>
                     <When condition={step === 2}>
-                        <div className="step flex flex-col flex-grow justify-between h-full max-w-xs mx-auto">
+                        <div className="step flex flex-col grow justify-between h-full max-w-xs mx-auto">
                             <div className="step-content">
                                 <p className="mb-8 fss-2 text-center">
                                     Pellentesque sed luctus nisi. Vestibulum sed massa eu velit egestas ultricies. 
@@ -75,11 +75,11 @@ const BookingModal = ({setModalShow, classes=''}) => {
                                 </ul>
                             </div>
                             
-                            <Button text="And a time preference?" classes="border border-black py-4 px-10 hover:bg-gray-300" handleClick={() => setStep(3)}/>
+                            <Button text="And a time preference?" classes="border border-black py-4 px-8 hover:bg-gray-300" handleClick={() => setStep(3)}/>
                         </div>
                     </When>
                     <When condition={step === 3}>
-                        <div className="step flex flex-col flex-grow justify-between h-full max-w-xs mx-auto">
+                        <div className="step flex flex-col grow justify-between h-full max-w-xs mx-auto">
                             <div className="step-content">
                                 <p className="mb-8 fss-2 text-center">
                                     Pellentesque sed luctus nisi. Vestibulum sed massa eu velit egestas ultricies. 
@@ -101,7 +101,7 @@ const BookingModal = ({setModalShow, classes=''}) => {
                                 </ul>
                             </div>
                             
-                            <Button text="Schedule call" classes="border border-black py-4 px-10 hover:bg-gray-300" handleClick={() => setStep(1)}/>
+                            <Button text="Schedule call" classes="border border-black py-4 px-8 hover:bg-gray-300" handleClick={() => setStep(1)}/>
                         </div>
                     </When>
                 </form>

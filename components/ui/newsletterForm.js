@@ -63,7 +63,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         type="text"
                         placeholder="First Name"
                         autoComplete="false"
-                        className={`w-full font-secondary  pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent  focus:ring-4  ${
+                        className={`w-full font-secondary  pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent  focus:ring-4  ${
                         errors.FNAME
                             ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                             : "border-white ring-gray-100 dark:ring-0"
@@ -85,7 +85,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         type="text"
                         placeholder="Last Name"
                         autoComplete="false"
-                        className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent   focus:ring-4  ${
+                        className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent   focus:ring-4  ${
                         errors.LNAME
                             ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                             : "border-white ring-gray-100 dark:ring-0"
@@ -112,7 +112,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         placeholder="Email Address"
                         name="EMAIL"
                         autoComplete="false"
-                        className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 dark:text-white outline-none dark:placeholder:text-white dark:bg-transparent focus:ring-4  ${
+                        className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent focus:ring-4  ${
                         errors.EMAIL
                             ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                             : "border-white ring-gray-100 dark:ring-0"

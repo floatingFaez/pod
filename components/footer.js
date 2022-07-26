@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Container from "@components/container";
 import Newsletter from "@components/newsletter";
+import Copyright from "./ui/copyright-text";
 import Image from "next/image";
 import GetImage from "@utils/getImage";
 import Link from "next/link";
@@ -46,9 +47,7 @@ export default function Footer(props) {
           ))}
         </div>
 
-        <div className=" text-center font-regular font-secondary text-white">
-          ©{new Date().getFullYear()} {props?.copyright}.
-        </div>
+        <Copyright text={props.copyright} />
 
       </Container>
     </Fragment>
