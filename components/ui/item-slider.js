@@ -6,7 +6,6 @@ import GetImage from "@utils/getImage";
 import { PhotographIcon } from "@heroicons/react/outline";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay, Mousewheel]);
 
-
 const ItemSlider = ({items,sliderPerView,imgSizes,classes=''}) => {
     
     const addSwiperParams = {

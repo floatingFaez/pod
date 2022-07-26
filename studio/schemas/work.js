@@ -59,6 +59,11 @@ export default {
       type: "string"
     },
     {
+      name: "campaign_name",
+      title: "Campaign Name",
+      type: "string"
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",

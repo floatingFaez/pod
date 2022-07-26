@@ -113,18 +113,21 @@ export default function Post(props) {
             </div>
 
             <div className="slider-content full-width w-full h-screen text-white">
-              <div className="mx-auto xl:px-5 max-w-screen-xl h-full flex flex-col flex-grow justify-between">
+
+              <div className="mx-auto px-5 max-w-screen-xl h-full flex flex-row md:flex-col flex-grow justify-between ">
                 <Link href="/work">
-                  <a className="fss text-white uppercase back-to-index">
+                  <a className="fss text-white uppercase back-to-index justify-end">
                     Back to Index
                   </a>
                 </Link>
 
-                <div className="description flex flex-row justify-between fss-2">
-                  <div className="body">
+                <div className="description flex flex-row justify-end md:justify-between fss-2">
+
+                  <div className="body hidden md:block">
                     <p className="mb-3 fss-3">{post?.campaign_name}</p>
-                    <p className="post-body">{post.body && <PortableText value={post.body} />}</p>
+                    <div className="post-body">{post.body && <PortableText value={post.body} />}</div>
                   </div>
+
                   <div className="social-share grid content-end">
                     <div className="share-content flex content-end">
                       <span className="uppercase">Share</span>
@@ -143,6 +146,7 @@ export default function Post(props) {
                     </div>
                     
                   </div>
+
                 </div>
               </div>
             </div>
@@ -150,11 +154,16 @@ export default function Post(props) {
 
           <div className="full-width theme-gray-bg">
             <Container>
-              <div className="grid grid-cols-2 grid-rows-1">
+              <div className="body md:hidden pt-10">
+                <p className="mb-3 fss-3">{post?.campaign_name}</p>
+                <div className="work-desc">{post.body && <PortableText value={post.body} />}</div>
+              </div>
+
+              <div className="grid md:grid-cols-2 md:grid-rows-1 py-10">
                   {
                     map(post?.section2Images, (sectionImage,index)=> {
                       const classes = index === 1 ? 'pad-max':''
-                      return <div className={`img-wrap my-24 ${classes}`}>
+                      return <div className={`img-wrap my-5 md:my-24 ${classes}`}>
                                 <Section2Image image={sectionImage.image} sizes={{w:660,h:875}} key={sectionImage._key}/>
                               </div>
                     })
@@ -164,7 +173,7 @@ export default function Post(props) {
           </div>
 
 
-          <div className="full-width w-full h-screen text-white overflow-hidden relative">
+          <div className="full-width w-full h-screen text-white overflow-hidden relative hidden md:block">
             <div className="aspect-video">
               {
                 post?.section3Image && <MainImage image={post?.section3Image} 
@@ -180,9 +189,9 @@ export default function Post(props) {
             <Container>
               <div className="work-section-content text-center">
                 <p className="fss-1 uppercase font-secondary text-center mb-8">{post.section4Heading} </p>
-                <p className="text-heading-3x font-regular tracking-tight text-center lg:leading-snug text-brand-primary">
+                <div className="text-heading-2.5x font-regular tracking-tight text-center lg:leading-snug text-brand-primary">
                     {post.section4Description && <PortableText value={post.section4Description} />}
-                </p>
+                </div>
               </div>
               <div className="relative work-section-image overflow-hidden">
                 {post?.section4Image && <MainImage image={post.section4Image} 
@@ -194,9 +203,9 @@ export default function Post(props) {
               
             </Container>
           </div>
-          <div className="full-width theme-gray-bg py-32">
+          <div className="full-width theme-gray-bg py-10 md:py-32">
               <Container>
-                <div className="grid grid-cols-2 grid-rows-1 ">
+                <div className="grid md:grid-cols-2 md:grid-rows-1 gap-10">
                   <div className="relative work-section-image overflow-hidden">
                     {post?.section4Image && <MainImage image={post.section5Image} 
                                             layout="fill" 
@@ -205,13 +214,13 @@ export default function Post(props) {
                                             objectPosition="top"/>}
                   </div>
                   <div className="section-content grid content-center">
-                      <div className="vertical-center px-16">
+                      <div className="vertical-center md:px-16">
                         <span className="fss-3 uppercase">
                           {post?.section5Heading}
                         </span>
-                        <p className="fss-2 mt-4">
+                        <div className="fss-2 mt-4">
                           {post?.section5Description && <PortableText value={post.section5Description} />}
-                        </p>
+                        </div>
                       </div>
                   </div>
                 </div>
@@ -223,9 +232,9 @@ export default function Post(props) {
               <Container>
                 <div className="work-section-content text-center text-white">
                   <p className="fss-1 uppercase font-secondary text-center mb-8">{post?.section6Heading} </p>
-                  <p className="text-heading-3x font-regular tracking-tight text-center lg:leading-snug text-brand-primary">
+                  <div className="text-heading-2.5x font-regular tracking-tight text-center lg:leading-snug text-brand-primary">
                       {post.section6Description && <PortableText value={post.section6Description} />}
-                  </p>
+                  </div>
                 </div>
               </Container>
 
@@ -237,9 +246,9 @@ export default function Post(props) {
               <Container>
                 <div className="work-section-content text-center text-white">
                   <p className="fss-1 uppercase font-secondary text-center mb-8">{post?.section7Heading} </p>
-                  <p className="text-heading-3x font-regular tracking-tight text-center lg:leading-snug text-brand-primary">
+                  <div className="text-heading-3x font-regular tracking-tight text-center lg:leading-snug text-brand-primary">
                       {post.section6Description && <PortableText value={post.section7Description} />}
-                  </p>
+                  </div>
                 </div>
                 <div className="relative work-section-image overflow-hidden">
                   
@@ -260,17 +269,17 @@ export default function Post(props) {
           
             <div className="full-width  theme-gray-bg pb-4">
               <Container>
-                <div className="grid grid-cols-2 grid-rows-1 gap-5">
-                  <div className="pr-5">
+                <div className="grid md:grid-cols-2 grid-rows-1 gap-5">
+                  <div className="md:pr-5 hidden md:block">
                     {post?.mainImage && <MainImage image={post.mainImage} />}
                   </div>
 
-                  <div className="section-content grid content-center">
-                      <div className="vertical-center px-16 grid grid-cols-2">
+                  <div className="section-content grid content-center py-10">
+                      <div className="vertical-center md:px-16 grid md:grid-cols-2">
                         {
                           map(post.services, obj => {
-                            return <div className="service mb-4" key={obj._key}>
-                                      <span className="fss-1 uppercase">
+                            return <div className="service mb-5 md:mb-4" key={obj._key}>
+                                      <span className="fss-1 font-secondary uppercase">
                                         {obj?.service}
                                       </span>
                                       <p className="fss-3 uppercase">
@@ -311,9 +320,7 @@ export default function Post(props) {
 
 const MainImage = ({ image,...rest }) => {
   return (
-    <div className="mt-12 mb-12 ">
       <Image {...GetImage(image)} alt={image?.alt || "Thumbnail"} {...rest}/>
-    </div>
   );
 };
 
