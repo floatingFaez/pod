@@ -60,14 +60,19 @@ body{
   font-size: 40px;
   line-height: 42px;
 }
-.text-heading-3x{
-  font-size: 44px;
-  line-height: 62px;
-}
 .text-heading-2x{
   font-size: 36px;
   line-height: 1.2;
 }
+.text-heading-2\.5x{
+  font-size: 44px;
+  line-height: 50px;
+}
+.text-heading-3x{
+  font-size: 44px;
+  line-height: 62px;
+}
+
 .bg-theme-green {
   background-color: #00FF01;
 }
@@ -575,6 +580,29 @@ input[type="radio"].radio::before{
   }
 }
 @media (max-width: 576px){
+  .text-heading-2\.5x{
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .section-desc,.tab-content{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .discover{
+    margin: 0 -20px;
+    padding: 100px 20px;
+  }
+  .tap-parent.inside.discover .tape-p{
+    border-top: 1px solid var(--theme-black);
+    border-bottom: 1px solid var(--theme-black);
+  }
+  .tap-parent.inside .tape-p.pos-right,
+  .tap-parent.inside .tape-p.pos-left{
+    display: none !important;
+  }
+  .tap-parent.inside.discover .tape-p.pos-bottom{
+    border-bottom: 0;
+  }
   .modal {
     max-width: 95%;
     top: 1em;
@@ -678,6 +706,16 @@ input[type="radio"].radio::before{
   .tab-content{
     width: 100%;
     max-width: 100%;
+  }
+
+  .banner {
+    height: 455px;
+  }
+  .banner img {
+    object-fit: cover;
+  }
+  .banner span {
+    height: 100% !important;
   }
 }
 

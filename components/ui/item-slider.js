@@ -12,7 +12,7 @@ const ItemSlider = ({items,sliderPerView,imgSizes,classes=''}) => {
     const addSwiperParams = {
         containerClass:'max-w-screen-xl mx-auto overflow-hidden px-5 relative py-20',
         wrapperClass:'swiper-wrapper mb-20',
-        slidesPerView: 2,
+        slidesPerView: 1,
         rebuildOnUpdate: true,
         runCallbacksOnInit: true,
         slideToClickedSlide: true,

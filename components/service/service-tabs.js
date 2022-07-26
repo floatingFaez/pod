@@ -8,7 +8,7 @@ const Tabs = ({tabs}) => {
 
     return ( 
         <Fragment>
-            <div className='border-white border-y'>
+            <div className='border-white border-y hidden md:block'>
                 <ul className="flex flex-wrap -mb-px justify-around fss-3 text-center mb-0 max-w-screen-xl mx-auto  px-5">
                     { map(tabTitles, (tab,i) => {
                         return <li key={`${tab.key}_tt`} className={`${ activeTab === i ? 'text-white' : 'text-gray-700 hover:text-white hover:text-white'} grow `} onClick={() => setActiveTab(i)} >
@@ -22,7 +22,7 @@ const Tabs = ({tabs}) => {
                 { map(tabs, (service,index) => {
                     return <ServiceItem key={service._key} service={service} imgSizes={{w:721,h:831}} classes={`${activeTab !== index ? 'hidden' : ''}`}>
                                 {map(service.serviceOptions, serviceItem => 
-                                    <div className="flex flex-col fss-1" key={`${serviceItem._key}`}>
+                                    <div className="flex flex-col fss-1 mb-8 md:mb-0" key={`${serviceItem._key}`}>
                                         <span>{serviceItem.service1}</span>
                                         <span>{serviceItem.service2}</span>
                                     </div>

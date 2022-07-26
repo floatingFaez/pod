@@ -11,7 +11,7 @@ const Tabs = ({tabs}) => {
 
     return ( 
         <Fragment>
-            <div className='tab-images pt-11 flex flex-wrap justify-around max-w-screen-xl mx-auto'>
+            <div className='tab-images pt-11 flex flex-wrap justify-around max-w-screen-xl mx-auto hidden md:block'>
                 {
                     map(tabImages, (tab,i) => { 
                         const tabImage = tab?.image ? GetImage(tab.image) : null;
@@ -39,7 +39,7 @@ const Tabs = ({tabs}) => {
                     })
                 }
             </div>
-            <div className="border-white border-y">
+            <div className="border-white border-y hidden md:block">
                 <ul className="flex flex-wrap -mb-px justify-around fss-3 text-center mb-0 max-w-screen-xl mx-auto  px-5">
                     { map(tabTitles, (tab,i) => {
                         return <li key={`${tab.key}_tt`} 
@@ -57,8 +57,8 @@ const Tabs = ({tabs}) => {
                     
                     const btnText = index<3 ? "Save & Next": "Submit Package"
 
-                    return <div key={tab._key} className={`${activeTab !== index ? 'hidden' : ''} p-4 text-white tab-content mx-auto text-center`}>
-                        <p className='text-heading'>{tab.packag_title}</p>
+                    return <div key={tab._key} className={`${activeTab !== index ? 'hidden' : ''} text-white tab-content mx-auto text-center`}>
+                        <p className='text-heading-3x'>{tab.packag_title}</p>
                         <div className='grid gap-4 grid-cols-2 md:grid-cols-4 grid-rows-4  md:grid-rows-2 my-10 fss-1 '>
                             {
                                 map(tab.packageOptions,(option,i) => {

@@ -36,7 +36,7 @@ export default function FieldTrips(props) {
           <HeaderSection title={page.subtitle} subtitle={page.title} classes="border-b txt-black theme-gray-bg"/>
 
           <Container className="full-width">
-            <div className="banner">
+            <div className="banner bg-cover bg-center">
               {imageProps ? (
                 <Image
                   src={imageProps.src}
@@ -59,8 +59,8 @@ export default function FieldTrips(props) {
           </Container>
           
           <Container className="full-width border-t theme-gray-bg">
-            <div className="mx-auto prose text-center dark:prose-invert section-desc">
-              <p className="text-desc text-heading txt-black">
+            <div className="mx-auto text-center section-desc max-w-screen-xl px-5">
+              <p className="text-desc text-heading-2.5x txt-black">
                 {page.body}
               </p>
             </div>
@@ -77,8 +77,8 @@ export default function FieldTrips(props) {
                   page?.package?.map( (aPackage,i )=> {
                     let packageImg = aPackage?.pkgImage ? GetImage(aPackage.pkgImage) : null;
                     return (
-                      <div className={`pt-20 pb-16 text-center md:border-r relative ${i === 0 ?'border-theme-black':'tap-parent inside'}`} key={`apck_#${i}`}>
-                          <p className="text-heading mb-5">{aPackage.title}</p>
+                      <div className={`py-16 md:pt-20 md:pb-16 text-center md:border-r relative ${i === 0 ?'border-theme-black':'tap-parent inside discover'}`} key={`apck_#${i}`}>
+                          <p className="text-heading-2.5x mb-5">{aPackage.title}</p>
                           <div className="package-thumb">
                             {
                               !!packageImg && 

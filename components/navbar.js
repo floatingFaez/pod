@@ -39,7 +39,7 @@ export default function Navbar({menus, logo, footerlogo, logoalt, logotext, copy
                     <Logo logo={logo} logoalt={logoalt} logotext={logotext} open={open}/>
                     <Popover.Button
                     aria-label="Toggle Menu"
-                    className="px-2 py-1 ml-auto text-gray-500 rounded-md md:hidden focus:text-blue-500 focus:outline-none dark:text-gray-300 ">
+                    className="px-2 py-1 ml-auto text-gray-500 rounded-md md:hidden focus:text-blue-500 focus:outline-none text-gray-300 ">
                       {
                         !open ? 
                         <svg width="31" height="9" viewBox="0 0 31 9" fill="none" xmlns="http://www.w3.org/2000/svg">

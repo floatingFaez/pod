@@ -14,7 +14,7 @@ export default function Worklist({ post, aspect, preloadImage }) {
     <div className="cursor-pointer group">
       <div
         className={cx(
-          "relative overflow-hidden transition-all bg-gray-800",
+          "relative mx-5 md:mx-0 overflow-hidden transition-all bg-gray-800",
           aspect === "landscape" ? "aspect-video" : "aspect-square"
         )}>
         <Link href={`/work/${post.slug.current}`}>
@@ -42,7 +42,7 @@ export default function Worklist({ post, aspect, preloadImage }) {
         </Link>
       </div>
 
-      <p className="mt-5 text-md text-brand-primary dark:text-white font-secondary leading-5 uppercase">
+      <p className="mt-5 text-md text-brand-primary text-white font-secondary leading-5 uppercase">
         <Link href={`/work/${post.slug.current}`}>
           <a className="fss-1 hover:text-blue-500">
             {post.title} <br/>

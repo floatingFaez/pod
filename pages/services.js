@@ -27,8 +27,8 @@ export default function Services(props) {
         <Fragment>
           <HeaderSection title={page.subtitle} subtitle={page.title} classes="border-b txt-black theme-gray-bg"/>
 
-          <Container className="full-width border-b">
-            <div className="banner">
+          <Container className="full-width">
+            <div className="banner bg-cover bg-center">
               {imageProps ? (
                 <Image
                   src={imageProps.src}
@@ -47,11 +47,18 @@ export default function Services(props) {
                   <PhotographIcon />
                 </span>
               )}
-
+            </div>
+          </Container>
+          
+          <Container className="full-width border-t theme-gray-bg">
+            <div className="mx-auto text-center section-desc max-w-screen-xl px-5">
+              <p className="text-desc text-heading-2.5x txt-black">
+                {page.body}
+              </p>
             </div>
           </Container>
 
-          <div className='full-width theme-gray-bg'>
+          {/* <div className='full-width theme-gray-bg'>
             <Container>
               <div className="mx-auto prose text-center dark:prose-invert section-desc">
                 <p className="text-desc text-3xl txt-black">
@@ -59,7 +66,7 @@ export default function Services(props) {
                 </p>
               </div>
             </Container>
-          </div>
+          </div> */}
 
           <Tabs tabs={page.tabs}/>
 
