@@ -57,7 +57,7 @@ export default function Work(props) {
           <HeaderSection title="Current Project" subtitle="Our Work" classes="border-b txt-black theme-gray-bg border-theme-black"/>
 
           <div className="full-width txt-black theme-gray-bg">
-            <div className="mx-auto xl:px-5 max-w-screen-xl grid gap-10 py-12 pb-12 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 text-center">
+            <div className="mx-auto xl:px-5 max-w-screen-xl grid gap-10 py-8 md:py-12 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 text-center">
               {posts.map(post => (
                 <Worklist
                   key={post._id}

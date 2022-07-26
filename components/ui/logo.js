@@ -8,7 +8,7 @@ const logo = (props) => {
     return ( 
             <Fragment>
                 <Link href="/">
-                    <a className="w-28 dark:hidden py-3">
+                    <a className="w-28 hidden py-3">
                         {props.logo ? (
                         <Image
                             {...GetImage(props.logo)}
@@ -24,7 +24,7 @@ const logo = (props) => {
                     </a>
                     </Link>
                     <Link href="/">
-                    <a className="hidden w-28 dark:block py-3">
+                    <a className="hidden w-28 block py-3">
                         {props.logoalt ? (
                         <Image
                             {...GetImage(props.logoalt)}

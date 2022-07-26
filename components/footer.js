@@ -40,7 +40,7 @@ export default function Footer(props) {
         <div className="hidden md:flex flex-col items-center justify-center w-full md:flex-row md:w-auto uppercase">
           {footerMenus.map((item, index) => (
             <Link href={item.link} key={index}>
-              <a className="px-4 mx-5 my-3 md:py-5 md:my-10 font-regular font-secondary text-dark dark:text-white hover:text-blue-500">
+              <a className="px-4 mx-5 my-3 md:py-5 md:my-10 font-secondary text-white">
                 {item.name}
               </a>
             </Link>

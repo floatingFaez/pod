@@ -72,12 +72,12 @@ export default function FieldTrips(props) {
           <Tabs tabs={page.tabs}/>
 
           <Container className="full-width border-y theme-gray-bg ">
-            <div className="grid grid-cols-2 text-white max-w-screen-xl mx-auto  px-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 text-white max-w-screen-xl mx-auto  px-5">
                 {
                   page?.package?.map( (aPackage,i )=> {
                     let packageImg = aPackage?.pkgImage ? GetImage(aPackage.pkgImage) : null;
                     return (
-                      <div className={`pt-20 pb-16 text-center border-r relative ${i === 0 ?'border-theme-black':'tap-parent inside'}`} key={`apck_#${i}`}>
+                      <div className={`pt-20 pb-16 text-center md:border-r relative ${i === 0 ?'border-theme-black':'tap-parent inside'}`} key={`apck_#${i}`}>
                           <p className="text-heading mb-5">{aPackage.title}</p>
                           <div className="package-thumb">
                             {

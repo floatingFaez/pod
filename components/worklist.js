@@ -14,7 +14,7 @@ export default function Worklist({ post, aspect, preloadImage }) {
     <div className="cursor-pointer group">
       <div
         className={cx(
-          "relative overflow-hidden transition-all bg-gray-100 dark:bg-gray-800",
+          "relative overflow-hidden transition-all bg-gray-800",
           aspect === "landscape" ? "aspect-video" : "aspect-square"
         )}>
         <Link href={`/work/${post.slug.current}`}>

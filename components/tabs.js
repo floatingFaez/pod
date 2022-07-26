@@ -59,7 +59,7 @@ const Tabs = ({tabs}) => {
 
                     return <div key={tab._key} className={`${activeTab !== index ? 'hidden' : ''} p-4 text-white tab-content mx-auto text-center`}>
                         <p className='text-heading'>{tab.packag_title}</p>
-                        <div className='grid gap-4 grid-cols-4 grid-rows-2 my-10 fss-1 '>
+                        <div className='grid gap-4 grid-cols-2 md:grid-cols-4 grid-rows-4  md:grid-rows-2 my-10 fss-1 '>
                             {
                                 map(tab.packageOptions,(option,i) => {
                                     return <label htmlFor={`file-1${i}`} key={option._key} className="mb-4 uppercase">

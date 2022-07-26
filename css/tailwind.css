@@ -675,6 +675,10 @@ input[type="radio"].radio::before{
   #headlessui-disclosure-panel-2 {
     padding-bottom: 15px;
   }
+  .tab-content{
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 414px){
