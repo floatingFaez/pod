@@ -11,7 +11,7 @@ const Tabs = ({tabs}) => {
 
     return ( 
         <Fragment>
-            <div className='tab-images pt-11 flex flex-wrap justify-around max-w-screen-xl mx-auto hidden md:block'>
+            <div className='tab-images pt-11 flex flex-wrap justify-around max-w-screen-xl mx-auto hidden md:flex'>
                 {
                     map(tabImages, (tab,i) => { 
                         const tabImage = tab?.image ? GetImage(tab.image) : null;
