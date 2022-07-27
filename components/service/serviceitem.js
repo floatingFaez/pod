@@ -48,7 +48,7 @@ const ServiceItem = (props) => {
                         }
                     </div>
 
-                    <div className="service-footer mb-4 max-w-lg mx-auto dark:text-white font-regular py-5">
+                    <div className="service-footer mb-4 max-w-lg mx-auto text-white font-regular py-5">
                         <p className="mb-5 fss-2">{service.description}</p>
                         <div className="flex flex-col md:flex-row justify-around font-secondary uppercase py-6">
                             {props.children}

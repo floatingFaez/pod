@@ -134,10 +134,10 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
 
                 <button
                 type="submit"
-                className="w-full font-secondary  uppercase newsletter-submit border font-regular text-white transition-colors bg-gray-900 dark:hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200  dark:bg-transparent dark:text-white ">
+                className="w-full font-secondary  uppercase newsletter-submit border font-regular text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200  bg-transparent text-white ">
                 {isSubmitting ? (
                     <svg
-                    className="w-5 h-5 mx-auto text-white dark:text-black animate-spin"
+                    className="w-5 h-5 mx-auto text-black animate-spin"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24">

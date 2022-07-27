@@ -116,15 +116,15 @@ export default function Post(props) {
 
               <div className="mx-auto px-5 max-w-screen-xl h-full flex flex-row md:flex-col flex-grow justify-between ">
                 <Link href="/work">
-                  <a className="fss text-white uppercase back-to-index justify-end index-nav">
+                  <a className="fss-1 text-white uppercase back-to-index justify-end index-nav font-secondary md:mt-2">
                     Back to Index
                   </a>
                 </Link>
 
-                <div className="description flex flex-row justify-end md:justify-between fss-2">
+                <div className="description flex flex-row justify-end md:justify-between fss-2 text-white">
 
                   <div className="body hidden md:block">
-                    <p className="mb-3 fss-3">{post?.campaign_name}</p>
+                    <p className="mb-4 fss-3">{post?.campaign_name}</p>
                     <div className="post-body">{post.body && <PortableText value={post.body} />}</div>
                   </div>
 
@@ -250,7 +250,7 @@ export default function Post(props) {
                       {post.section6Description && <PortableText value={post.section7Description} />}
                   </div>
                 </div>
-                <div className="relative work-section-image overflow-hidden">
+                <div className="relative work-section-image overflow-hidden video-img">
                   
                 {post?.section7videoImage && <MainImage image={post.section7videoImage} 
                                                           layout="fill" 

@@ -9,6 +9,7 @@ import Layout from "@components/layout";
 import Marquee from "@components/ui/marquee";
 import HeaderSection from "@components/sections/headerSection";
 import BookingModal from "@components/modal/bookingModal";
+import RewardBadge from "@components/ui/reward-badge";
 import Tabs from "@components/tabs";
 import Button from "@components/ui/button";
 import TapeBorder from "@components/ui/tape-border";
@@ -100,6 +101,7 @@ export default function FieldTrips(props) {
                           <p className="mb-16 max-w-lg mx-auto fss-2">{aPackage.description}</p>
                           <Button text={aPackage.buttonText} classes="border border-theme-black py-4 px-20 hover:bg-gray-100" handleClick={()=> handleButtonClick(i)}/>
                           <When condition={i===1}>
+                            <RewardBadge type='bottom' classes='dreamers' boarding_hide={true} reward_Text='DREAMER REWARDS' />
                             <TapeBorder scrollText={siteconfig.marquee_tape_text} count={10}/>
                           </When>
                       </div>

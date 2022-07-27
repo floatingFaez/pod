@@ -78,7 +78,7 @@ const WorkSlider = ({works,sliderPerView,className='', wrapperClassName=''}) => 
                     { getSliderHtml(works,imageSizes) }
                 </Swiper>
             </div>
-            <span className='slider-footer-link text-white hover:text-blue-500 uppercase font-secondary fss-1'> Scroll </span>
+            <span className='slider-footer-link text-white uppercase font-secondary fss-1'> Scroll </span>
         </div>
     )
 }

@@ -202,6 +202,18 @@ body{
   position: relative;
   left: -3px;
 }
+.badge-wrapper.dreamers {
+  position: absolute;
+  width: 170px;
+  left: 25px;
+  top: 135px;
+}
+.badge-wrapper.dreamers .wide-txt {
+  right: -90px;
+  font-family: 'ABC Favorit';
+  transform: rotate(350deg);
+  top: 78px;
+}
 /*--------------------- slider ---------------------*/
 .slider-container {
     overflow: hidden;
@@ -557,6 +569,113 @@ input[type="radio"].radio::before{
 .bg-hover-white:hover{
   background-color: #F8F4F1 !important;
 }
+
+.work-section-image.video-img{
+  height: 700px;
+}
+
+.img-hover:hover span:after {
+  background: rgba(255, 255, 255, 0.3);
+  transition: .2s all ease-in;
+}
+.img-hover span:after {
+  content: "\A";
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: .3s all ease-out;
+}
+/* -------------------------- NProgress Style -----------------------*/
+
+#nprogress {
+  position: fixed;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  background-color: var(--theme-black);
+  top:0;
+  left:0;
+  z-index: 100;
+}
+
+#nprogress .bar {
+  background: #fff;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: #fff;
+  opacity: 1.0;
+
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .logo{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+          animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* -------------------------- NProgress Style -----------------------*/
+
 @media (min-width: 1280px){
   .xl\:text-heading-2x {
     font-size: 3.1428rem;
@@ -743,6 +862,25 @@ input[type="radio"].radio::before{
   }
   .index-nav{
     align-self: flex-end;
+  }
+  .play-button .play-icon{
+    width: 90px;
+    height: 90px;
+  }
+  .badge-wrapper.dreamers {
+    position: absolute;
+    width: 170px;
+    left: unset;
+    top: 132px;
+    right: 15px;
+  }
+  .badge-wrapper.dreamers .wide-txt {
+    right: -8px;
+    transform: rotate(5deg);
+    top: 52px;
+    font-size: 12px;
+    letter-spacing: .2px;
+    font-weight: 600;
   }
 }
 

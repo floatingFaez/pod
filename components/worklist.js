@@ -18,7 +18,7 @@ export default function Worklist({ post, aspect, preloadImage }) {
           aspect === "landscape" ? "aspect-video" : "aspect-square"
         )}>
         <Link href={`/work/${post.slug.current}`}>
-          <a>
+          <a className="img-hover">
             {imageProps ? (
               <Image
                 src={imageProps.src}
