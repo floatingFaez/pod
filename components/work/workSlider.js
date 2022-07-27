@@ -1,13 +1,14 @@
 import 'swiper/css';
 import Image from "next/image";
 import Swiper from "react-id-swiper";
+import { cx } from '@utils/all';
 import SwiperCore, { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import GetImage from "@utils/getImage";
 import { PhotographIcon } from "@heroicons/react/outline";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 SwiperCore.use([Autoplay]);
 
-const WorkSlider = ({works,sliderPerView}) => {
+const WorkSlider = ({works,sliderPerView,className='', wrapperClassName=''}) => {
     const imageSizes = {w:1130,h:785}
     const addSwiperParams = {
         containerClass:'work-slider pr-40',
@@ -47,7 +48,7 @@ const WorkSlider = ({works,sliderPerView}) => {
     const getSliderHtml = (sliders,size) => {
         return sliders.map(slider => {
             let imageProps = slider?.image ? GetImage(slider.image) : null;
-            return <div className="slider-item p-7 border-r border-black " key={slider._key}>
+            return <div className={cx('slider-item p-7 border-r border-black ',className)}  key={slider._key}>
                         {imageProps ? (
                             <Image
                                 src={imageProps.src}
@@ -72,7 +73,7 @@ const WorkSlider = ({works,sliderPerView}) => {
 
     return (
         <div className='container nav-slider-container full-width relative no-border'>
-            <div className='max-w-screen-xl mx-auto overflow-hidden px-5 relative pt-0 pb-5'>
+            <div className={cx('max-w-screen-xl mx-auto overflow-hidden px-5 relative pt-0 pb-5',wrapperClassName)}>
                 <Swiper {...addSwiperParams}>
                     { getSliderHtml(works,imageSizes) }
                 </Swiper>

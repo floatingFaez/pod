@@ -238,7 +238,7 @@ export default function Post(props) {
                 </div>
               </Container>
 
-              {post?.section6Images && <WorkSlider works={post.section6Images} sliderPerView={1} />}
+              {post?.section6Images && <WorkSlider works={post.section6Images} sliderPerView={1} className='!border-r-0 !p-0 !mr-5' wrapperClassName='nav-white with-left-padding'/>}
 
             </div>
 
@@ -267,7 +267,7 @@ export default function Post(props) {
               
             </div>
           
-            <div className="full-width  theme-gray-bg pb-4">
+            <div className="full-width  theme-gray-bg py-4 md:py-14">
               <Container>
                 <div className="grid md:grid-cols-2 grid-rows-1 gap-5">
                   <div className="md:pr-5 hidden md:block">
@@ -288,8 +288,6 @@ export default function Post(props) {
                                     </div>
                           })
                         }
-                       
-
                       </div>
                   </div>
                 </div>

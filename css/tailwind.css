@@ -232,6 +232,10 @@ body{
   margin-left: -30px;
   width: calc(100% + 60px);
 }
+.nav-white .swiper-button-prev, 
+.nav-white .swiper-button-next {
+  color: #fff;
+}
 .nav-slider-container .swiper-button-next, 
 .nav-slider-container .swiper-button-prev{
   bottom:40px
@@ -733,6 +737,9 @@ input[type="radio"].radio::before{
   .service .fss-3 {
     font-size: 16px;
     line-height: 24px;
+  }
+  .with-left-padding .swiper-wrapper{
+    padding-left: 30px;
   }
 }
 
