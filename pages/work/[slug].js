@@ -116,7 +116,7 @@ export default function Post(props) {
 
               <div className="mx-auto px-5 max-w-screen-xl h-full flex flex-row md:flex-col flex-grow justify-between ">
                 <Link href="/work">
-                  <a className="fss text-white uppercase back-to-index justify-end">
+                  <a className="fss text-white uppercase back-to-index justify-end index-nav">
                     Back to Index
                   </a>
                 </Link>

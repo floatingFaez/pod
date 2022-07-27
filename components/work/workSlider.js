@@ -11,7 +11,7 @@ SwiperCore.use([Autoplay]);
 const WorkSlider = ({works,sliderPerView,className='', wrapperClassName=''}) => {
     const imageSizes = {w:1130,h:785}
     const addSwiperParams = {
-        containerClass:'work-slider pr-40',
+        containerClass:'work-slider pr-20 md:pr-40',
         wrapperClass:'swiper-wrapper mb-20',
         slidesPerView: 1,
         rebuildOnUpdate: true,

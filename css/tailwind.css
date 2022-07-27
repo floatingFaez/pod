@@ -741,6 +741,9 @@ input[type="radio"].radio::before{
   .with-left-padding .swiper-wrapper{
     padding-left: 30px;
   }
+  .index-nav{
+    align-self: flex-end;
+  }
 }
 
 @media (max-width: 414px){
