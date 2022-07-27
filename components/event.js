@@ -9,19 +9,32 @@ import Container from "./container";
 import { parseISO, format } from "date-fns";
 import {PortableText} from "@lib/sanity";
 
-const Event = ({event, isExpand, setClickedId, setModalShow}) => {
+const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
 
     const [expand,setExpand] = useState(false)
     const [showModal,setShowModal] = useState(false)
 
+
     useEffect(()=>{
-        // console.log({expand})
         setExpand(isExpand)
         setShowModal(isExpand)
     },[isExpand])
 
+    const handleToggle = () => {
+        if(clickedId === event._id && !!expand){
+            setExpand(false)
+        }else{
+            setExpand(true)
+        }
+        setClickedId(event._id)
+        if(!event?.scheduled){
+            setShowModal(true)
+        }
+    }
+
     const handleExpand = () => {
         setClickedId(event._id)
+
         if(!event?.scheduled){
             setShowModal(true)
         }
@@ -125,7 +138,7 @@ const Event = ({event, isExpand, setClickedId, setModalShow}) => {
                 </div>
                 <div className={`booking-info w-full lg:w-3/12 items-end ${!!event.boarding ? 'content-end' : 'content-between'}  grid grid-row-2`}>
                     {event.scheduled && <RewardBadge type={!!event.boarding?'bottom':'top'} classes={`${expand ? 'show':'hidden'} m-hidden`}/>}
-                    <Button text={!event.scheduled? 'Early Access' : learnBtnText} classes={`${expand ? 'border':'theme-bg-black'} block md:hidden md:border-0 md:txt-black md:bg-transparent border-theme-black text-center md:text-right py-4 md:py-0 w-full md:w-72 md:ml-auto mb-4 md:mb-0`} handleClick={handleExpand}/>
+                    <Button text={!event.scheduled? 'Early Access' : learnBtnText} classes={`${expand ? 'border':'theme-bg-black'} block md:hidden md:border-0 md:txt-black md:bg-transparent border-theme-black text-center md:text-right py-4 md:py-0 w-full md:w-72 md:ml-auto mb-4 md:mb-0`} handleClick={handleToggle}/>
                     <Button text={!event.scheduled? 'Early Access' : event.buttonText} classes={`${expand ? 'border':'theme-bg-black'} md:block hidden md:border-0 md:txt-black md:bg-transparent border-theme-black text-center md:text-right py-4 md:py-0 w-full md:w-72 md:ml-auto mb-4 md:mb-0`} handleClick={handleExpand}/>
                 </div>
                 <p className="booking-date font-secondary uppercase fss-1 md:hidden show text-center md:text-left">
