@@ -5,6 +5,18 @@ import ServiceItem from './serviceitem'
 const Tabs = ({tabs}) => {
     const [activeTab,setActiveTab] = useState(0)
     let tabTitles = map(tabs, tab => { return {key:tab._key,title:tab.tabtitle}})
+    let tabCount = tabTitles.length;
+
+    const handlePreviousClick = () =>{
+        if( 0 < activeTab){
+            setActiveTab(currActiveTav => currActiveTav - 1)
+        }
+    }
+    const handleNextClick = () =>{
+        if(activeTab < tabCount - 1){
+            setActiveTab(currActiveTav => currActiveTav + 1)
+        }
+    }
 
     return ( 
         <Fragment>
@@ -30,6 +42,13 @@ const Tabs = ({tabs}) => {
                             </ServiceItem>
                 })}
             </div>
+            <div className='max-w-screen-xl mx-auto px-5'>
+                <div className='tab-nav md:hidden w-full text-white relative flex justify-between content-center'>
+                    <div class="swiper-button-next" tabindex="0" role="button" onClick={handleNextClick}></div>
+                    <div class="swiper-button-prev" tabindex="-1" role="button" onClick={handlePreviousClick}></div>
+                </div>
+            </div>
+            
         </Fragment>
     );
 }

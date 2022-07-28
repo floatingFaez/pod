@@ -98,7 +98,7 @@ export default function FieldTrips(props) {
                             }
                             
                           </div>
-                          <p className="mb-16 max-w-lg mx-auto fss-2">{aPackage.description}</p>
+                          <p className="mb-16 max-w-lg mx-auto fss-2 px-4 lg:px-5 md:px-9">{aPackage.description}</p>
                           <Button text={aPackage.buttonText} classes="border border-theme-black py-4 px-20 hover:bg-gray-100" handleClick={()=> handleButtonClick(i)}/>
                           <When condition={i===1}>
                             <RewardBadge type='bottom' classes='dreamers' boarding_hide={true} reward_Text='DREAMER REWARDS' />

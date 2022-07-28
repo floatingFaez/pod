@@ -674,7 +674,36 @@ input[type="radio"].radio::before{
   100% { transform: rotate(360deg); }
 }
 
+.tab-nav {
+  height: 100px;
+  margin-top: -75px;
+}
+.tab-nav .swiper-button-next {
+  right: 0;
+}
+.tab-nav .swiper-button-next, 
+.tab-nav .swiper-button-prev{
+  bottom: 40px;
+  padding: 10px;
+  margin: -10px;
+}
+
+.service-tab-img span {
+  height: 250px !important;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+.service-tab-img img {
+  object-fit: cover;
+}
 /* -------------------------- NProgress Style -----------------------*/
+
+@media (min-width: 1280px) and (max-width: 1440px){
+  .badge-wrapper.dreamers {
+    width: 140px;
+  }
+}
 
 @media (min-width: 1280px){
   .xl\:text-heading-2x {

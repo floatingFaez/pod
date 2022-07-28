@@ -30,7 +30,7 @@ const ServiceItem = (props) => {
                 <div className="text-center flex flex-col justify-between">
                     <HeaderSection title={service.service_subtitle} subtitle={service.service_title} classes="border-b-0 -mt-4 text-white"/>
 
-                    <div className="img-wrapper block md:hidden mb-9">
+                    <div className="img-wrapper block md:hidden mb-9 service-tab-img">
                         {
                         !!serviceImg && 
                             <Image
