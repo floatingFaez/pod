@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { map } from "lodash";
 import Image from "next/image";
 import dynamic from 'next/dynamic'
 import Link from "next/link";
@@ -22,7 +23,7 @@ import GetImage from "@utils/getImage";
 import { NextSeo } from "next-seo";
 
 import { singleWorkquery, configQuery, workPathQuery } from "@lib/groq";
-import { map } from "lodash";
+
 
 
 export default function Post(props) {
@@ -163,8 +164,8 @@ export default function Post(props) {
                   {
                     map(post?.section2Images, (sectionImage,index)=> {
                       const classes = index === 1 ? 'pad-max':''
-                      return <div className={`img-wrap my-5 md:my-24 ${classes}`}>
-                                <Section2Image image={sectionImage.image} sizes={{w:660,h:875}} key={sectionImage._key}/>
+                      return <div className={`img-wrap my-5 md:my-24 ${classes}`} key={sectionImage._key}>
+                                <Section2Image image={sectionImage.image} sizes={{w:660,h:875}}/>
                               </div>
                     })
                   }

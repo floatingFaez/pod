@@ -20,9 +20,9 @@ const Tabs = ({tabs}) => {
                                 className={`tab-image mb-11 cursor-pointer ${activeTab !== i ? 'opacity-50':'opacity-100'} hover:opacity-100`} 
                                 htmlFor={`#${tab.key}_id`}
                                 onClick={() => setActiveTab(i)}
+                                key={`${tab.key}_img`}
                             >
                                 <Image
-                                    key={`${tab.key}_img`}
                                     src={tabImage.src}
                                     loader={tabImage.loader}
                                     blurDataURL={tabImage.blurDataURL}

@@ -44,8 +44,8 @@ const Tabs = ({tabs}) => {
             </div>
             <div className='max-w-screen-xl mx-auto px-5'>
                 <div className='tab-nav md:hidden w-full text-white relative flex justify-between content-center'>
-                    <div class="swiper-button-next" tabindex="0" role="button" onClick={handleNextClick}></div>
-                    <div class="swiper-button-prev" tabindex="-1" role="button" onClick={handlePreviousClick}></div>
+                    <div className="swiper-button-next" tabIndex="0" role="button" onClick={handleNextClick}></div>
+                    <div className="swiper-button-prev" tabIndex="-1" role="button" onClick={handlePreviousClick}></div>
                 </div>
             </div>
             
