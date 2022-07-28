@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }) {
 
   const startCount = function() {
     if (!NProgress.status) setCount(0);
+
     let n = 0;
     var work = function() {
       setTimeout(function() {
@@ -26,8 +27,7 @@ function MyApp({ Component, pageProps }) {
           amount = (1 - n) * clamp(Math.random() * n, 0.1, 0.95);
         }
         n = clamp(n + amount, 0, 0.994);
-
-        let percentage = n*1000
+        let percentage = n * 1000
         setCount(percentage)
         if(!!document){
           document.getElementById('percentage').textContent = percentage.toFixed(1)
