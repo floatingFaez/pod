@@ -44,7 +44,7 @@ export default function Worklist({ post, aspect, preloadImage }) {
 
       <p className="mt-5 text-md text-brand-primary text-white font-secondary leading-5 uppercase">
         <Link href={`/work/${post.slug.current}`}>
-          <a className="fss-1 hover:text-blue-500">
+          <a className="fss-1">
             {post.title} <br/>
             {post.city}
           </a>

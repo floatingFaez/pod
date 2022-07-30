@@ -136,12 +136,12 @@ export default function Post(props) {
                 <div className="description flex flex-row justify-end md:justify-between fss-2 text-white">
 
                   <div className="body hidden md:block">
-                    <p className="mb-4 fss-3">{post?.campaign_name}</p>
+                    <p className="mb-4 fss-4">{post?.campaign_name}</p>
                     <div className="post-body">{post.body && <PortableText value={post.body} />}</div>
                   </div>
 
                   <div className="social-share grid content-end">
-                    <div className="share-content flex content-end">
+                    <div className="share-content flex content-end ">
                       <span className="uppercase">Share</span>
                       <ul className="flex">
                         <li className="ml-5">
@@ -182,11 +182,11 @@ export default function Post(props) {
                 <div className="work-desc">{post.body && <PortableText value={post.body} />}</div>
               </div>
 
-              <div className="grid md:grid-cols-2 md:grid-rows-1 py-10">
+              <div className="grid md:grid-cols-2 md:grid-rows-1 py-10 md:pt-9">
                   {
                     map(post?.section2Images, (sectionImage,index)=> {
                       const classes = index === 1 ? 'pad-max':''
-                      return <div className={`img-wrap my-5 md:my-24 ${classes}`} key={sectionImage._key}>
+                      return <div className={`img-wrap my-5 md:my-16 ${classes}`} key={sectionImage._key}>
                                 <Section2Image image={sectionImage.image} sizes={{w:660,h:875}}/>
                               </div>
                     })
@@ -208,7 +208,7 @@ export default function Post(props) {
             </div>
           </div>
 
-          <div className="full-width theme-gray-bg pb-4">
+          <div className="full-width theme-gray-bg pb-2">
             <Container>
               <div className="work-section-content text-center">
                 <p className="fss-1 uppercase font-secondary text-center mb-8">{post.section4Heading} </p>
@@ -265,7 +265,7 @@ export default function Post(props) {
 
             </div>
 
-            <div className="full-width  theme-gray-bg pb-4">
+            <div className="full-width  theme-gray-bg pb-4 md:pb-9">
               <Container>
                 <div className="work-section-content text-center text-white">
                   <p className="fss-1 uppercase font-secondary text-center mb-8">{post?.section7Heading} </p>
@@ -290,7 +290,7 @@ export default function Post(props) {
               
             </div>
           
-            <div className="full-width  theme-gray-bg py-4 md:py-14">
+            <div className="full-width  theme-gray-bg py-4 md:py-16 ">
               <Container>
                 <div className="grid md:grid-cols-2 grid-rows-1 gap-5">
                   <div className="md:pr-5 hidden md:block">
@@ -305,7 +305,7 @@ export default function Post(props) {
                                       <span className="fss-1 font-secondary uppercase">
                                         {obj?.service}
                                       </span>
-                                      <p className="fss-3 uppercase">
+                                      <p className="fss-4 uppercase">
                                         {obj?.specialist}
                                       </p>
                                     </div>

@@ -48,7 +48,7 @@ const WorksSlider = ({works,sliderPerView,listLink}) => {
     const getSliderHtml = (sliders,size) => {
         return sliders.map(slider => {
             let imageProps = slider?.mainImage ? GetImage(slider.mainImage) : null;
-            return <div className="slider-item p-7 border-r border-black " key={slider._id}>
+            return <div className="slider-item p-7 md:border-r border-black " key={slider._id}>
                         <Link href={`/work/${slider.slug.current}`}>
                             <a>
                                 {imageProps ? (

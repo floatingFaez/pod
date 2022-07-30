@@ -45,7 +45,7 @@ const Tabs = ({tabs}) => {
                         return <li key={`${tab.key}_tt`} 
                                    id={`${tab.key}_id`}
                                    className={`${ activeTab === i ? 'text-white' : 'text-gray-700 hover:text-white'} grow `} onClick={() => setActiveTab(i)} >
-                            <button className="p-4 uppercase">
+                            <button className="p-4 uppercase fss-4">
                                 0{i+1}. {tab.title}
                             </button>
                         </li>
@@ -59,7 +59,7 @@ const Tabs = ({tabs}) => {
 
                     return <div key={tab._key} className={`${activeTab !== index ? 'hidden' : ''} text-white tab-content mx-auto text-center`}>
                         <p className='text-heading-3x'>{tab.packag_title}</p>
-                        <div className='grid gap-4 grid-cols-2 md:grid-cols-4 grid-rows-4  md:grid-rows-2 my-10 fss-1 '>
+                        <div className='grid gap-4 grid-cols-2 md:grid-cols-4 grid-rows-4  md:grid-rows-2 my-10 fss-1 text-left md:text-center'>
                             {
                                 map(tab.packageOptions,(option,i) => {
                                     return <label htmlFor={`file-1${i}`} key={option._key} className="mb-4 uppercase">

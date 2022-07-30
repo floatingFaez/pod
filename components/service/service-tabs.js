@@ -24,7 +24,7 @@ const Tabs = ({tabs}) => {
                 <ul className="flex flex-wrap -mb-px justify-around fss-3 text-center mb-0 max-w-screen-xl mx-auto  px-5">
                     { map(tabTitles, (tab,i) => {
                         return <li key={`${tab.key}_tt`} className={`${ activeTab === i ? 'text-white' : 'text-gray-700 hover:text-white hover:text-white'} grow `} onClick={() => setActiveTab(i)} >
-                            <button className="p-4 uppercase">{tab.title}</button>
+                            <button className="p-4 uppercase fss-4">{tab.title}</button>
                         </li>
                     })}
                 </ul>

@@ -9,7 +9,7 @@ const CTAItem = (props) => {
     let itemImg = item?.mainImage ? GetImage(item.mainImage) : null;
     return ( 
         <div className={`cta-item ${classes}`}>
-            <div className="grid gap-0 grid-cols-1 md:grid-cols-2 ">
+            <div className="grid gap-0 grid-cols-1 md:grid-cols-2 px-5">
                 <HeaderSection title={item.subtitle} subtitle={item.title} classes="border-b-0 text-white md:hidden show !pb-16"/>
                 { !!itemImg &&
                     <div className="cta-image-wrapper">

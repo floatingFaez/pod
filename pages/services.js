@@ -58,21 +58,11 @@ export default function Services(props) {
             </div>
           </Container>
 
-          {/* <div className='full-width theme-gray-bg'>
-            <Container>
-              <div className="mx-auto prose text-center dark:prose-invert section-desc">
-                <p className="text-desc text-3xl txt-black">
-                  {page.body}
-                </p>
-              </div>
-            </Container>
-          </div> */}
-
           <Tabs tabs={page.tabs}/>
 
           <Container className="full-width border-t theme-gray-bg">
             <div className={`py-5 border-theme-black text-center`}>
-                <p className="mt-2 fss-3 txt-black uppercase">{page.sectiontitle}</p>
+                <p className="my-3 fss-4 txt-black uppercase">{page.sectiontitle}</p>
             </div>
           </Container>
 

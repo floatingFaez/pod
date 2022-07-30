@@ -37,7 +37,7 @@ body{
 }
 .fss-1{
   font-size:16px;
-  line-height: 21px;
+  line-height: 18px;
 }
 .fss-2{
   font-size:18px;
@@ -47,9 +47,13 @@ body{
   font-size:21px;
   line-height: 24px;
 }
+.fss-4{
+  font-size:22px;
+  line-height: 30px;
+}
 .font-primary{
   font-family: Favorit,sans-serif;
-  font-size: 2.71428rem;
+  font-size: 38px;
   line-height: 1;
 }
 .text-heading-sm{
@@ -70,7 +74,7 @@ body{
 }
 .text-heading-3x{
   font-size: 44px;
-  line-height: 62px;
+  line-height: 50px;
 }
 
 .bg-theme-green {
@@ -188,7 +192,7 @@ body{
   content: '(';
   font-family: 'ABC Favorit Mono';
   position: relative;
-  top: 2px;
+  top: 3px;
 }
 .slider-info .info-wrap {
   font-family: 'ABC Favorit Mono';
@@ -196,11 +200,11 @@ body{
 .slider-info .info-wrap .right-braces {
   position: absolute;
   right: 0;
-  top: 0px;
+  top: 2px;
 }
 .slider-info .info-wrap .right-braces sup {
   position: relative;
-  left: -3px;
+  left: -2px;
 }
 .badge-wrapper.dreamers {
   position: absolute;
@@ -272,7 +276,7 @@ body{
 }
 .slider-footer-link.uppercase.font-secondary {
   position: absolute;
-  bottom: 35px;
+  bottom: 40px;
   width: 100%;
   text-align: center;
 }
@@ -757,7 +761,7 @@ input[type="radio"].radio::before{
   }
   .modal {
     max-width: 95%;
-    top: 1em;
+    top: 3em;
   }
   .modal.tap-parent{
     max-width: 80%;
@@ -782,21 +786,30 @@ input[type="radio"].radio::before{
   .slider-info .info-wrap .infos {
     padding-left: 0;
   }
+  .slider-content {
+    background-image: linear-gradient(360deg, rgba(0,0,0,.2), transparent);
+  }
   .event-item .event-image,
   .event-item .description,
   .event-item .booking-info{
     max-width: 100%;
   }
-
+  .work-desc p {
+    font-size: 16px;
+    line-height: 24px;
+  }
   .text-heading-3x{
     font-size: 30px;
-    line-height: 1.2;
+    line-height: 1;
   }
   .m-show{
     display: block;
   }
   .m-hidden{
     display: none;
+  }
+  .work-section-image.video-img{
+    height: 350px;
   }
   .event-item .description .badge-wrapper {
     position: absolute;
@@ -841,7 +854,7 @@ input[type="radio"].radio::before{
     position: absolute;
   }
   .description.early-access {
-      max-height: 160px;
+      max-height: 215px;
       overflow: hidden;
   }
   .modal.tap-parent {
@@ -874,7 +887,7 @@ input[type="radio"].radio::before{
     padding: 0px;
   }
   .work-section-content {
-    padding: 20px 0;
+    padding: 60px 0px 75px;
   }
   .work-section-image{
     height: 420px;

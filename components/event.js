@@ -45,8 +45,8 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
 
     return ( 
         <Container className={`full-width relative block border-t border-theme-black cursor-pointer ${expand ? '':'hover:bg-white bg-hover-white'} ${event.scheduled ? 'scheduled' : ''}`}>
-            <div  className="event-item flex md:flex-row flex-col max-w-screen-xl mx-auto px-5 txt-black pt-2.5 md:pt-9 pb-5 md:pb-9 h-full" onClick={handleExpand}>
-                <p className="tracking-tighter my-8  text-heading-3x !leading-none show md:hidden text-center w-56 mx-auto">{event.countries}</p>
+            <div  className="event-item flex md:flex-row flex-col max-w-screen-xl mx-auto  txt-black pt-2.5 px-5 md:pt-9 pb-5 md:pb-9 h-full" onClick={handleExpand}>
+                <p className="tracking-tighter my-8  text-heading-3x show md:hidden text-center w-56 mx-auto">{event.countries}</p>
 
                 <div className="event-image w-full lg:w-3/12 uppercase md:mr-11">
                     { !!imageProps && 
@@ -85,10 +85,10 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
                     </div>
                 </div>
                 <div className={`description w-full lg:w-7/12 my-7 md:my-0 relative ${!event?.scheduled ? 'early-access' :''}`}>
-                    <div className="grid grid-rows-3 md:grid-rows-1 grid-flow-col auto-cols-max gap-6 md:gap-0">
+                    <div className="grid grid-rows-3 md:grid-rows-1 grid-flow-col auto-cols-max gap-6 md:gap-0 pb-2.5">
                         <div className="ticket-info">
                             <p className="font-secondary uppercase fss-1 mb-1 tracking-light">DEPARTURE</p>
-                            <p className="text-2xl">
+                            <p className="fss-4">
                                 <time
                                     className="leading-8"
                                     dateTime={event?.endDate}>
@@ -101,7 +101,7 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
                         </div>
                         <div className="ticket-info">
                             <p className="font-secondary uppercase fss-1 mb-1 tracking-light">RETURNING</p>
-                            <p className="text-2xl">
+                            <p className="fss-4">
                                 <time
                                     className="leading-8"
                                     dateTime={event?.endDate}>
@@ -114,14 +114,14 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
                         </div>
                         <div className="ticket-info">
                             <p className="font-secondary uppercase fss-1 mb-1 tracking-light">AVAILABILITY</p>
-                            <p className="text-2xl flex">
+                            <p className="fss-4 flex">
                                 <span className={`mr-5 flight-text ${expand ? 'expanded':''}`}>{expand ? 'Reserve Your Seat' : 'Flight Open'} </span>
                                 <img src="/img/plane.svg" className='plane-icon' alt="plane"/>
                             </p>
                         </div>
                     </div>
                     
-                    <p className="tracking-tighter my-8  text-heading-3x !leading-none hidden md:block">{event.countries}</p>
+                    <p className="tracking-tighter my-8  text-heading-3x hidden md:block">{event.countries}</p>
                     <div className={`fss-2 event-content mb-0 overflow-hidden height-0 my-9 ${expand ? 'expand mb-8':''}`}>{event.body && <PortableText value={event.body} />}</div>
                     <p className={`booking-date font-secondary uppercase fss-1 hidden md:block ${expand ? 'mt-5':''}`}>
                         Booking Deadline 
