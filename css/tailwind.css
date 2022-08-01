@@ -555,9 +555,11 @@ input[type="radio"].radio::before{
   bottom: -80px;
   top: unset;
 }
-.tap-parent .tape-p.pos-left,
 .tap-parent .tape-p.pos-right{
-  width: 164.8%;
+  width:161.79%
+}
+.tap-parent .tape-p.pos-left{
+  width: 170.8%;
 }
 .tap-parent.inside .tape-p{
   top: 0;
