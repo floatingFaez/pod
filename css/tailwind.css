@@ -375,11 +375,11 @@ body{
 }
 .modal {
   position: fixed;
-  width: 416px;
-  min-height: 590px;
-  max-height: 645px;
+  width: 415px;
+  min-height: 580px;
+  max-height: 630px;
   z-index: 50;
-  top: 7em;
+  top: 6em;
   left: 0;
   right: 0;
   bottom: 0;
