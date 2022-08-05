@@ -1,12 +1,10 @@
-import 'swiper/css';
 import Image from "next/image";
 import Swiper from "react-id-swiper";
 import { cx } from '@utils/all';
 import SwiperCore, { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import GetImage from "@utils/getImage";
 import { PhotographIcon } from "@heroicons/react/outline";
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
-SwiperCore.use([Autoplay]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y,Autoplay]);
 
 const WorkSlider = ({works,sliderPerView,className='', wrapperClassName=''}) => {
     const imageSizes = {w:1130,h:785}

@@ -17,6 +17,8 @@ import { PhotographIcon } from "@heroicons/react/outline";
 
 export default function FieldTrips(props) {
   const { page, siteconfig, preview, preloadImage } = props;
+  const {marquee_text,marquee_speed,marquee_tape_text} = siteconfig
+
   const [showBooking,setShowBooking] = useState(false)
 
   let imageProps = null
@@ -65,8 +67,8 @@ export default function FieldTrips(props) {
                 {page.body}
               </p>
             </div>
-            <Marquee count={10} classes='border-t border-theme-black txt-black bg-white'>
-              {siteconfig.marquee_text}
+            <Marquee count={10} classes='border-t border-theme-black txt-black bg-white' speed={marquee_speed}>
+              {marquee_text}
             </Marquee>
           </Container>
             
@@ -102,7 +104,7 @@ export default function FieldTrips(props) {
                           <Button text={aPackage.buttonText} classes="border border-theme-black py-4 px-20 hover:bg-gray-100" handleClick={()=> handleButtonClick(i)}/>
                           <When condition={i===1}>
                             <RewardBadge type='bottom' classes='dreamers' boarding_hide={true} reward_Text='DREAMER REWARDS' />
-                            <TapeBorder scrollText={siteconfig.marquee_tape_text} count={10}/>
+                            <TapeBorder scrollText={marquee_tape_text} count={10} speed={marquee_speed}/>
                           </When>
                       </div>
                     )

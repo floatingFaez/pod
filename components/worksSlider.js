@@ -1,4 +1,3 @@
-import 'swiper/css';
 import Image from "next/image";
 import Link from "next/link";
 import Swiper from "react-id-swiper";

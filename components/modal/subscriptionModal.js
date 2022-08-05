@@ -2,7 +2,7 @@ import HeaderSection from "@components/sections/headerSection";
 import NewsletterSubscribe from "@components/newsletterSubscribe";
 import TapeBorder from "@components/ui/tape-border";
 
-const SubscriptionModal = ({setModalShow,scrollText,classes=''}) => {
+const SubscriptionModal = ({setModalShow,scrollText,tickerSpeed,classes=''}) => {
     return ( 
             <div className={`modal tap-parent ${classes}`}>
                 <button type="button" className="btn-close" onClick={() => setModalShow(false)}>
@@ -13,7 +13,7 @@ const SubscriptionModal = ({setModalShow,scrollText,classes=''}) => {
                     <NewsletterSubscribe className='max-w-xs mx-auto  px-5 pb-8' type='vertical' />
                 </div>
                 <div className="tape-wrapper">
-                    <TapeBorder scrollText={scrollText} />
+                    <TapeBorder scrollText={scrollText} speed={tickerSpeed}/>
                 </div>
                 
         </div>

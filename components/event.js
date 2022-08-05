@@ -139,7 +139,7 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
                 <div className={`booking-info w-full lg:w-3/12 items-end ${!!event.boarding ? 'content-end' : 'content-between'}  grid grid-row-2`}>
                     {event.scheduled && <RewardBadge type={!!event.boarding?'bottom':'top'} classes={`${expand ? 'show':'hidden'} m-hidden`}/>}
                     <Button text={!event.scheduled? 'Early Access' : learnBtnText} classes={`${expand ? 'border':'theme-bg-black'} block md:hidden md:border-0 md:txt-black md:bg-transparent border-theme-black text-center md:text-right py-4 md:py-0 w-full md:w-72 md:ml-auto mb-4 md:mb-0`} handleClick={handleToggle}/>
-                    <Button text={!event.scheduled? 'Early Access' : event.buttonText} classes={`${expand ? 'border':'theme-bg-black'} md:block hidden md:border-0 md:txt-black md:bg-transparent border-theme-black text-center md:text-right py-4 md:py-0 w-full md:w-72 md:ml-auto mb-4 md:mb-0`} handleClick={handleExpand}/>
+                    <Button text={!event.scheduled? 'Early Access' : learnBtnText} classes={`${expand ? 'border':'theme-bg-black'} md:block hidden md:border-0 md:txt-black md:bg-transparent border-theme-black text-center md:text-right py-4 md:py-0 w-full md:w-72 md:ml-auto mb-4 md:mb-0`} handleClick={handleToggle}/>
                 </div>
                 <p className="booking-date font-secondary uppercase fss-1 md:hidden show text-center md:text-left">
                     Booking Deadline 

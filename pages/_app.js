@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
         if(percentage < 101){
           setCount(percentage)
         }
-        if(!!document && percentage < 101){
+        if(!!document && document.getElementById('percentage') && percentage < 101){
           document.getElementById('percentage').textContent = percentage.toFixed(0)
         }
         work();
@@ -51,7 +51,7 @@ function MyApp({ Component, pageProps }) {
 
     if(seconds === 2){
       clearInterval(interval)
-      if(!!document){
+      if(!!document && !!document.getElementById('percentage')){
         document.getElementById('percentage').textContent = randomBetween(96,100).toFixed(0)
       }
       setTimeout(()=>{
@@ -71,7 +71,7 @@ function MyApp({ Component, pageProps }) {
       NProgress.start()
     });
     Router.events.on("routeChangeComplete", () => {
-      if(!!document){
+      if(!!document && !!document.getElementById('percentage')){
         document.getElementById('percentage').textContent = randomBetween(96,100)
       }
       setTimeout(()=>{
@@ -79,7 +79,7 @@ function MyApp({ Component, pageProps }) {
       },500)
     });
     Router.events.on("routeChangeError", () => {
-      if(!!document){
+      if(!!document && !!document.getElementById('percentage')){
         document.getElementById('percentage').textContent = randomBetween(96,100)
       }
       setTimeout(()=>{
@@ -93,7 +93,7 @@ function MyApp({ Component, pageProps }) {
         startCount()
       });
       Router.events.off("routeChangeComplete", () => {
-        if(!!document){
+        if(!!document && !!document.getElementById('percentage')){
           document.getElementById('percentage').textContent = randomBetween(96,100)
         }
         setTimeout(()=>{

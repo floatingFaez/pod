@@ -101,7 +101,7 @@ export default function Contact({ siteconfig }) {
                   autoComplete="false"
                   className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${
                     errors.name
-                      ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                      ? "border-green focus:border-green ring-red-100 dark:ring-0"
                       : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
                   }`}
                   {...register("name", {
@@ -110,7 +110,7 @@ export default function Contact({ siteconfig }) {
                   })}
                 />
                 {errors.name && (
-                  <div className="mt-1 text-red-600">
+                  <div className="mt-1 text-green">
                     <small>{errors.name.message}</small>
                   </div>
                 )}
@@ -128,7 +128,7 @@ export default function Contact({ siteconfig }) {
                   autoComplete="false"
                   className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${
                     errors.email
-                      ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                      ? "border-green focus:border-green ring-red-100 dark:ring-0"
                       : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
                   }`}
                   {...register("email", {
@@ -140,7 +140,7 @@ export default function Contact({ siteconfig }) {
                   })}
                 />
                 {errors.email && (
-                  <div className="mt-1 text-red-600">
+                  <div className="mt-1 text-green">
                     <small>{errors.email.message}</small>
                   </div>
                 )}
@@ -152,7 +152,7 @@ export default function Contact({ siteconfig }) {
                   placeholder="Your Message"
                   className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white dark:placeholder:text-gray-200 dark:bg-gray-900   rounded-md outline-none  h-36 focus:ring-4  ${
                     errors.message
-                      ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                      ? "border-green focus:border-green ring-red-100 dark:ring-0"
                       : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
                   }`}
                   {...register("message", {
@@ -160,7 +160,7 @@ export default function Contact({ siteconfig }) {
                   })}
                 />
                 {errors.message && (
-                  <div className="mt-1 text-red-600">
+                  <div className="mt-1 text-green">
                     {" "}
                     <small>{errors.message.message}</small>
                   </div>

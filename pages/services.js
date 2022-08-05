@@ -8,6 +8,7 @@ import GetImage from "@utils/getImage";
 import SliderPlaceHolder from "@components/ui/slider-placeholder";
 import HeaderSection from "@components/sections/headerSection";
 import Tabs from "@components/service/service-tabs";
+// const Tabs = dynamic(() => import('@components/service/service-tabs'),{ loading: () => <SliderPlaceHolder sizes={{w:1900,h:980}}/>, ssr: false });
 const ItemSlider = dynamic(() => import('@components/ui/item-slider'),{ loading: () => <SliderPlaceHolder sizes={{w:310,h:88}}/>, ssr: false });
 import Image from "next/image";
 import { PhotographIcon } from "@heroicons/react/outline";
@@ -58,6 +59,7 @@ export default function Services(props) {
             </div>
           </Container>
 
+          
           <Tabs tabs={page.tabs}/>
 
           <Container className="full-width border-t theme-gray-bg">

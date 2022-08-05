@@ -1,4 +1,3 @@
-import 'swiper/css';
 import Image from "next/image";
 import Swiper from "react-id-swiper";
 import SwiperCore, { A11y, Autoplay, Navigation, Pagination, Scrollbar, Mousewheel } from "swiper";

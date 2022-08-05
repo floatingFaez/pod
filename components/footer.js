@@ -10,7 +10,7 @@ export default function Footer(props) {
   const footerMenus = props.footer_menus;
 
   return (
-    <Fragment>
+    <div className="footer" id="footer">
 
       <Newsletter classes="pt-0 !pb-4 !md:pb-22 border-t-0"/>
 
@@ -50,7 +50,7 @@ export default function Footer(props) {
         <Copyright text={props.copyright} />
 
       </Container>
-    </Fragment>
+    </div>
   );
 }
 

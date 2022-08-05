@@ -27,6 +27,8 @@ export default function Home(props) {
   const [modalShow,setModalShow] = useState(false)
   const [showBooking,setShowBooking] = useState(false)
 
+  const {footerlogo,marquee_text,marquee_speed,marquee_tape_text} = siteconfig
+
   useEffect(() => {
     const onScroll = e => {
       let pageOffset = e.target.documentElement.scrollTop
@@ -50,15 +52,15 @@ export default function Home(props) {
       {!!page && 
         <Fragment>
           <Container className="full-width">
-            <Slider {...{items:sliders,sizes:{w:1440,h:1052},logo:siteconfig.footerlogo,classes:"-mt-14"}} />
-            <Marquee count={10} classes='banner-marquee'>
-              {siteconfig.marquee_text}
+            <Slider {...{items:sliders,sizes:{w:1440,h:1052},logo:footerlogo,classes:"-mt-14"}} />
+            <Marquee count={10} classes='banner-marquee' speed={marquee_speed}>
+              {marquee_text}
             </Marquee>
           </Container>
           
           <EventList events={events} setModalShow={setModalShow}/>
 
-          <Container className="full-width border-t">
+          <Container className="full-width border-t" id="book-discover-call">
             <CTAItem item={ctaObj} imgSizes={{w:700,h:980}} classes="max-w-screen-xl mx-auto  px-0">
               <Button text="Book Your Call" classes="border border-white py-4 px-20 hover:bg-gray-700" handleClick={() => setShowBooking(true)}/>
             </CTAItem>
@@ -67,7 +69,7 @@ export default function Home(props) {
           <HeaderSection title={page.header_subtitle} subtitle={page.header_title} classes="border-y theme-gray-bg txt-black border-black"/>
           <WorksSlider works={works} sliderPerView={3} listLink={{name:page.work_text,link:page.work_link}}/>
           <When condition={modalShow}>
-            <SubscriptionModal setModalShow={setModalShow} classes="tape" scrollText={siteconfig.marquee_tape_text}/>
+            <SubscriptionModal setModalShow={setModalShow} classes="tape" scrollText={marquee_tape_text} tickerSpeed={marquee_speed}/>
           </When>
           <When condition={showBooking}>
             <BookingModal setModalShow={setShowBooking} classes='!theme-gray-bg border border-black p-6'/>

@@ -65,7 +65,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         autoComplete="false"
                         className={`w-full font-secondary  pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent  focus:ring-4  ${
                         errors.FNAME
-                            ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                            ? "border-green focus:border-green ring-red-100 dark:ring-0"
                             : "border-white ring-gray-100 dark:ring-0"
                         }`}
                         {...register("FNAME", {
@@ -74,7 +74,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         })}
                     />
                     {errors.FNAME && (
-                        <div className="mt-1 text-red-600">
+                        <div className="mt-1 text-green">
                         <small>{errors.FNAME.message}</small>
                         </div>
                     )}
@@ -87,7 +87,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         autoComplete="false"
                         className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent   focus:ring-4  ${
                         errors.LNAME
-                            ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                            ? "border-green focus:border-green ring-red-100 dark:ring-0"
                             : "border-white ring-gray-100 dark:ring-0"
                         }`}
                         {...register("LNAME", {
@@ -96,7 +96,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         })}
                     />
                     {errors.LNAME && (
-                        <div className="mt-1 text-red-600">
+                        <div className="mt-1 text-green">
                         <small>{errors.LNAME.message}</small>
                         </div>
                     )}
@@ -114,7 +114,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         autoComplete="false"
                         className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent focus:ring-4  ${
                         errors.EMAIL
-                            ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                            ? "border-green focus:border-green ring-red-100 dark:ring-0"
                             : "border-white ring-gray-100 dark:ring-0"
                         }`}
                         {...register("EMAIL", {
@@ -126,7 +126,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         })}
                     />
                     {errors.EMAIL && (
-                        <div className="mt-1 text-red-600">
+                        <div className="mt-1 text-green">
                         <small>{errors.EMAIL.message}</small>
                         </div>
                     )}

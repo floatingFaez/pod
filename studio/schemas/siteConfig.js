@@ -20,6 +20,10 @@ export default {
       name: "social"
     },
     {
+      title: "Ticker",
+      name: "ticker"
+    },
+    {
       title: "Website Logo",
       name: "logos",
       options: {
@@ -137,13 +141,21 @@ export default {
     {
       name: "marquee_text",
       type: "string",
-      title: "Marquee Scroll Text"
+      title: "Ticker Text",
+      fieldset: "ticker"
     },
     {
       name: "marquee_tape_text",
       type: "string",
-      title: "Marquee Tape Scroll Text",
+      title: "Ticker Tape Text",
+      fieldset: "ticker",
       description:"Border of Outside Box Tape Design Scrolling Text"
+    },
+    {
+      name: "marquee_speed",
+      type: "number",
+      title: "Ticker Speed",
+      fieldset: "ticker",
     },
     {
       name: "w3ckey",
@@ -170,6 +182,122 @@ export default {
               name: "link",
               title: "Link"
             }
+          ],
+          preview: {
+            select: {
+              title: "name"
+            }
+          }
+        }
+      ]
+    },
+    {
+      name: 'cta',
+      title: 'CTA Desktop',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              type: "string",
+              name: "name",
+              title: "Name"
+            },
+            {
+              type: "string",
+              name: "link",
+              title: "Link"
+            },
+            {
+              name: 'submenu',
+              title: 'Submenu',
+              type: 'array',
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    {
+                      type: "string",
+                      name: "name",
+                      title: "Name"
+                    },
+                    {
+                      type: "string",
+                      name: "link",
+                      title: "Link"
+                    }
+                  ],
+                  preview: {
+                    select: {
+                      title: "name"
+                    }
+                  }
+                }
+              ]
+            },
+          ],
+          preview: {
+            select: {
+              title: "name"
+            }
+          }
+        }
+      ]
+    },
+    {
+      name: 'cta_mobile',
+      title: 'CTA Mobile',
+      type: 'array',
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              type: "string",
+              name: "name",
+              title: "Name"
+            },
+            {
+              type: "string",
+              name: "link",
+              title: "Link"
+            },
+            {
+              name: 'submenu',
+              title: 'Submenu',
+              type: 'array',
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    {
+                      type: "string",
+                      name: "name",
+                      title: "Name"
+                    },
+                    {
+                      type: "string",
+                      name: "link",
+                      title: "Link"
+                    },
+                    {
+                      type: "string",
+                      name: "target",
+                      title: "Link Target"
+                    },
+                  ],
+                  preview: {
+                    select: {
+                      title: "name"
+                    }
+                  },
+                  initialValue: {
+                    target: '_self',
+                  },
+                }
+              ]
+            },
           ],
           preview: {
             select: {
@@ -275,5 +403,8 @@ export default {
         "Image for sharing previews on Facebook, Twitter etc.",
       fieldset: "metadata"
     }
-  ]
+  ],
+  initialValue: {
+    marquee_speed: 10,
+  },
 };

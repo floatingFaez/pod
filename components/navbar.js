@@ -1,5 +1,8 @@
-import {Fragment} from "react";
+import {Fragment, useState} from "react";
+import { useRouter } from 'next/router'
+import { map } from "lodash"
 import { Popover, Transition } from "@headlessui/react";
+import When from "./when";
 import Container from "@components/container";
 import Logo from "@components/ui/logo";
 import Copyright from "./ui/copyright-text";
@@ -7,21 +10,38 @@ import Link from "next/link";
 import Image from "next/image";
 import GetImage from "@utils/getImage";
 
-export default function Navbar({menus, logo, footerlogo, logoalt, logotext, copyright, navClass='theme-bg-black'}) {
+export default function Navbar({menus,  cta, cta_mobile, logo, footerlogo, logoalt, logotext, copyright, navClass='theme-bg-black'}) {
+  const router = useRouter()
+  const [toggleClass,setToggle] = useState('collapsed')
+  const rightmenu = map(cta, menu => {
+    return {
+      name: menu.name,
+      link: menu.link
+    }
+  });
+  const rightMenu = map(cta_mobile, menu => {
+    return {
+      name: menu.name,
+      link: menu.link,
+      submenu: menu.submenu
+    }
+  });
 
-  const rightmenu = [
-    {
-      name: "Discovery Session",
-      link: "/discovery-session"
-    },
-  ];
-  const rightMenu = [
-    {
-      name: "Connect",
-      link: "/discovery-session"
-    },
-  ];
-
+  const toggleSubmenu = (event,submenu,handlePopover) =>{
+    event.stopPropagation();
+    if(!!submenu){
+      if(toggleClass === 'collapsed'){
+        event.preventDefault();
+      }else{
+        if(event.target.hostname !== window.location.hostname){
+          router.push(event.target.href,event.target.href,'_blank')
+        }else{
+          handlePopover()
+        }
+      }
+      setToggle(currToggleClass => currToggleClass === 'collapsed'?'':'collapsed')
+    }
+  }
 
   const mobilemenu = [...menus, ...rightMenu];
   const mainmenu = [...menus, ...rightmenu];
@@ -30,7 +50,7 @@ export default function Navbar({menus, logo, footerlogo, logoalt, logotext, copy
     <Container py='0' full="true" className={`z-50 relative border-b border-theme-black md:border-white full-width sticky top-0 ${navClass} `}>
       <nav className="max-w-screen-xl mx-auto px-5">
         <Popover className="relative">
-          {({ open }) => (
+          {({ open,close }) => (
               <Fragment>
                 <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap font-secondary text-white">
                   
@@ -66,7 +86,7 @@ export default function Navbar({menus, logo, footerlogo, logoalt, logotext, copy
                     {rightmenu.map((item, index) => (
                       <Link href={item.link} key={index}>
                         <a
-                          className="py-3 text-sm font-regular hover:text-blue-500"
+                          className="py-3 text-sm"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           {item.name}
@@ -90,10 +110,30 @@ export default function Navbar({menus, logo, footerlogo, logoalt, logotext, copy
                       {mobilemenu.map((item, index) => (
                         <Link href={item.link} key={index}>
                           <a
-                            className={`px-5 py-4 font-regular text-white text-white text-3xl border-b border-white w-full ${ index === 0? 'border-t':''}`}
+                            className={`px-5 py-4 text-white text-3xl border-b border-white w-full 
+                                        ${ index === 0? 'border-t':''} ${!!item.submenu? `${toggleClass} has-submenu`:''}`}
+                            onClick = {(e)=>toggleSubmenu(e,item.submenu,close)}
                             target={item.external ? "_blank" : ""}
-                            rel={item.external ? "noopener" : ""}>
+                            rel={item.external ? "noopener" : ""}
+                            
+                            >
                             {item.name}
+                            <When condition={!!item.submenu}>
+                              <ul className="submenu my-4 relative">
+                                {map(item.submenu, menuItem => {
+                                  return (<li key={menuItem._key} className="text-white text-2xl ">
+                                          <Link href={menuItem.link} >
+                                            <a
+                                              className={`w-full px-5 py-2 block`}
+                                              target={menuItem.target}
+                                              rel={item.external ? "noopener" : ""}>
+                                              {menuItem.name}
+                                            </a>
+                                          </Link>
+                                        </li>)
+                                })}
+                              </ul>
+                            </When>
                           </a>
                         </Link>
                       ))}
