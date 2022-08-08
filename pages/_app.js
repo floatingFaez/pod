@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
   
   NProgress.configure({
     showSpinner: false,
-    template: `<div class="page-loader h-screen w-full theme-bg-black"><div class="bar" role="bar"><div class="peg"></div></div><div class="logo"><img src="/img/footer-logo.svg" width="115" height="115"class="animate-[spin_6s_linear_infinite]"/><p class="font-secondary mt-8 uppercase text-center fss-2 text-white">Loading <span id='percentage'>${count.toFixed(0)}</span>%</p></div><div class="spinner" role="spinner"><div class="spinner-icon"></div></div>`
+    template: `<div class="page-loader h-screen w-full theme-bg-black"><div class="bar" role="bar"><div class="peg"></div></div><div class="logo"><img src="/img/footer-logo.svg" width="115" height="115" class="animate-[spin_6s_linear_infinite]"/><p class="font-secondary mt-8 uppercase text-center fss-2 text-white">Loading <span id='percentage'>${count.toFixed(0)}</span>%</p></div><div class="spinner" role="spinner"><div class="spinner-icon"></div></div>`
   });
 
   useEffect(()=>{

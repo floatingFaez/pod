@@ -58,19 +58,19 @@ const BookingModal = ({setModalShow, classes=''}) => {
                                 </p>
                                 <ul className="list-none fss-1 checkbox-list font-secondary w-40">
                                     <li><label htmlFor="#monday">
-                                        <input type="radio" name="day" value="Monday" id="monday" /> MONDAY 
+                                        <input type="radio" name="day" value="Monday" id="monday" className="rounded-none radio-checkbox"/> MONDAY 
                                     </label></li>
                                     <li><label htmlFor="#tuesday">
-                                        <input  type="radio" name="day" value="Tuesday" id="tuesday" /> TUESDAY 
+                                        <input  type="radio" name="day" value="Tuesday" id="tuesday" className="rounded-none radio-checkbox"/> TUESDAY 
                                     </label></li>
                                     <li><label htmlFor="#wednesday">
-                                        <input  type="radio" name="day" value="Wednesday" id="wednesday" /> WEDNESDAY
+                                        <input  type="radio" name="day" value="Wednesday" id="wednesday" className="rounded-none radio-checkbox"/> WEDNESDAY
                                     </label></li>
                                     <li><label htmlFor="#thursday">
-                                        <input  type="radio" name="day" value="Thursday" id="thursday" /> THURSDAY
+                                        <input  type="radio" name="day" value="Thursday" id="thursday" className="rounded-none radio-checkbox"/> THURSDAY
                                     </label></li>
                                     <li><label htmlFor="#friday">
-                                        <input  type="radio" name="day" value="Friday" id="friday" /> FRIDAY
+                                        <input  type="radio" name="day" value="Friday" id="friday" className="rounded-none radio-checkbox"/> FRIDAY
                                     </label></li>
                                 </ul>
                             </div>
@@ -87,16 +87,16 @@ const BookingModal = ({setModalShow, classes=''}) => {
                                 </p>
                                 <ul className="list-none fss-1 checkbox-list font-secondary">
                                     <li><label htmlFor="#morning">
-                                        <input type="radio" name="time" value="Morning (9am - 12pm)" id="morning" /> MORNING PLEASE (9am - 12pm)
+                                        <input type="radio" name="time" value="Morning (9am - 12pm)" id="morning" className="rounded-none radio-checkbox"/> MORNING PLEASE (9am - 12pm)
                                     </label></li>
                                     <li><label htmlFor="#afternoon">
-                                        <input  type="radio" name="time" value="Afternoon (2PM – 6PM)" id="afternoon" /> AFTERNOON (2PM – 6PM)
+                                        <input  type="radio" name="time" value="Afternoon (2PM – 6PM)" id="afternoon" className="rounded-none radio-checkbox"/> AFTERNOON (2PM – 6PM)
                                     </label></li>
                                     <li><label htmlFor="#dinner">
-                                        <input  type="radio" name="time" value="After dinner (7PM – 9PM)" id="dinner" /> AFTER DINNER (7PM – 9PM)
+                                        <input  type="radio" name="time" value="After dinner (7PM – 9PM)" id="dinner" className="rounded-none radio-checkbox"/> AFTER DINNER (7PM – 9PM)
                                     </label></li>
                                     <li><label htmlFor="#anytime">
-                                        <input  type="radio" name="time" value="ANYTIME, ASAP!" id="anytime" /> ANYTIME, ASAP!
+                                        <input  type="radio" name="time" value="ANYTIME, ASAP!" id="anytime" className="rounded-none radio-checkbox"/> ANYTIME, ASAP!
                                     </label></li>
                                 </ul>
                             </div>

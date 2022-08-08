@@ -1,5 +1,6 @@
 import { Fragment,useState } from 'react'
 import {map} from 'lodash'
+import { useForm } from "react-hook-form";
 import Image from 'next/image'
 import GetImage from "@utils/getImage";
 import Button from "@components/ui/button";
@@ -8,6 +9,24 @@ const Tabs = ({tabs}) => {
     const [activeTab,setActiveTab] = useState(0)
     let tabTitles = map(tabs, tab => { return {key:tab._key,title:tab.tabtitle}})
     let tabImages = map(tabs, tab => { return {key:tab._key,image:tab.tabImage}})
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        watch,
+        control,
+        setValue,
+        formState: { errors, isSubmitSuccessful, isSubmitting }
+    } = useForm({
+        mode: "onTouched"
+    });
+
+
+    const onSubmit = data => {
+        // const isFormValidate = onValidated(data)
+    };
+    
 
     return ( 
         <Fragment>

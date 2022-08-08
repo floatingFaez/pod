@@ -25,6 +25,7 @@ export default function Footer(props) {
                     alt={props.footerlogoalt}
                     sizes="(max-width: 640px) 100vw, 200px"
                     priority={true}
+                    className="animate-[spin_6s_linear_infinite]"
                 />
                 ) : (
                 <span className="block">

@@ -63,7 +63,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         type="text"
                         placeholder="First Name"
                         autoComplete="false"
-                        className={`w-full font-secondary  pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent  focus:ring-4  ${
+                        className={`w-full rounded-none font-secondary  pr-2 py-3 border-b border-white placeholder:uppercase  placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent  focus:ring-4  ${
                         errors.FNAME
                             ? "border-green focus:border-green ring-red-100 dark:ring-0"
                             : "border-white ring-gray-100 dark:ring-0"
@@ -85,7 +85,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         type="text"
                         placeholder="Last Name"
                         autoComplete="false"
-                        className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent   focus:ring-4  ${
+                        className={`w-full rounded-none font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent   focus:ring-4  ${
                         errors.LNAME
                             ? "border-green focus:border-green ring-red-100 dark:ring-0"
                             : "border-white ring-gray-100 dark:ring-0"
@@ -112,7 +112,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
                         placeholder="Email Address"
                         name="EMAIL"
                         autoComplete="false"
-                        className={`w-full font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent focus:ring-4  ${
+                        className={`w-full rounded-none font-secondary pr-2 py-3 border-b border-white placeholder:uppercase placeholder:text-gray-800 text-white outline-none placeholder:text-white bg-transparent focus:ring-4  ${
                         errors.EMAIL
                             ? "border-green focus:border-green ring-red-100 dark:ring-0"
                             : "border-white ring-gray-100 dark:ring-0"
@@ -134,7 +134,7 @@ const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizonta
 
                 <button
                 type="submit"
-                className="w-full font-secondary  uppercase newsletter-submit border font-regular text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200  bg-transparent text-white ">
+                className="w-full rounded-none font-secondary  uppercase newsletter-submit border font-regular text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200  bg-transparent text-white ">
                 {isSubmitting ? (
                     <svg
                     className="w-5 h-5 mx-auto text-black animate-spin"

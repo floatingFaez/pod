@@ -26,11 +26,11 @@ export default function Worklist({ post, aspect, preloadImage }) {
                 blurDataURL={imageProps.blurDataURL}
                 alt={post.mainImage.alt || "Thumbnail"}
                 placeholder="blur"
-                sizes="80vw"
-                //sizes="(max-width: 640px) 90vw, 480px"
-                layout="fill"
+                layout="responsive"
+                width={'440px'}
+                height={'440px'}
                 objectFit="cover"
-                priority={preloadImage ? true : false}
+                priority={true}
                 className="transition-all"
               />
             ) : (

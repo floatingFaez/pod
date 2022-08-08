@@ -728,6 +728,9 @@ input[type="radio"].radio::before{
 .service-tab-img img {
   object-fit: cover;
 }
+.radio-checkbox {
+  border-radius: 0 !important;
+}
 /* -------------------------- NProgress Style -----------------------*/
 
 @media (min-width: 1280px) and (max-width: 1440px){

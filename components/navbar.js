@@ -147,6 +147,7 @@ export default function Navbar({menus,  cta, cta_mobile, logo, footerlogo, logoa
                                   alt='(POD)®'
                                   sizes="(max-width: 640px) 100vw, 200px"
                                   priority={true}
+                                  className="animate-[spin_6s_linear_infinite]"
                               />
                               ) : (
                               <span className="block">
