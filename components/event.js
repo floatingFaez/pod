@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import RewardBadge from './ui/reward-badge';
 import HeaderSection from './sections/headerSection';
 import Image from "next/image";
@@ -8,6 +8,8 @@ import Button from "./ui/button";
 import Container from "./container";
 import { parseISO, format } from "date-fns";
 import {PortableText} from "@lib/sanity";
+
+
 
 const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
 
@@ -20,6 +22,14 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
         setShowModal(isExpand)
     },[isExpand])
 
+    const handleModalShow = () =>{
+        setShowModal(true)
+        console.log('clicked',`modal_${event._id}`)
+        setTimeout(()=>{
+            document.getElementById(`modal_${event._id}`).scrollIntoView({behavior: 'smooth'}, true);
+        },300)
+    }
+
     const handleToggle = () => {
         if(clickedId === event._id && !!expand){
             setExpand(false)
@@ -28,16 +38,16 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
         }
         setClickedId(event._id)
         if(!event?.scheduled){
-            setShowModal(true)
+            handleModalShow()
         }
     }
 
     const handleExpand = () => {
         setClickedId(event._id)
 
-        if(!event?.scheduled){
-            setShowModal(true)
-        }
+        // if(!event?.scheduled){
+        //     handleModalShow()
+        // }
     }
     const imageProps = event?.mainImage ? GetImage(event.mainImage) : null;
     const learnBtnText = expand ? 'Collapse': event.buttonText
@@ -154,9 +164,9 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
                 </p>
             </div>
             {!event?.scheduled &&
-                <div className={`subscriber-modal p-12 text-center absolute left-0 top-0 w-full theme-gray-bg h-full opacity-95 ${showModal ? '':'hidden'}`}>
-                    <HeaderSection title="Get Early Access" subtitle='NOT YET TAKING PASSANGERS' classes="border-0 mb-16"/>
-                    <p className="fss-2 mx-auto -mt-24 mb-7" style={{maxWidth:510}} >
+                <div id={`modal_${event._id}`} className={`subscriber-modal md:p-12 text-center absolute left-0 top-0 w-full theme-gray-bg opacity-95 h-0 md:h-full overflow-hidden ${showModal ? 'show-modal':'hidden'}`}>
+                    <HeaderSection title="Get Early Access" subtitle='NOT YET TAKING PASSANGERS' classes="border-0 mb-0"/>
+                    <p className="fss-2 mx-auto mt-0 mb-7" style={{maxWidth:510}} >
                         Pellentesque sed luctus nisi. Vestibulum sed massa eu velit egestas ultricies. Nulla semper justo tristique mi eleifend, eu ultrices urna ullamcorper. Nunc mattis cursus nunc et feugiat.
                     </p>
                     <div className="flex flex-row justify-around font-secondary uppercase py-6">

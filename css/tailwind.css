@@ -318,10 +318,11 @@ body{
 .slider-img{
   transition: opacity .3s ease-in;
   opacity: 1;
+  cursor: pointer;
 }
 .slider-img.fade{
-  opacity: 0; 
-  transition: opacity .5s ease-out;
+  opacity: .1; 
+  transition: opacity .3s ease-out;
 }
 .event-image {
   max-width: 184px;
@@ -791,7 +792,7 @@ input[type="radio"].radio::before{
   }
   .modal {
     max-width: 95%;
-    top: 3em;
+    top: 2.5em;
   }
   .modal.tap-parent{
     max-width: 80%;
@@ -957,6 +958,11 @@ input[type="radio"].radio::before{
   .share-content {
     position: relative;
     top: 5px;
+  }
+  .subscriber-modal.show-modal {
+    height: -webkit-fill-available;
+    padding: 48px;
+    transition: .3s all ease-in-out;
   }
 }
 

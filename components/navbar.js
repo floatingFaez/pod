@@ -104,9 +104,9 @@ export default function Navbar({menus,  cta, cta_mobile, logo, footerlogo, logoa
                   leaveFrom="transform scale-100 opacity-100"
                   leaveTo="transform scale-95 opacity-0"
                 >
-                  <Popover.Panel className="absolute z-10 px-5 mobile-menu md:hidden flex flex-col grow h-screen content-between left-0 right-0 py-20 -mx-5 border-t theme-bg-black">
+                  <Popover.Panel className="absolute z-10 px-5 mobile-menu md:hidden flex flex-col grow h-screen content-between left-0 right-0 py-16 -mx-5 border-t theme-bg-black">
                     
-                    <div className="flex flex-col grow items-center justify-start w-full ">
+                    <div className="flex flex-col grow items-center justify-start w-full mb-6">
                       {mobilemenu.map((item, index) => (
                         <Link href={item.link} key={index}>
                           <a
