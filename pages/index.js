@@ -91,11 +91,11 @@ export async function getStaticProps({ params, preview = false }) {
   const workLimit = homeData?.work_limit ? homeData?.work_limit : 4;
 
   const eventQuery = groq`
-    *[_type == "events"] | order(startDate asc)[0..${limit}] {...,}
+    *[_type == "events"] | order(startDate asc)[0..${limit - 1}] {...,}
   `;
 
   const workQuery = groq`
-    *[_type == "work"] | order(_createdAt asc)[0..${workLimit}] {...,}
+    *[_type == "work"] | order(_createdAt asc)[0..${workLimit - 1}] {...,}
   `;    
 
   const events = await getClient(preview).fetch(eventQuery);
