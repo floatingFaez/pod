@@ -2,12 +2,12 @@ import Image from "next/image";
 import GetImage from "@utils/getImage";
 
 const SliderInfo = ({slider,logo}) => {
-    const {city,country,lat,long,start_date,end_date,project_1,project_2} = slider
+    const {city,country,lat,long,start_date,end_date,project_1,project_2,siteTitle} = slider
     return ( 
         <div className="slider-info font-primary gap-6 md:gap-0 grid grid-cols-1 md:grid-cols-2 absolute inset-0 pb-5 md:pb-0
                         max-w-screen-xl mx-auto px-5 justify-between mx-auto place-content-end md:place-content-center align-middle text-white">
             <div className="brand-name flex content-center">
-                <span className="hidden md:block">Proof of Dreams</span>
+                <span className="hidden md:block">{siteTitle}</span>
                 
                 <div className="logo-wrap block md:hidden">
                     <Image

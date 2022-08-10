@@ -1,39 +1,27 @@
 import { Fragment } from "react";
 import Image from "next/image";
 import GetImage from "@utils/getImage";
-import { Disclosure,Popover } from "@headlessui/react";
 import Link from "next/link";
 
 const logo = (props) => {
+    
+    const mainLogo = props.logo ? GetImage(props.logo) : null;
+    
+    console.log({mainLogo})
+    
     return ( 
             <Fragment>
                 <Link href="/">
-                    <a className="w-28 dark:hidden py-3">
-                        {props.logo ? (
+                    <a className="w-28 py-1 site-logo">
+                        {!!mainLogo ? (
                         <Image
-                            {...GetImage(props.logo)}
-                            alt="Logo"
+                            {...mainLogo}
+                            alt={props.logo.alt}
                             sizes="(max-width: 640px) 100vw, 200px"
                             priority={true}
                         />
                         ) : (
                         <span className="block">
-                            {props.logotext}
-                        </span>
-                        )}
-                    </a>
-                    </Link>
-                    <Link href="/">
-                    <a className="hidden w-28 dark:block py-3">
-                        {props.logoalt ? (
-                        <Image
-                            {...GetImage(props.logoalt)}
-                            alt="Logo"
-                            sizes="(max-width: 640px) 100vw, 200px"
-                            priority={true}
-                        />
-                        ) : (
-                        <span className="block ">
                             {props.logotext}
                         </span>
                         )}

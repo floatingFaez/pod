@@ -159,6 +159,9 @@ body{
   transition: .3s all ease-in-out;
   margin: 0;
 }
+.site-logo span {
+  max-height: 30px;
+}
 .nav-logo>div {
   max-width: 50px;
   width: 50px;

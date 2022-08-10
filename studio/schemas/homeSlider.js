@@ -33,6 +33,12 @@ export default {
       }
     },
     {
+      name: "siteTitle",
+      type: "string",
+      title: "Site Title",
+      fieldset: "content"
+    },   
+    {
       name: "title",
       type: "string",
       title: "Title",
