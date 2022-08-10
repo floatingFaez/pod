@@ -26,10 +26,6 @@ import { NextSeo } from "next-seo";
 import { singleWorkquery, configQuery, workPathQuery } from "@lib/groq";
 
 
-
-
-
-
 export default function Post(props) {
 
   const { postdata, siteconfig, preview } = props;
@@ -87,9 +83,9 @@ export default function Post(props) {
           <NextSeo
             title={`${post.title} - ${siteConfig.title}`}
             description={post.excerpt || ""}
-            canonical={`${siteConfig?.url}/post/${post.slug.current}`}
+            canonical={`${siteConfig?.url}/work/${post.slug.current}`}
             openGraph={{
-              url: `${siteConfig?.url}/post/${post.slug.current}`,
+              url: `${siteConfig?.url}/work/${post.slug.current}`,
               title: `${post.title} - ${siteConfig.title}`,
               description: post.excerpt || "",
               images: [

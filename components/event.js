@@ -16,7 +16,6 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
     const [expand,setExpand] = useState(false)
     const [showModal,setShowModal] = useState(false)
 
-
     useEffect(()=>{
         setExpand(isExpand)
         setShowModal(isExpand)
@@ -24,7 +23,6 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
 
     const handleModalShow = () =>{
         setShowModal(true)
-        console.log('clicked',`modal_${event._id}`)
         setTimeout(()=>{
             document.getElementById(`modal_${event._id}`).scrollIntoView({behavior: 'smooth'}, true);
         },300)

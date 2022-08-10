@@ -7,8 +7,6 @@ const logo = (props) => {
     
     const mainLogo = props.logo ? GetImage(props.logo) : null;
     
-    console.log({mainLogo})
-    
     return ( 
             <Fragment>
                 <Link href="/">
