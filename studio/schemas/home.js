@@ -53,6 +53,12 @@ export default {
       validation: Rule => Rule.max(200)
     },
     {
+      name: "event_limit",
+      type: "number",
+      title: "Event Limit",
+      description:"Enter value of how many event do you want to show in homepage, default:5",
+    },
+    {
       name: "cta_title",
       type: "string",
       title: "CTA Title",
@@ -91,7 +97,7 @@ export default {
       type: "text",
       rows:4,
       fieldset:"cta"
-    },    
+    },   
     {
       name: "cta_button_text",
       type: "string",
@@ -110,6 +116,13 @@ export default {
       title: "Header Sub Title",
       fieldset:"slider"
     },
+    {
+      name: "work_limit",
+      type: "number",
+      title: "Project Limit",
+      description:"Enter value of how many project do you want to show in project Slider, default:6",
+      fieldset:"slider"
+    }, 
     {
       name: "work_text",
       type: "string",

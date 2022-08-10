@@ -1,8 +1,9 @@
 
 import { Fragment } from "react";
 import dynamic from 'next/dynamic'
+import { groq } from "next-sanity";
 import { getClient } from "@lib/sanity";
-import { configQuery, homeQuery, homeSliderQuery, eventQuery, workQuery } from "@lib/groq";
+import { configQuery, homeQuery, homeSliderQuery } from "@lib/groq";
 
 import {useState, useEffect} from 'react'
 import Layout from "@components/layout";
@@ -84,9 +85,22 @@ export default function Home(props) {
 export async function getStaticProps({ params, preview = false }) {
   const config = await getClient(preview).fetch(configQuery);
   const homeData = await getClient(preview).fetch(homeQuery);
-  const workData = await getClient(preview).fetch(workQuery);
   const homeSliders = await getClient(preview).fetch(homeSliderQuery);
+
+  const limit = homeData?.event_limit ? homeData?.event_limit : 4;
+  const workLimit = homeData?.work_limit ? homeData?.work_limit : 4;
+
+  const eventQuery = groq`
+    *[_type == "events"] | order(startDate asc)[0..${limit}] {...,}
+  `;
+
+  const workQuery = groq`
+    *[_type == "work"] | order(_createdAt asc)[0..${workLimit}] {...,}
+  `;    
+
   const events = await getClient(preview).fetch(eventQuery);
+  const workData = await getClient(preview).fetch(workQuery);
+
   return {
     props: {
       page: homeData,
