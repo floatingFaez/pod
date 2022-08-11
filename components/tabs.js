@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import Image from 'next/image'
 import GetImage from "@utils/getImage";
 import Button from "@components/ui/button";
+import FieldTripForm from "@components/ui/field-trip-form";
+import HeaderSection from "@components/sections/headerSection"; 
 
 const Tabs = ({tabs}) => {
     const [activeTab,setActiveTab] = useState(0)
@@ -74,25 +76,30 @@ const Tabs = ({tabs}) => {
             <div id="TabContent" className='max-w-screen-xl mx-auto  px-5'>
                 { map(tabs, (tab,index) => {
                     
-                    const btnText = index<3 ? "Save & Next": "Submit Package"
+                    const btnText = index<4 ? "Save & Next": "Submit Package"
 
                     return <div key={tab._key} className={`${activeTab !== index ? 'hidden' : ''} text-white tab-content mx-auto text-center`}>
                         <p className='text-heading-3x'>{tab.packag_title}</p>
-                        <div className='grid gap-4 grid-cols-2 md:grid-cols-4 grid-rows-4  md:grid-rows-2 my-10 fss-1 text-left md:text-center'>
+                        <div className='grid gap-4 grid-cols-2 md:grid-cols-4 grid-rows-4 font-secondary md:grid-rows-2 my-10 fss-1 text-left mx-auto'>
                             {
                                 map(tab.packageOptions,(option,i) => {
-                                    return <label htmlFor={`file-1${i}`} key={option._key} className="mb-4 uppercase">
-                                                <input type="radio" name='file-1' id={`file-1${i}`} value="field file" className='mr-3 radio'/> {option.name}
+                                    return <label htmlFor={`file-1${i}`} key={option._key} className="mb-4 uppercase md:ml-5 flex radio-item">
+                                                <input type="radio" name={`file-${index}`} id={`file-1${i}`} value="field file" className='mr-3 radio'/> {option.name}
                                             </label>
                                 })
                             }
                         </div>
 
                         <Button text={btnText}
-                                handleClick={() => setActiveTab(index<3?index+1:0)}
+                                handleClick={() => setActiveTab(index<4?index+1:0)}
                                 classes="border border-white py-4 px-20 hover:bg-gray-700" />
                     </div>
                 })}
+                <div className={`${activeTab !== 4 ? 'hidden' : ''} text-white tab-content mx-auto text-center`}>
+                    <HeaderSection title="Your Details" subtitle="" classes="border-y-0 text-white !pt-0 !pb-5"/>
+                    {/* pt-0 !pb-4 !md:pb-22 border-t-0 */}
+                    <FieldTripForm classes={`mx-auto`} />
+                </div>
                 
             </div>
         </Fragment>
