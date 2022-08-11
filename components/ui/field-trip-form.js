@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import Button from "@components/ui/button";
 import useWeb3Forms from "use-web3forms";
 
-const FieldTripForm = ({classes,type='horizontal'}) => {
+const FieldTripForm = ({classes,setActiveTab,type='horizontal'}) => {
 
     const [isSuccess, setIsSuccess] = useState(false);
     const [message, setMessage] = useState(false);
@@ -123,7 +124,7 @@ const FieldTripForm = ({classes,type='horizontal'}) => {
                 
                 <div className="mb-0 input-group text-left"></div>
 
-                <button
+                {/* <button
                 type="submit"
                 className="w-full md:mt-8 rounded-none font-secondary  uppercase newsletter-submit border font-regular text-white transition-colors hover:bg-gray-800 focus:outline-none  bg-transparent text-white ">
                 {isSubmitting ? (
@@ -145,7 +146,11 @@ const FieldTripForm = ({classes,type='horizontal'}) => {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                 ) : ("Submit Package")}
-                </button>
+                </button> */}
+
+                <Button text={'Submit Package'}
+                    handleClick={() => setActiveTab(5)}
+                    classes="border border-white py-4 px-20 hover:bg-gray-700 md:mt-8" />
             </form>
 
             {isSubmitSuccessful && isSuccess && (

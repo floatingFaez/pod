@@ -98,7 +98,19 @@ const Tabs = ({tabs}) => {
                 <div className={`${activeTab !== 4 ? 'hidden' : ''} text-white tab-content mx-auto text-center`}>
                     <HeaderSection title="Your Details" subtitle="" classes="border-y-0 text-white !pt-0 !pb-5"/>
                     {/* pt-0 !pb-4 !md:pb-22 border-t-0 */}
-                    <FieldTripForm classes={`mx-auto`} />
+                    <FieldTripForm classes={`mx-auto`} setActiveTab={setActiveTab}/>
+                </div>
+
+                <div className={`${activeTab !== 5 ? 'hidden' : ''} text-white tab-content mx-auto text-center`}>
+                    <HeaderSection title="Thank you!" subtitle="" classes="border-y-0 text-white !pt-0 !pb-5"/>
+                    <div className={`newsletter_body`}>
+                        
+                        <p className='my-12 md:w-1/2 mx-auto fss-2'>Your Quote request has been successfully submitted. One of our dreamers will be in contact to discuss your bespoke opportunities soon.</p>
+
+                        <Button text={'Create a New Package'}
+                                handleClick={() => setActiveTab(0)}
+                                classes="border border-white py-4 px-16 md:px-20 hover:bg-gray-700" />
+                    </div>
                 </div>
                 
             </div>
