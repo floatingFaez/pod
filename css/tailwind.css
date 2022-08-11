@@ -15,11 +15,16 @@
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-  -webkit-box-shadow: 0 0 0 30px black inset !important;
+input:-webkit-autofill:active,
+input:-moz-autofill,
+input:-moz-autofill:hover, 
+input:-moz-autofill:focus, 
+input:-moz-autofill:active{
+  -webkit-box-shadow: 0 0 0 100px var(--theme-black) inset !important;
 }
 input:-webkit-autofill{
   -webkit-text-fill-color: white !important;
+  -webkit-background-clip: text;
 }
 .pt-18{
   padding-top:3.75rem;
