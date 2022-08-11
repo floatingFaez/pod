@@ -53,7 +53,7 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
 
     return ( 
         <Container className={`full-width relative block border-t border-theme-black cursor-pointer ${expand ? '':'hover:bg-white bg-hover-white'} ${event.scheduled ? 'scheduled' : ''}`}>
-            <div  className="event-item flex md:flex-row flex-col max-w-screen-xl mx-auto  txt-black pt-2.5 px-5 md:pt-9 pb-5 md:pb-9 h-full" onClick={handleExpand}>
+            <div  className="event-item flex md:flex-row flex-col max-w-screen-xl mx-auto  txt-black pt-2.5 px-5 md:pt-9 pb-5 md:pb-9 h-full" onClick={handleToggle}>
                 <p className="tracking-tighter my-8  text-heading-3x show md:hidden text-center w-56 mx-auto">{event.countries}</p>
 
                 <div className="event-image w-full lg:w-3/12 uppercase md:mr-11">
@@ -123,7 +123,10 @@ const Event = ({event, isExpand,clickedId, setClickedId, setModalShow}) => {
                         <div className="ticket-info">
                             <p className="font-secondary uppercase fss-1 mb-1 tracking-light">AVAILABILITY</p>
                             <p className="fss-4 flex">
-                                <span className={`mr-5 flight-text ${expand ? 'expanded':''}`}>{expand ? 'Reserve Your Seat' : 'Flight Open'} </span>
+                                <span className={`mr-5 flight-text ${expand ? 'expanded':''}`}>
+                                    <span className={`text-alt ${expand ? 'to-opacity-0':'opacity-100'}`}>Flight Open</span>
+                                    <span className={`text-alt ${expand ? 'to-opacity-100':'opacity-0'}`}>Reserve Your Seat</span>
+                                </span>
                                 <img src="/img/plane.svg" className='plane-icon' alt="plane"/>
                             </p>
                         </div>

@@ -12,6 +12,15 @@
 :root {
   --theme-black: #1a1a1a;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px black inset !important;
+}
+input:-webkit-autofill{
+  -webkit-text-fill-color: white !important;
+}
 .pt-18{
   padding-top:3.75rem;
 }
@@ -101,14 +110,31 @@ body{
   transition: .3s ease-in all
 }
 .flight-text{
-  max-width: 130px;
+  width: 120px;
   overflow: hidden;
   transition: .3s ease-out all;
   white-space: nowrap;
+  position: relative;
+}
+.flight-text span {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .flight-text.expanded{
-  max-width: 200px;
+  width: 200px;
   transition: .3s ease-in all
+}
+.text-alt {
+  display: inline-block;
+}
+.text-alt.to-opacity-0,.text-alt.opacity-0 {
+  opacity: 0;
+  transition: .2s all ease-in;
+}
+.text-alt.to-opacity-100,.text-alt.opacity-100 {
+  opacity: 1;
+  transition: .2s all ease-in;
 }
 .font-secondary{
   font-family: 'ABC Favorit Mono';
