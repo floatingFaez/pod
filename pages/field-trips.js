@@ -72,7 +72,7 @@ export default function FieldTrips(props) {
             </Marquee>
           </Container>
             
-          <Tabs tabs={page.tabs}/>
+          <Tabs tabs={page.tabs} siteconfig={siteconfig}/>
 
           <Container className="full-width border-y theme-gray-bg ">
             <div className="grid grid-cols-1 md:grid-cols-2 text-white max-w-screen-xl mx-auto  px-5">

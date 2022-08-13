@@ -2,15 +2,23 @@ import { Fragment,useState } from 'react'
 import {map} from 'lodash'
 import { useForm } from "react-hook-form";
 import Image from 'next/image'
+import useWeb3Forms from "use-web3forms";
+
 import GetImage from "@utils/getImage";
 import Button from "@components/ui/button";
 import FieldTripForm from "@components/ui/field-trip-form";
 import HeaderSection from "@components/sections/headerSection"; 
 
-const Tabs = ({tabs}) => {
+
+const Tabs = ({tabs,siteconfig}) => {
     const [activeTab,setActiveTab] = useState(0)
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [message, setMessage] = useState(false);
+
     let tabTitles = map(tabs, tab => { return {key:tab._key,title:tab.tabtitle}})
     let tabImages = map(tabs, tab => { return {key:tab._key,image:tab.tabImage}})
+
+    const apiKey = siteconfig?.w3ckey || process.env.W3_FORM_KEY;
 
     const {
         register,
@@ -21,13 +29,34 @@ const Tabs = ({tabs}) => {
         setValue,
         formState: { errors, isSubmitSuccessful, isSubmitting }
     } = useForm({
-        mode: "onTouched"
+        mode: "onChange"
     });
 
 
-    const onSubmit = data => {
-        // const isFormValidate = onValidated(data)
-    };
+    // const onFormSubmit = data => {
+    //     console.log('submitted->',data)
+    // };
+
+    const handleFromDataSave = (index) =>{
+        console.log({index},{errors})
+        setActiveTab(index<4?index+1:0)
+    }
+
+    
+    const { submit: onFormSubmit } = useWeb3Forms({
+        apikey: apiKey,
+        from_name: "Field Trip Order Query",
+        subject: "New Contact Message from POD",
+        onSuccess: (msg, data) => {
+            setIsSuccess(true);
+            setMessage(msg);
+            reset();
+        },
+        onError: (msg, data) => {
+            setIsSuccess(false);
+            setMessage(msg);
+        }
+    });
     
 
     return ( 
@@ -73,7 +102,7 @@ const Tabs = ({tabs}) => {
                     })}
                 </ul>
             </div>
-            <div id="TabContent" className='max-w-screen-xl mx-auto  px-5'>
+            <form className='max-w-screen-xl mx-auto  px-5' onSubmit={handleSubmit(onFormSubmit)}>
                 { map(tabs, (tab,index) => {
                     
                     const btnText = index<4 ? "Save & Next": "Submit Package"
@@ -83,22 +112,31 @@ const Tabs = ({tabs}) => {
                         <div className='grid gap-4 grid-cols-2 md:grid-cols-4 grid-rows-4 font-secondary md:grid-rows-2 my-10 fss-1 text-left mx-auto'>
                             {
                                 map(tab.packageOptions,(option,i) => {
-                                    return <label htmlFor={`file-1${i}`} key={option._key} className="mb-4 uppercase md:ml-5 flex radio-item">
-                                                <input type="radio" name={`file-${index}`} id={`file-1${i}`} value="field file" className='mr-3 radio'/> {option.name}
+                                    return <label htmlFor={`${tab.tabtitle}_${i}`} key={option._key} className="mb-4 uppercase md:ml-5 flex radio-item cursor-pointer">
+                                                <input type="radio" {...register(tab.tabtitle)} id={`${tab.tabtitle}_${i}`} value={option.name} className='mr-3 radio'/> {option.name}
                                             </label>
                                 })
                             }
                         </div>
 
                         <Button text={btnText}
-                                handleClick={() => setActiveTab(index<4?index+1:0)}
+                                handleClick={() => handleFromDataSave(index)}
                                 classes="border border-white py-4 px-20 hover:bg-gray-700" />
+
+                        {errors[tab.tabtitle] && (
+                            <div className="mt-2 text-green">
+                                <small>{errors[tab.tabtitle].message}</small>
+                            </div>
+                        )}
                     </div>
                 })}
                 <div className={`${activeTab !== 4 ? 'hidden' : ''} text-white tab-content mx-auto text-center`}>
                     <HeaderSection title="Your Details" subtitle="" classes="border-y-0 text-white !pt-0 !pb-5"/>
-                    {/* pt-0 !pb-4 !md:pb-22 border-t-0 */}
-                    <FieldTripForm classes={`mx-auto`} setActiveTab={setActiveTab}/>
+                    <FieldTripForm classes={`mx-auto`} 
+                                    setActiveTab={setActiveTab} 
+                                    isSuccess={isSuccess} 
+                                    message={message}
+                                    register={register} formState={{ errors, isSubmitSuccessful, isSubmitting }}/>
                 </div>
 
                 <div className={`${activeTab !== 5 ? 'hidden' : ''} text-white tab-content mx-auto text-center`}>
@@ -113,7 +151,7 @@ const Tabs = ({tabs}) => {
                     </div>
                 </div>
                 
-            </div>
+            </form >
         </Fragment>
     );
 }

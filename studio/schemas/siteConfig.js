@@ -406,13 +406,13 @@ export default {
     //   ]
     // },
     
-    // {
-    //   name: "w3ckey",
-    //   type: "string",
-    //   title: "Web3Forms Access Key",
-    //   description:
-    //     "Enter Access key obtained from web3forms.com. It is required to make the form work."
-    // },
+    {
+      name: "w3ckey",
+      type: "string",
+      title: "Web3Forms Access Key",
+      description:
+        "Enter Access key obtained from web3forms.com. It is required to make the form work."
+    },
   ],
   initialValue: {
     marquee_speed: 10,

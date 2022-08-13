@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import useWeb3Forms from "use-web3forms";
+// import useWeb3Forms from "use-web3forms";
 
 const NewsLetterForm = ({ status, cmessage, onValidated, classes,type='horizontal'}) => {
 
